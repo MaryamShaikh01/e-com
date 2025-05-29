@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category GridView Page</title>
+    <link href="./output.css" rel="stylesheet">
+</head>
+
+<body>
+    <main class=" bg-[#F7FAFC]">
+        <section class="py-5 mx-56">
+            <ul class="flex gap-5">
+                <li class="text-[#8B96A5]">Home ></li>
+                <li class="text-[#8B96A5]">Clothings ></li>
+                <li class="text-[#8B96A5]">Men's Wear ></li>
+                <li class="text-[#8B96A5]">Summer Clothing</li>
+            </ul>
+        </section>
+
+        <section class="grid grid-cols-[250px_1fr] gap-10 mx-56">
+            <div class="flex flex-col">
+
+                <div id="category-list" class="flex justify-between  font-semibold border-t-2 light-gray-border py-5 cursor-pointer"
+                    onclick="dropdown(event)">
+                    Category <img src="/img/Icon/control/expand_more.svg" alt="" class="chevron-icon"></div>
+
+                <ul class="hidden-ul text-[#505050] pb-5">
+                    <li class="py-2">
+                        Mobile
+                        accessory
+                    </li>
+                    <li class="py-2">
+                        Electronics
+                    </li>
+                    <li class="py-2">
+                        Smartphones
+                    </li>
+                    <li class="py-2">
+                        Modern tech
+                    </li>
+
+                    <li class="text-[#0D6EFD] py-2 cursor-pointer">See all</li>
+                </ul>
+                <!-- </div> -->
+
+
+                <div id="brand-list" class="flex justify-between py-5 border-t-2 light-gray-border font-semibold cursor-pointer" onclick="dropdown(event)">
+                    Brand <img src="/img/Icon/control/expand_more.svg" alt=""></div>
+                <ul class="text-[#1C1C1C] pb-5 hidden-ul">
+                    <li class="py-2 flex items-center gap-2">
+                        <input type="checkbox" id="samsung" value=""
+                            class="w-[15px] h-[15px] rounded-[2px] border-2 border-[#8B96A5]"><label
+                            for="samsung">Samsung</label>
+                    </li>
+                    <li class="py-2 flex items-center gap-2">
+                        <input type="checkbox" id="apple" value=""
+                            class="w-[15px] h-[15px] rounded-[2px] border-2 border-[#8B96A5]"><label
+                            for="apple">Apple</label>
+                    </li>
+                    <li class="py-2 flex items-center gap-2">
+                        <input type="checkbox" id="huawei" value=""
+                            class="w-[15px] h-[15px] rounded-[2px] border-2 border-[#8B96A5]"><label
+                            for="huawei">Huawei</label>
+                    </li>
+                    <li class="py-2 flex items-center gap-2">
+                        <input type="checkbox" id="pocco" value=""
+                            class="w-[15px] h-[15px] rounded-[2px] border-2 border-[#8B96A5]"><label
+                            for="pocco">Pocco</label>
+                    </li>
+                    <li class="py-2 flex items-center gap-2">
+                        <input type="checkbox" id="lenovo" value=""
+                            class="w-[15px] h-[15px] rounded-[2px] border-2 border-[#8B96A5]"><label
+                            for="lenovo">Lenovo</label>
+                    </li>
+                    <li class="text-[#0D6EFD] py-2 cursor-pointer">See all</li>
+                </ul>
+
+                <div id="features-list" class="flex justify-between features-dropdown-list border-t-2 light-gray-border py-5 font-semibold cursor-pointer"
+                    onclick="dropdown(event)">Features <img src="/img/Icon/control/expand_more.svg" alt=""></div>
+                <ul class="hidden-ul text-[#1C1C1C]">
+                    <li class="py-2 flex items-center gap-2">
+                        <input type="checkbox" id="metallic" value=""
+                            class="w-[15px] h-[15px] rounded-[2px] border-2 border-[#8B96A5]"><label
+                            for="metallic">Metallic</label>
+                    </li>
+                    <li class="py-2 flex items-center gap-2">
+                        <input type="checkbox" id="plastic-cover" value=""
+                            class="w-[15px] h-[15px] rounded-[2px] border-2 border-[#8B96A5]"><label
+                            for="plastic-cover">Plastic cover</label>
+                    </li>
+                    <li class="py-2 flex items-center gap-2">
+                        <input type="checkbox" id="ram" value=""
+                            class="w-[15px] h-[15px] rounded-[2px] border-2 border-[#8B96A5]"><label for="ram">8GB
+                            RAM</label>
+                    </li>
+                    <li class="py-2 flex items-center gap-2">
+                        <input type="checkbox" id="powerful" value=""
+                            class="w-[15px] h-[15px] rounded-[2px] border-2 border-[#8B96A5]"><label
+                            for="powerful">Super power</label>
+                    </li>
+                    <li class="py-2 flex items-center gap-2">
+                        <input type="checkbox" id="large-memory" value=""
+                            class="w-[15px] h-[15px] rounded-[2px] border-2 border-[#8B96A5]"><label
+                            for="large-memory">Large Memory</label>
+                    </li>
+                    <li class="text-[#0D6EFD] py-2 cursor-pointer">See all</li>
+                </ul>
+
+
+                <div id="condition-list" class="flex justify-between condition-dropdown-list border-t-2 light-gray-border py-5 font-semibold cursor-pointer"
+                    onclick="dropdown(event)">Conditions <img src="/img/Icon/control/expand_more.svg" alt=""></div>
+                <ul class="hidden-ul">
+                    <li class="py-2 flex items-center gap-2">
+                        <input type="checkbox" id="any"
+                            class="appearance-none w-[18px] h-[18px] border-2 border-[#BDBDBD] rounded-full"><label
+                            for="any">Any</label>
+                    </li>
+                    <li class="py-2 flex items-center gap-2">
+                        <input type="checkbox" id="refurbished"
+                            class="appearance-none w-[18px] h-[18px] border-2 border-[#BDBDBD] rounded-full"><label
+                            for="refurbished">Refurbished</label>
+                    </li>
+                    <li class="py-2 flex items-center gap-2">
+                        <input type="checkbox" id="brand-new"
+                            class="appearance-none w-[18px] h-[18px] border-2 border-[#BDBDBD] rounded-full"><label
+                            for="brand-new">Brand New</label>
+                    </li>
+                    <li class="py-2 flex items-center gap-2">
+                        <input type="checkbox" id="old-items"
+                            class="appearance-none w-[18px] h-[18px] border-2 border-[#BDBDBD] rounded-full"><label
+                            for="old-items">Old items</label>
+                    </li>
+
+                </ul>
+
+                <div id="range" class="flex justify-between border-t-2 light-gray-border py-5 cursor-pointer font-semibold" onclick="dropdown(event)">Price Range <img src="/img/Icon/control/expand_more.svg" alt=""></div>
+                    <div class="hidden-ul">
+
+                        <input type="range" name="range" id="range" class="py-3 w-full">
+                        
+                        <div class="grid grid-cols-2">
+                            <label for="min-range" class="">Min
+                                
+                                <input type="number" name="min-range" id="min-range" value="0"
+                                class="text-[#DEE2E7] px-1.5 py-1.5 border-2 border-[#DEE2E7] rounded-[6px] w-[120px]">
+                            </label>
+                            
+                            <label for="min-range" class="ml-2">Max
+                                
+                                <input type="number" name="min-range" id="min-range" value="10000"
+                                class="text-[#DEE2E7] px-1.5 py-1.5 border-2 border-[#DEE2E7] rounded-[6px] w-[120px]">
+                            </label>
+                            
+                            <button
+                            class="text-[#0D6EFD] px-5 py-1 mb-5 border-2 border-[#DEE2E7] rounded-[6px] col-span-2 mt-3 font-medium">Apply</button>
+                        </div>
+                    </div>
+
+                <div id="rating-list" class="flex justify-between rating-dropdown-list border-t-2 light-gray-border py-5 font-semibold cursor-pointer" onclick="dropdown(event)">Ratings <img src="/img/Icon/control/expand_more.svg" alt=""></div>
+                    <ul class="rating-stars text-[#1C1C1C] hidden-ul">
+                        <li class="py-2 flex items-center gap-2">
+                            <input type="checkbox" id="five-star" value=""
+                                class="w-[15px] h-[15px] rounded-[2px] border-2 border-[#8B96A5]"><label
+                                for="five-star">
+                                <ul class="flex items-start gap-4">
+                                    <li class="flex items-center">
+                                        <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                        <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                        <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                        <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                        <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                    </li>
+                                </ul>
+                            </label>
+                        </li>
+                        <li class="py-2 flex items-center gap-2">
+                            <input type="checkbox" id="four-star" value=""
+                                class="w-[15px] h-[15px] rounded-[2px] border-2 border-[#8B96A5]"><label
+                                for="four-star">
+                                <ul class="flex items-start gap-4">
+                                    <li class="flex items-center">
+                                        <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                        <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                        <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                        <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                        <img src="/img/Icon/control/star.svg" alt="" class="star-grey-filter">
+                                    </li>
+                                </ul>
+                            </label>
+                        </li>
+                        <li class="py-2 flex items-center gap-2">
+                            <input type="checkbox" id="three-star" value=""
+                                class="w-[15px] h-[15px] rounded-[2px] border-2 border-[#8B96A5]"><label
+                                for="three-star">
+
+                                <ul class="flex items-start gap-4">
+                                    <li class="flex items-center">
+                                        <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                        <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                        <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                        <img src="/img/Icon/control/star.svg" alt="" class="star-grey-filter">
+                                        <img src="/img/Icon/control/star.svg" alt="" class="star-grey-filter">
+                                    </li>
+                                </ul>
+                            </label>
+                        </li>
+                        <li class="py-2 flex items-center gap-2">
+                            <input type="checkbox" id="two-star" value=""
+                                class="w-[15px] h-[15px] rounded-[2px] border-2 border-[#8B96A5]"><label for="two-star">
+                                <ul class="flex items-start gap-4">
+                                    <li class="flex items-center">
+                                        <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                        <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                        <img src="/img/Icon/control/star.svg" alt="" class="star-grey-filter">
+                                        <img src="/img/Icon/control/star.svg" alt="" class="star-grey-filter">
+                                        <img src="/img/Icon/control/star.svg" alt="" class="star-grey-filter">
+                                    </li>
+                                </ul>
+                            </label>
+                        </li>
+
+                    </ul>
+
+            </div>
+
+            <div class=" flex flex-col gap-5">
+                <div
+                    class="flex items-center justify-end gap-2 p-2.5 border-2 light-gray-border rounded-[6px] bg-white">
+                    <p class="mr-auto ">12,911 items in <span class="font-semibold">Mobile accessory</span></p>
+
+                    <input type="checkbox" name="verify-filter" id="verify-filter"
+                        class="w-[15px] h-[15px] rounded-[2px] border-2 border-[#8B96A5]">
+                    <label for="verify-filter" class="mr-3" >Verified Only
+                    </label>
+                    <select name="type" id="type" class="border-2 border-[#DEE2E7] py-1.5 pl-1.5 pr-10 rounded-[6px]">
+                        <option value="featured">Featured</option>
+                    </select>
+                   <div class="flex">
+
+                        <button class="border-y-2 border-y-[#DEE2E7] border-l-2 border-l-[#DEE2E7] p-1.5 rounded-tl-md rounded-bl-md hover:bg-[#EFF2F4]">
+                            <img src="/img/Icon/control/gridview.svg" alt="gridview-icon" width="20px" height="20px">
+                        </button>
+                        <button class="border-2 light-gray-border p-1.5 rounded-tr-md rounded-br-md hover:bg-[#EFF2F4]  ">
+                            <img src="/img/Icon/control/listview.svg" alt="listview-icon" width="20px" height="20px">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex gap-2 items-center">
+                    <button class="flex border-1 border-[#0D6EFD] rounded-[6px] pl-[15px] pr-2.5 py-1 gap-2 text-[#505050]">Samsung <img src="/img/Icon/control/clear.svg" alt="" class="grey-icon-filter"></button>
+                    <button class="flex border-1 border-[#0D6EFD] rounded-[6px] pl-[15px] pr-2.5 py-1 gap-2 text-[#505050]">Pocco <img src="/img/Icon/control/clear.svg" alt="" class="grey-icon-filter"></button>
+                    <button class="flex border-1 border-[#0D6EFD] rounded-[6px] pl-[15px] pr-2.5 py-1 gap-2 text-[#505050]">Metallic<img src="/img/Icon/control/clear.svg" alt="" class="grey-icon-filter"></button>
+                    <button class="flex border-1 border-[#0D6EFD] rounded-[6px] pl-[15px] pr-2.5 py-1 gap-2 text-[#505050]">4 star<img src="/img/Icon/control/clear.svg" alt="" class="grey-icon-filter"></button>
+                    <button class="flex border-1 border-[#0D6EFD] rounded-[6px] pl-[15px] pr-2.5 py-1    gap-2 text-[#505050]">3 star<img src="/img/Icon/control/clear.svg" alt="" class="grey-icon-filter"></button>
+                    <p class="text-[#0D6EFD] cursor-pointer ml-2">Clear all filter</p>
+                </div>
+
+
+                <div class="grid grid-cols-3 gap-5">
+
+                    <div class="  border-2 light-gray-border rounded-[6px] relative bg-white">
+                        <img src="/img/product images/Image/tech/red-mobile.svg" alt="" width="240px" height="240px"
+                            class="row-span-5 p-2 justify-self-center">
+
+                        <p class="font-semibold text-[20px] self-end px-5 border-t-2 border-t-[#DEE2E7] pt-5">$998.00 <span
+                                class="line-through text-[16px] text-[#8B96A5]">$1128.00</span></p>
+                        <ul class="flex items-start gap-4 px-4">
+                            <li class="flex items-center">
+                                <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                <img src="/img/Icon/control/star.svg" alt="" class="star-grey-filter">
+                                <span class="text-[#FF9017]">7.5</span>
+                            </li>
+                        </ul>
+                        <p class="font-medium pt-5 self-center px-5 pb-5">Canon Camera EOS 2000, Black 10x zoom</p>
+
+                        <button class="absolute bottom-20 right-5 border-2 border-[#DEE2E7] rounded-[6px] p-1 ">
+                            <img src="/img/Icon/control/favorite_border.svg" alt="favorite-icon"
+                                class="filter-[brightness(0)_saturate(100%)_invert(27%)_sepia(58%)_saturate(3012%)_hue-rotate(207deg)_brightness(106%)_contrast(99%)]">
+                        </button>
+                    </div>
+
+
+
+                    <div class="border-2 light-gray-border rounded-[6px] relative bg-white">
+                        <img src="/img/product images/Image/tech/two-coloured-mobile.svg" alt="" width="240px"
+                            height="240px" class="row-span-5 p-2 justify-self-center">
+
+                        <p class="font-semibold text-[20px] self-end px-5 border-t-2 border-t-[#DEE2E7] pt-5">$998.00 <span
+                                class="line-through text-[16px] text-[#8B96A5]">$1128.00</span></p>
+                        <ul class="flex items-start gap-4 px-4">
+                            <li class="flex items-center">
+                                <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                <img src="/img/Icon/control/star.svg" alt="" class="star-grey-filter">
+                                <span class="text-[#FF9017]">7.5</span>
+                            </li>
+                        </ul>
+                        <p class="font-medium pt-5 self-center px-5 pb-5">Canon Camera EOS 2000, Black 10x zoom</p>
+
+                        <button class="absolute bottom-20 right-5 border-2 border-[#DEE2E7] rounded-[6px] p-1 ">
+                            <img src="/img/Icon/control/favorite_border.svg" alt="favorite-icon"
+                                class="filter-[brightness(0)_saturate(100%)_invert(27%)_sepia(58%)_saturate(3012%)_hue-rotate(207deg)_brightness(106%)_contrast(99%)]">
+                        </button>
+                    </div>
+
+                    <div class=" border-2 light-gray-border rounded-[6px] relative bg-white">
+                        <img src="/img/product images/Image/tech/broad-phone.svg" alt="" width="240px" height="240px"
+                            class="row-span-5 p-2 justify-self-center">
+
+                       <p class="font-semibold text-[20px] self-end px-5 border-t-2 border-t-[#DEE2E7] pt-5">$998.00 <span
+                                class="line-through text-[16px] text-[#8B96A5]">$1128.00</span></p>
+                        <ul class="flex items-start gap-4 px-4">
+                            <li class="flex items-center">
+                                <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                <img src="/img/Icon/control/star.svg" alt="" class="star-grey-filter">
+                                <span class="text-[#FF9017]">7.5</span>
+                            </li>
+                        </ul>
+                        <p class="font-medium pt-5 self-center px-5 pb-5">Canon Camera EOS 2000, Black 10x zoom</p>
+
+                        <button class="absolute bottom-20 right-5 border-2 border-[#DEE2E7] rounded-[6px] p-1 ">
+                            <img src="/img/Icon/control/favorite_border.svg" alt="favorite-icon"
+                                class="filter-[brightness(0)_saturate(100%)_invert(27%)_sepia(58%)_saturate(3012%)_hue-rotate(207deg)_brightness(106%)_contrast(99%)]">
+                        </button>
+                    </div>
+
+                    <div class=" border-2 light-gray-border rounded-[6px] relative bg-white">
+                        <img src="/img/product images/Image/tech/laptop.svg " alt="" width="240px" height="240px"
+                            class="row-span-5 p-2 justify-self-center">
+
+                        <p class="font-semibold text-[20px] self-end px-5 border-t-2 border-t-[#DEE2E7] pt-5">$998.00 <span
+                                class="line-through text-[16px] text-[#8B96A5]">$1128.00</span></p>
+                        <ul class="flex items-start gap-4 px-4">
+                            <li class="flex items-center">
+                                <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                <img src="/img/Icon/control/star.svg" alt="" class="star-grey-filter">
+                                <span class="text-[#FF9017]">7.5</span>
+                            </li>
+                        </ul>
+                        <p class="font-medium pt-5 self-center px-5 pb-5">Canon Camera EOS 2000, Black 10x zoom</p>
+
+                        <button class="absolute bottom-20 right-5 border-2 border-[#DEE2E7] rounded-[6px] p-1 ">
+                            <img src="/img/Icon/control/favorite_border.svg" alt="favorite-icon"
+                                class="filter-[brightness(0)_saturate(100%)_invert(27%)_sepia(58%)_saturate(3012%)_hue-rotate(207deg)_brightness(106%)_contrast(99%)]">
+                        </button>
+                    </div>
+
+
+                    <div class="border-2 light-gray-border rounded-[6px] relative bg-white">
+                        <img src="/img/product images/Image/tech/digital-watch.svg" alt="" width="240px" height="240px"
+                            class="row-span-5 p-2 justify-self-center">
+
+                        <p class="font-semibold text-[20px] self-end px-5 border-t-2 border-t-[#DEE2E7] pt-5">$998.00 <span
+                                class="line-through text-[16px] text-[#8B96A5]">$1128.00</span></p>
+                        <ul class="flex items-start gap-4 px-4">
+                            <li class="flex items-center">
+                                <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                <img src="/img/Icon/control/star.svg" alt="" class="star-grey-filter">
+                                <span class="text-[#FF9017]">7.5</span>
+                            </li>
+                        </ul>
+                        <p class="font-medium pt-5 self-center px-5 pb-5">Canon Camera EOS 2000, Black 10x zoom</p>
+
+                        <button class="absolute bottom-20 right-5 border-2 border-[#DEE2E7] rounded-[6px] p-1 ">
+                            <img src="/img/Icon/control/favorite_border.svg" alt="favorite-icon"
+                                class="filter-[brightness(0)_saturate(100%)_invert(27%)_sepia(58%)_saturate(3012%)_hue-rotate(207deg)_brightness(106%)_contrast(99%)]">
+                        </button>
+                    </div>
+
+                    <div class=" border-2 light-gray-border rounded-[6px] relative bg-white">
+                        <img src="/img/product images/Image/tech/white-headphone.svg" alt="" width="240px"
+                            height="240px" class="row-span-5 p-2 justify-self-center">
+
+                        <p class="font-semibold text-[20px] self-end px-5 border-t-2 border-t-[#DEE2E7] pt-5">$998.00 <span
+                                class="line-through text-[16px] text-[#8B96A5]">$1128.00</span></p>
+                        <ul class="flex items-start gap-4 px-4">
+                            <li class="flex items-center">
+                                <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter">
+                                <img src="/img/Icon/control/star.svg" alt="" class="star-grey-filter">
+                                <span class="text-[#FF9017]">7.5</span>
+                            </li>
+                        </ul>
+                        <p class="font-medium pt-5 self-center px-5 pb-5">Canon Camera EOS 2000, Black 10x zoom</p>
+
+                        <button class="absolute bottom-20 right-5 border-2 border-[#DEE2E7] rounded-[6px] p-1 ">
+                            <img src="/img/Icon/control/favorite_border.svg" alt="favorite-icon"
+                                class="filter-[brightness(0)_saturate(100%)_invert(27%)_sepia(58%)_saturate(3012%)_hue-rotate(207deg)_brightness(106%)_contrast(99%)]">
+                        </button>
+                    </div>
+                </div>
+
+                 <div class=" flex gap-3 justify-end">
+                    <select name="show" id="show"
+                        class="border-2 border-[#DEE2E7] py-1.5 pl-1.5 pr-10 rounded-[6px] bg-white">
+                        <option value="show">Show 10</option>
+                    </select>
+                    <div class="flex">
+
+                        <button
+                            class="border-y-2 border-y-[#DEE2E7] border-l-2 border-l-[#DEE2E7] w-[35px] h-[35px] bg-white hover:bg-[#EFF2F4]">
+                            <img src="img/Icon/control/chevron_left.svg" alt="chevron-left"
+                                class="justify-self-center"></button>
+                        <button
+                            class="border-y-2 border-y-[#DEE2E7] border-l-2 border-l-[#DEE2E7] w-[35px] h-[35px] bg-white hover:bg-[#EFF2F4]">
+                            1 </button>
+                        <button
+                            class="border-y-2 border-y-[#DEE2E7] border-l-2 border-l-[#DEE2E7] w-[35px] h-[35px] bg-white hover:bg-[#EFF2F4]">
+                            2 </button>
+                        <button
+                            class="border-y-2 border-y-[#DEE2E7] border-l-2 border-l-[#DEE2E7] w-[35px] h-[35px] bg-white hover:bg-[#EFF2F4]">
+                            3 </button>
+                        <button
+                            class="border-y-2 border-y-[#DEE2E7] border-x-2 border-x-[#DEE2E7] w-[35px] h-[35px] bg-white hover:bg-[#EFF2F4]"><img
+                                src="/img/Icon/control/chevron_right.svg" alt="chevron-right"
+                                class="justify-self-center"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section Starts -->
+        <section class="bg-[#EFF2F4] ">
+
+            <div class="text-center py-8 my-10 mx-56">
+                <p class="font-semibold text-[20px]">Subscribe to our newsletter</p>
+                <p class="text-[#606060] mb-5">Get daily news on upcoming offers from many suppliers all over the world
+                </p>
+                <input type="email" name="email" id="email" placeholder="Email"
+                    class="bg-white  px-10 py-1 bg-[url(/img/Icon/email.svg)] bg-no-repeat bg-position-[10px] mr-[10px] rounded-[6px]">
+                <button class="bg-[#0067FF] text-white col-span-2 rounded-[6px] px-2.5 py-1">Subscribe</button>
+
+            </div>
+        </section>
+        <!-- Newsletter Section Ends -->
+    </main>
+<script src="script.js"></script>
+
+</body>
+
+</html>

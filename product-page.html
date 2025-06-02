@@ -8,6 +8,34 @@
     <link href="./output.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
+
+         .show {
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 70%;
+            height: 100vh;
+            background-color: rgb(241, 249, 255);
+            z-index: 1000;
+            box-shadow: 9px 0px 10px -5px rgba(97,97,97,0.75);
+
+        }
+
+        .custom-select {
+        min-width: fit-content;
+        background-color: transparent;
+        z-index: 1;
+    }
+
+    .custom-select select {
+        appearance: none;
+        width: 100%;
+        padding: 0px 20px 0px 0px;
+        background-color: transparent;
+        color: #000;
+        cursor: pointer;
+    }
         .swiper {
             width: 100%;
             height: 100%;
@@ -107,18 +135,68 @@
             object-position: top;
             border-radius: 6px;
         }
+
+        
     </style>
 </head>
 
 <body>
     <main class=" bg-[#F7FAFC]">
+       
+        <section class="bottom-0 bg-white w-full  fixed xl:hidden shadow-[1px_-5px_5px_-5px_rgba(99,99,99,0.75)] z-50">
+            <div class="flex justify-between py-3 gap-5 px-[10px] m-auto md:w-[90%] xl:w-[80%]">
+                    <span class="text-[#8B96A5] flex flex-col justify-center items-center p-16px">
 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M10 10C12.7625 10 15 7.7625 15 5C15 2.2375 12.7625 0 10 0C7.2375 0 5 2.2375 5 5C5 7.7625 7.2375 10 10 10ZM10 11.5C6.6625 11.5 0 13.175 0 16.5V17.75C0 18.4375 0.5625 19 1.25 19H18.75C19.4375 19 20 18.4375 20 17.75V16.5C20 13.175 13.3375 11.5 10 11.5Z"
+                                fill="#8B96A5" />
+                        </svg>
+                        Profile
+                    </span>
+                    <span class="text-[#8B96A5] flex flex-col justify-center items-center p-16px">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M18 0H2C0.9 0 0.01 0.9 0.01 2L0 20L4 16H18C19.1 16 20 15.1 20 14V2C20 0.9 19.1 0 18 0ZM5 7H15C15.55 7 16 7.45 16 8C16 8.55 15.55 9 15 9H5C4.45 9 4 8.55 4 8C4 7.45 4.45 7 5 7ZM11 12H5C4.45 12 4 11.55 4 11C4 10.45 4.45 10 5 10H11C11.55 10 12 10.45 12 11C12 11.55 11.55 12 11 12ZM15 6H5C4.45 6 4 5.55 4 5C4 4.45 4.45 4 5 4H15C15.55 4 16 4.45 16 5C16 5.55 15.55 6 15 6Z"
+                                fill="#8B96A5" />
+                        </svg>Message
+                    </span>
+                    <span class="text-[#8B96A5] flex flex-col justify-center items-center p-16px">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 18" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M11.35 17.1302C10.59 17.8202 9.42003 17.8202 8.66003 17.1202L8.55003 17.0202C3.30003 12.2702 -0.129969 9.16017 3.10168e-05 5.28017C0.060031 3.58017 0.930031 1.95017 2.34003 0.990166C4.98003 -0.809834 8.24003 0.0301659 10 2.09017C11.76 0.0301659 15.02 -0.819834 17.66 0.990166C19.07 1.95017 19.94 3.58017 20 5.28017C20.14 9.16017 16.7 12.2702 11.45 17.0402L11.35 17.1302Z"
+                                fill="#8B96A5" />
+                        </svg>Orders
+                    </span>
+                    <span class="text-[#8B96A5] flex flex-col justify-center items-center p-16px">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="22" viewBox="0 0 21 21" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M6.29989 16.7997C5.14491 16.7997 4.21043 17.7447 4.21043 18.8997C4.21043 20.0546 5.14491 20.9996 6.29989 20.9996C7.45487 20.9996 8.39985 20.0546 8.39985 18.8997C8.39985 17.7447 7.45487 16.7997 6.29989 16.7997ZM0 1.04998C0 1.62747 0.472492 2.09996 1.04998 2.09996H2.09996L5.8799 10.0693L4.46242 12.6313C3.69593 14.0383 4.70392 15.7497 6.29989 15.7497H17.8497C18.4272 15.7497 18.8997 15.2772 18.8997 14.6997C18.8997 14.1223 18.4272 13.6498 17.8497 13.6498H6.29989L7.45487 11.5498H15.2772C16.0647 11.5498 16.7577 11.1193 17.1147 10.4683L20.8736 3.65394C21.2621 2.96095 20.7581 2.09996 19.9601 2.09996H4.42042L3.71693 0.598489C3.54894 0.230996 3.17094 0 2.77195 0H1.04998C0.472492 0 0 0.472492 0 1.04998ZM16.7997 16.7997C15.6447 16.7997 14.7102 17.7447 14.7102 18.8997C14.7102 20.0546 15.6447 20.9996 16.7997 20.9996C17.9547 20.9996 18.8997 20.0546 18.8997 18.8997C18.8997 17.7447 17.9547 16.7997 16.7997 16.7997Z"
+                                fill="#8B96A5" />
+                        </svg>My Cart
+                    </span>
+                </div>
+        </section>
         <!-- First Header Starts -->
 
-        <!-- <header class="bg-white border-b-1 border-[#E0E0E0]">
-            <div class="mx-56 flex   justify-between  bg-white py-5">
-
-                <div class="text-[#8CB7F5] text-[32px] font-semibold flex gap-3 items-center">
+        <header class="bg-white border-b-1 border-[#E0E0E0]">
+            <div class="px-[10px] m-auto md:w-[90%] xl:w-[80%] flex items-center  justify-between  bg-white py-5">
+                <a href="index.html"
+                    class="lg:hidden bg-[#0D6EFD] w-[43px] h-[43px] shadow-[8px_0px_0px_0px_rgba(13,110,253,0.21)] rounded-[10px] relative">
+                    <svg class="absolute top-[50%] left-[50%] transform translate-x-[-50%] translate-y-[-50%] "
+                        xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22" fill="none">
+                        <g opacity="0.7">
+                            <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd"
+                                d="M4.29018 7.3562H3.30965C3.25911 7.3562 3.18417 7.4265 3.18127 7.47295L2.45892 19.1476L15.9548 19.1451L15.2253 7.47295C15.2225 7.42828 15.1457 7.3562 15.0969 7.3562H14.1164V9.32145C14.1164 9.86413 13.6765 10.3041 13.1338 10.3041C12.5911 10.3041 12.1512 9.86413 12.1512 9.32145V7.3562L6.25543 7.3562V9.32145C6.25543 9.86413 5.81549 10.3041 5.27281 10.3041C4.73012 10.3041 4.29018 9.86413 4.29018 9.32145V7.3562Z"
+                                fill="white" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M9.20329 0.478271C11.9153 0.478271 14.1164 2.6796 14.1164 5.38906L15.0969 5.39138C16.1835 5.39138 17.1192 6.27035 17.1867 7.35079L17.9244 19.1539C17.9921 20.2361 17.1698 21.1133 16.0865 21.1133H2.3201C1.23739 21.1133 0.41462 20.2344 0.482148 19.1539L1.21984 7.35079C1.28748 6.26864 2.22128 5.39138 3.30964 5.39138H4.29017C4.29017 2.67813 6.49304 0.478271 9.20329 0.478271ZM12.1511 5.39149C12.1511 3.76503 10.8299 2.44362 9.20328 2.44362C7.57781 2.44362 6.25541 3.76421 6.25541 5.38917L12.1511 5.39149ZM4.29018 7.35657H3.30965C3.2591 7.35657 3.18417 7.42687 3.18126 7.47332L2.45892 19.148L15.9548 19.1455L15.2253 7.47332C15.2225 7.42864 15.1457 7.35657 15.0969 7.35657H14.1164V9.32181C14.1164 9.8645 13.6765 10.3044 13.1338 10.3044C12.5911 10.3044 12.1512 9.8645 12.1512 9.32181V7.35657L6.25542 7.35657L6.25542 9.32181C6.25542 9.8645 5.81549 10.3044 5.2728 10.3044C4.73011 10.3044 4.29018 9.8645 4.29018 9.32181V7.35657Z"
+                                fill="white" />
+                        </g>
+                    </svg>
+                    <!-- <a href="/checkout-page.html" class="absolute "></a> -->
+                </a>
+                <div class="hidden lg:flex text-[#8CB7F5] text-[32px] font-semibold  gap-3 items-center">
                     <p
                         class="bg-[#0D6EFD] w-[43px] h-[43px] shadow-[8px_0px_0px_0px_rgba(13,110,253,0.21)] rounded-[10px] relative">
                         <svg class="absolute top-[50%] left-[50%] transform translate-x-[-50%] translate-y-[-50%] "
@@ -135,18 +213,31 @@
                     </p>Brand
                 </div>
 
-                <div class="border-2 border-[#0D6EFD] rounded-[6px] w-[55%] flex">
-                    <input type="search" placeholder="Search"
+                <div class="border-2 border-[#0D6EFD] rounded-[6px] w-[80%] xl:w-[55%] flex">
+                    <input type="search" id="search-box" name="search" placeholder="Clothes"
                         class=" px-2.5 py-2 border-r-1 border-r-[#0D6EFD] w-full focus:outline-0">
+<span class="custom-select relative before:absolute before:w-[20px] before:h-[20px] before:top-2 before:right-0 before:content-[url('/img/expand_more.svg')] before:z-[-1] hidden xl:block pl-2.5">
 
-                    <select name="" id="" class="focus:outline-0 px-2.5 py-2 mr-2.5">
-                        <option value="All Category" class="focus:outline-0">All Category</option>
-                        <option value="All Category">All Category</option>
-                    </select>
-                    <button class="btn-gradient text-white px-8 py-2 font-medium">Search</button>
+    <select name="categories" id="categories"
+    class="focus:outline-0 px-2.5 py-2 mr-2.5 hidden xl:block h-[100%]">
+    <option value="All Category" class="focus:outline-0">All Category</option>
+    <option value="All Category">All Category</option>
+</select>
+</span>
+                    <button class="hidden md:block btn-gradient text-white px-2.5  sm:px-8 py-2 font-medium">Search
+                    </button>
+
+                    <svg class="md:hidden self-center btn-gradient h-[100%] py-3 text-white  font-medium"
+                        xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="25" viewBox="0 0 50 50">
+                        <path
+                            d="M 21 3 C 11.6 3 4 10.6 4 20 C 4 29.4 11.6 37 21 37 C 24.354553 37 27.47104 36.01984 30.103516 34.347656 L 42.378906 46.621094 L 46.621094 42.378906 L 34.523438 30.279297 C 36.695733 27.423994 38 23.870646 38 20 C 38 10.6 30.4 3 21 3 z M 21 7 C 28.2 7 34 12.8 34 20 C 34 27.2 28.2 33 21 33 C 13.8 33 8 27.2 8 20 C 8 12.8 13.8 7 21 7 z"
+                            fill="white"></path>
+                    </svg>
                 </div>
 
-                <div class="flex gap-5">
+
+
+                <div class="hidden xl:flex gap-5">
                     <span class="text-[#8B96A5] flex flex-col justify-center items-center">
 
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
@@ -179,41 +270,92 @@
                     </span>
                 </div>
             </div>
-        </header> -->
+        </header>
         <!-- First Header Ends -->
 
         <!-- Navbar Starts -->
-        <!-- <section class="bg-white border-b-1 border-[#E0E0E0]">
-            <div class="flex justify-between bg-white mx-56 py-[17px]">
-                <ul class="flex gap-8">
-                    <li class="flex gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none">
+        <section class="bg-white border-b-1 border-[#E0E0E0]">
+            <div class="px-[10px] m-auto md:w-[90%] xl:w-[80%] flex justify-between gap-20 bg-white py-[17px]">
+                <ul class="flex gap-5 whitespace-nowrap">
+                    <span class="lg:hidden" id="hamburger" onclick="sideNav()">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M3 18H21V16H3V18ZM3 13H21V11H3V13ZM3 6V8H21V6H3Z" fill="#1C1C1C" />
-                        </svg>All category</li>
+                        </svg>
+                    </span>
+                    <li class="flex gap-2">All category</li>
+                    <li>Hot Offers</li>
+                    <li class="hidden sm:block">Gift Boes</li>
+                    <li class="hidden md:block">Projects</li>
+                    <li class="hidden sm:block">Menu Items</li>
+                    <li class="flex items-center  custom-select relative before:absolute before:w-[20px] before:h-[20px] before:top-0 before:right-0 before:content-[url('/img/expand_more.svg')] before:z-[-1]">
+                        <select name="help" id="help" class="appearance-none focus:outline-0 ">
+                                    <option value="">Help</option>
+                        </select>
+                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none">
+                            <path
+                                d="M16.59 8.29504L12 12.875L7.41 8.29504L6 9.70504L12 15.705L18 9.70504L16.59 8.29504Z"
+                                fill="#8B96A5" />
+                        </svg> -->
+                    </li>
+
+                </ul>
+
+                <ul class=" items-center gap-12 hidden lg:flex">
+                    <li class="flex gap-2 custom-select relative before:absolute before:w-[20px] before:h-[20px] before:top-0 before:right-0 before:content-[url('/img/expand_more.svg')] before:z-[-1]"><select name="help" id="help" class="appearance-none focus:outline-0">
+                            <option value="">English, USD</option>
+                        </select></li>
+
+                    <li class="flex items-center gap-3 custom-select relative before:absolute before:w-[20px] before:h-[20px] before:top-0 before:right-[32%] before:content-[url('/img/expand_more.svg')] before:z-[-1]">
+                        <select name="help" id="help" class="appearance-none focus:outline-0">
+                            <option value="">Ship To</option>
+                        </select>
+                        <img src="/img/flags/italy.svg" alt="">
+                        
+                    </li>
+                </ul>
+            </div>
+
+            <div class="hidden" id="side-nav">
+
+                <div class="px-[20px] flex flex-col justify-between gap-2 py-[17px] ">
+                    <p onclick="closeNav()" class="absolute top-0 right-0 p-5"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50">
+<path d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z"></path>
+</svg></p>
+                <ul class="flex flex-col gap-8">
+
+                    
+                    <li class="flex gap-2">All category</li>
                     <li>Hot Offers</li>
                     <li>Gift Boes</li>
                     <li>Projects</li>
                     <li>Menu Items</li>
-                    <li class="flex items-center"><select name="help" id="help" class="appearance-none focus:outline-0">
+                    <li class="flex items-center">
+                        <select name="help" id="help" class="appearance-none focus:outline-0">
                             <option value="">Help</option>
                         </select><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                             fill="none">
                             <path
                                 d="M16.59 8.29504L12 12.875L7.41 8.29504L6 9.70504L12 15.705L18 9.70504L16.59 8.29504Z"
                                 fill="#8B96A5" />
-                        </svg></li>
+                        </svg>
+                    </li>   
 
                 </ul>
 
-                <ul class="flex items-center gap-12">
-                    <li class="flex gap-2"><select name="help" id="help" class="appearance-none focus:outline-0">
+                <ul class="flex flex-col items-start gap-12">
+                    <li class="flex gap-2">
+                        <select name="language" id="language" class="appearance-none focus:outline-0 a">
                             <option value="">English, USD</option>
-                        </select><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        </select>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                             fill="none">
                             <path
                                 d="M16.59 8.29504L12 12.875L7.41 8.29504L6 9.70504L12 15.705L18 9.70504L16.59 8.29504Z"
                                 fill="#8B96A5" />
-                        </svg></li>
+                        </svg>
+                    </li>
 
                     <li class="flex items-center gap-3 ">
                         <select name="help" id="help" class="appearance-none focus:outline-0">
@@ -228,11 +370,16 @@
                     </li>
                 </ul>
             </div>
-        </section> -->
+
+                </div>
+
+
+        </section>
         <!-- Navbar Ends -->
 
-        <section class="py-5 px-[20px] m-auto sm:w-[80%] ">
-            <ul class="flex gap-5 p-16px overflow-x-scroll">
+
+        <section class="py-2 md:py-5 px-[10px] m-auto md:w-[90%] xl:w-[80%]">
+            <ul class="flex flex-wrap gap-x-5 p-16px ">
                 <li class="text-[#8B96A5] whitespace-nowrap">Home ></li>
                 <li class="text-[#8B96A5] whitespace-nowrap">Clothings ></li>
                 <li class="text-[#8B96A5] whitespace-nowrap">Men's Wear ></li>
@@ -240,7 +387,7 @@
             </ul>
         </section>
 
-        <section class="px-[20px] m-auto sm:w-[80%] ">
+        <section class="px-[10px] m-auto md:w-[90%] xl:w-[80%]">
             <div class="flex flex-col lg:grid lg:grid-cols-12 2xl:grid 2xl:grid-cols-13 p-5 gap-x-5 border-1 border-[#DEE2E7] rounded-[6px] bg-[#FFFFFF]">
 
                 <div class="lg:col-span-6 2xl:col-span-5 rounded-[6px] ">
@@ -307,32 +454,31 @@
 
             </div>
             <div class="lg:col-span-6 2xl:col-span-5 flex flex-col gap-2.5">
-                <p class="text-[#00B517] flex text-[15px] items-center"><img src="/img/Icon/control/check.svg"
-                        alt="check icon" width="20px" height="20px" class="green-icon-filter">In Stock</p>
+                <p class="text-[#00B517] flex text-[15px] items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+<path d="M8.79508 15.875L4.62508 11.705L3.20508 13.115L8.79508 18.705L20.7951 6.70504L19.3851 5.29504L8.79508 15.875Z" fill="#00B517"/>
+</svg>In Stock</p>
                 <p class="font-semibold heading-20px">Mens Long Sleeve T-shirt Cotton Base<br> Layer Slim Muscle</p>
 
                 <ul class="flex flex-wrap items-start gap-4 p-16px">
                     <li class="flex items-center mt-[2px]">
-                        <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter" width="16px"
-                            height="16px">
-                        <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter" width="16px"
-                            height="16px">
-                        <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter" width="16px"
-                            height="16px">
-                        <img src="/img/Icon/control/star.svg" alt="" class="star-filled-filter" width="16px"
-                            height="16px">
-                        <img src="/img/Icon/control/star.svg" alt="" class="star-grey-filter" width="16px"
-                            height="16px">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="15" viewBox="0 0 80 15" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M72 12.0553L76.944 15L75.632 9.45L80 5.71579L74.248 5.23421L72 0L69.752 5.23421L64 5.71579L68.368 9.45L67.056 15L72 12.0553Z" fill="#D5CDC5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M56 12.0553L60.944 15L59.632 9.45L64 5.71579L58.248 5.23421L56 0L53.752 5.23421L48 5.71579L52.368 9.45L51.056 15L56 12.0553Z" fill="#FF9017"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M40 12.0553L44.944 15L43.632 9.45L48 5.71579L42.248 5.23421L40 0L37.752 5.23421L32 5.71579L36.368 9.45L35.056 15L40 12.0553Z" fill="#FF9017"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M24 12.0553L28.944 15L27.632 9.45L32 5.71579L26.248 5.23421L24 0L21.752 5.23421L16 5.71579L20.368 9.45L19.056 15L24 12.0553Z" fill="#FF9017"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8 12.0553L12.944 15L11.632 9.45L16 5.71579L10.248 5.23421L8 0L5.752 5.23421L0 5.71579L4.368 9.45L3.056 15L8 12.0553Z" fill="#FF9017"/>
+</svg>
                     </li>
                     <span class="text-[#FF9017] self-center">9.3</span>
                     <li class="text-[#8B96A5] flex items-center gap-1 p-16px"><span
-                            class=" inline-block w-[5px] h-[5px] border-2 border-[#8B96A5] bg-[#8B96A5] rounded-full self-center mr-[10px]"></span><img
-                            src="/img/Icon/chat.svg" alt="chat-icon" width="21px" height="21px" class="light-grey-icon-filter" >32 reviews</li>
+                            class=" inline-block w-[5px] h-[5px] border-2 border-[#8B96A5] bg-[#8B96A5] rounded-full self-center mr-[10px]"></span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+<path d="M3.33317 3.33329H16.6665V13.3333H4.30817L3.33317 14.3083V3.33329ZM3.33317 1.66663C2.4165 1.66663 1.67484 2.41663 1.67484 3.33329L1.6665 18.3333L4.99984 15H16.6665C17.5832 15 18.3332 14.25 18.3332 13.3333V3.33329C18.3332 2.41663 17.5832 1.66663 16.6665 1.66663H3.33317ZM4.99984 9.99996H14.9998V11.6666H4.99984V9.99996ZM4.99984 7.49996H14.9998V9.16663H4.99984V7.49996ZM4.99984 4.99996H14.9998V6.66663H4.99984V4.99996Z" fill="#8B96A5"/>
+</svg>32 reviews</li>
 
                     <li class="text-[#8B96A5]  flex items-center gap-1 p-16px"><span
-                            class=" inline-block w-[5px] h-[5px] border-2 border-[#8B96A5] bg-[#8B96A5] rounded-full self-center mr-[10px]"></span><img
-                            src="/img/Icon/shopping_basket.svg" alt="shopping-basket-icon" width="20px" height="20px"
-                            class="light-grey-icon-filter">154 sold</li>
+                            class=" inline-block w-[5px] h-[5px] border-2 border-[#8B96A5] bg-[#8B96A5] rounded-full self-center mr-[10px]"></span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <path d="M18.3335 7.90834H14.3418L10.6918 2.44167C10.5335 2.20834 10.2668 2.09167 10.0002 2.09167C9.7335 2.09167 9.46683 2.20834 9.3085 2.45001L5.6585 7.90834H1.66683C1.2085 7.90834 0.833496 8.28334 0.833496 8.74167C0.833496 8.81667 0.841829 8.89167 0.866829 8.96667L2.9835 16.6917C3.17516 17.3917 3.81683 17.9083 4.5835 17.9083H15.4168C16.1835 17.9083 16.8252 17.3917 17.0252 16.6917L19.1418 8.96667L19.1668 8.74167C19.1668 8.28334 18.7918 7.90834 18.3335 7.90834ZM10.0002 4.40834L12.3335 7.90834H7.66683L10.0002 4.40834ZM15.4168 16.2417L4.59183 16.25L2.7585 9.57501H17.2502L15.4168 16.2417ZM10.0002 11.2417C9.0835 11.2417 8.3335 11.9917 8.3335 12.9083C8.3335 13.825 9.0835 14.575 10.0002 14.575C10.9168 14.575 11.6668 13.825 11.6668 12.9083C11.6668 11.9917 10.9168 11.2417 10.0002 11.2417Z" fill="#8B96A5"/>
+</svg>154 sold</li>
                 </ul>
 
                 <div class="hidden sm:flex sm:flex-wrap p-[5%] gap-x-10 gap-y-1 bg-[#FFF0DF]">
@@ -430,74 +576,119 @@
 
 
         <!-- Description Box Section Satrts -->
-        <section class="px-[20px] m-auto sm:w-[80%] py-5 grid grid-cols-4 gap-5 bg-[#F7FAFC]">
+        <section class="px-[10px] m-auto md:w-[90%] xl:w-[80%] py-5 grid grid-cols-4 gap-5 bg-[#F7FAFC]">
             <div class=" col-span-4 lg:col-span-3 border-1 border-[#DEE2E7] rounded-[6px] p-5 bg-white">
 
-                <ul class="flex pb-5 overflow-auto whitespace-nowrap">
-                    <li class="font-medium border-b-blue-700 border-b-2 ">Description</li>
-                    <li class="font-medium px-5 text-[#8B96A5]">Reviews</li>
-                    <li class="font-medium px-5 text-[#8B96A5]">Shipping</li>
-                    <li class="font-medium px-5 text-[#8B96A5]">About Seller</li>
+                <ul class="flex pb-5 overflow-auto whitespace-nowrap text-[#8B96A5]">
+                    <li class="font-medium  tab-btn btn-active " id="btn-one">Description</li>
+                    <li class="font-medium px-5  tab-btn">Reviews</li>
+                    <li class="font-medium px-5 tab-btn">Shipping</li>
+                    <li class="font-medium px-5 tab-btn" id="btn-two">About Seller</li>
                 </ul>
-                <p class="text-[#505050]">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit
-                    amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, </p>
-                <p class="pb-5 text-[#505050]">Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                    nulla pariatur. </p>
-
-
-                <table class="border-1 border-[#E0E0E0] text-[#505050]">
-                    <tr class="">
-                        <th
-                            class="border-b-1 border-r-1 border-r-[#E0E0E0] border-b-[#E0E0E0] bg-[#EFF2F4] text-[#505050] font-normal text-start px-2 py-1.5 md:pr-40">
-                            Model</th>
-                        <td class="border-b-1  border-b-[#E0E0E0] py-1.5 md:pr-60 px-2">#8786867</td>
-                    </tr>
-                    <tr class="">
-                        <th
-                            class="border-b-1 border-r-1 border-r-[#E0E0E0] border-b-[#E0E0E0]  bg-[#EFF2F4] text-[#505050] font-normal text-start px-2 py-1.5 md:pr-40">
-                            Style</th>
+                <div class="content content-active" id="content-one">
+                    
+                    <p class="text-[#505050]">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit
+                        amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim veniam, </p>
+                        <p class="pb-5 text-[#505050]">Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                            nulla pariatur. </p>
+                            
+                            
+                            <table class="border-1 border-[#E0E0E0] text-[#505050]">
+                                <tr class="">
+                                    <th
+                                    class="border-b-1 border-r-1 border-r-[#E0E0E0] border-b-[#E0E0E0] bg-[#EFF2F4] text-[#505050] font-normal text-start px-2 py-1.5 md:pr-40">
+                                    Model</th>
+                                    <td class="border-b-1  border-b-[#E0E0E0] py-1.5 md:pr-60 px-2">#8786867</td>
+                                </tr>
+                                <tr class="">
+                                    <th
+                                    class="border-b-1 border-r-1 border-r-[#E0E0E0] border-b-[#E0E0E0]  bg-[#EFF2F4] text-[#505050] font-normal text-start px-2 py-1.5 md:pr-40">
+                                    Style</th>
                         <td class="border-b-1  border-b-[#E0E0E0] py-1.5 md:pr-60 px-2">Classic style</td>
                     </tr>
                     <tr class="">
                         <th
-                            class="border-b-1 border-r-1 border-r-[#E0E0E0] border-b-[#E0E0E0]  bg-[#EFF2F4] text-[#505050] font-normal text-start px-2 py-1.5 md:pr-40">
-                            Certificate</th>
+                        class="border-b-1 border-r-1 border-r-[#E0E0E0] border-b-[#E0E0E0]  bg-[#EFF2F4] text-[#505050] font-normal text-start px-2 py-1.5 md:pr-40">
+                        Certificate</th>
                         <td class="border-b-1  border-b-[#E0E0E0] py-1.5 md:pr-60 px-2">ISO-898921212</td>
                     </tr>
                     <tr class="">
                         <th
-                            class="border-b-1 border-r-1 border-r-[#E0E0E0] border-b-[#E0E0E0] bg-[#EFF2F4] text-[#505050] font-normal text-start px-2 py-1.5 md:pr-40">
-                            Size</th>
+                        class="border-b-1 border-r-1 border-r-[#E0E0E0] border-b-[#E0E0E0] bg-[#EFF2F4] text-[#505050] font-normal text-start px-2 py-1.5 md:pr-40">
+                        Size</th>
                         <td class="border-b-1  border-b-[#E0E0E0] py-1.5 md:pr-60 px-2">34mm x 450mm x 19mm</td>
                     </tr>
                     <tr class="">
                         <th
-                            class="border-b-1 border-r-1 border-r-[#E0E0E0] border-b-[#E0E0E0]  bg-[#EFF2F4] text-[#505050] font-normal text-start px-2 py-1.5 md:pr-40">
-                            Memory</th>
+                        class="border-b-1 border-r-1 border-r-[#E0E0E0] border-b-[#E0E0E0]  bg-[#EFF2F4] text-[#505050] font-normal text-start px-2 py-1.5 md:pr-40">
+                        Memory</th>
                         <td class="border-b-1 border-b-[#E0E0E0] py-1.5 md:pr-60 px-2">36GB RAM</td>
                     </tr>
-
-
+                    
+                    
                 </table>
-
+                
                 <ul class="py-5">
-                    <li class="flex gap-2 text-[#505050]"><img src="/img/Icon/control/check.svg" alt="check icon"
-                            width="20px" height="20px" class="light-grey-icon-filter">Some great feature name here</li>
-                    <li class="flex gap-2 text-[#505050]"><img src="/img/Icon/control/check.svg" alt="check icon"
-                            width="20px" height="20px" class="light-grey-icon-filter">Lorem ipsum dolor sit amet,
-                        consectetur </li>
-                    <li class="flex gap-2 text-[#505050]"><img src="/img/Icon/control/check.svg" alt="check icon"
-                            width="20px" height="20px" class="light-grey-icon-filter">Duis aute irure dolor in
-                        reprehenderit</li>
-                    <li class="flex gap-2 text-[#505050]"><img src="/img/Icon/control/check.svg" alt="check icon"
-                            width="20px" height="20px" class="light-grey-icon-filter">Some great feature name here</li>
+                    <li class="flex gap-2 text-[#505050]"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7.32923 13.2291L3.85423 9.75414L2.6709 10.9291L7.32923 15.5875L17.3292 5.58748L16.1542 4.41248L7.32923 13.2291Z" fill="#8B96A5"/>
+                    </svg>Some great feature name here</li>
+                    <li class="flex gap-2 text-[#505050]"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7.32923 13.2291L3.85423 9.75414L2.6709 10.9291L7.32923 15.5875L17.3292 5.58748L16.1542 4.41248L7.32923 13.2291Z" fill="#8B96A5"/>
+                    </svg>Lorem ipsum dolor sit amet,
+                    consectetur </li>
+                    <li class="flex gap-2 text-[#505050]"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7.32923 13.2291L3.85423 9.75414L2.6709 10.9291L7.32923 15.5875L17.3292 5.58748L16.1542 4.41248L7.32923 13.2291Z" fill="#8B96A5"/>
+                    </svg>Duis aute irure dolor in
+                    reprehenderit</li>
+                    <li class="flex gap-2 text-[#505050]"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7.32923 13.2291L3.85423 9.75414L2.6709 10.9291L7.32923 15.5875L17.3292 5.58748L16.1542 4.41248L7.32923 13.2291Z" fill="#8B96A5"/>
+                    </svg>Some great feature name here</li>
                 </ul>
             </div>
+
+
+            <!-- seller scroll starts -->
+
+            <div class="content border-2 border-[#DEE2E7] rounded-[6px] p-5  gap-2 h-fit "  id="content-two">
+
+                    <div class="flex border-b-1 border-[#DEE2E7] pb-5 gap-3">
+                        
+                    <p
+                    class="bg-[#4CA7A799] w-[50px] h-[50px] rounded-[6px] flex justify-center items-center text-[30px] text-[#9effff99]">
+                    R</p>
+                    <p class="">Supplier<br> Guanjoi Trading LLC</p>
+                </div>
+                <ul class="col-span-2 py-2.5 ">
+                    <li class="flex gap-5 text-[#8B96A5] pb-2.5"><img src="/img/flags/denmark.svg" alt="" width="20px"
+                        height="20px">Germany ,
+                        Berlin</li>
+                        <li class="flex gap-5 light-grey-icon-filter text-[#8B96A5] pb-2.5"><img
+                            src="/img/Icon/verified_user.svg" alt="" width="20px" height="20px">Verified
+                            User</li>
+                            <li class="flex gap-5 light-grey-icon-filter text-[#8B96A5]"><img src="/img/Icon/language.svg"
+                            alt="" width="20px" height="20px">Worldwide
+                            Shipping</li>
+                </ul>
+                <button class="bg-[#0067FF] text-white col-span-2 rounded-[6px] px-2.5 mt-4 py-1.5">Send
+                    Inquiry</button>
+                    <button
+                    class="bg-[#FFFFFF] text-[#0D6EFD] col-span-2 rounded-[6px] px-2.5 py-1.5 border-1 border-[#DEE2E7]">Seller's
+                    profile</button>
+
+                </div>
+
+
+             <!-- seller scroll ends -->
+
+
+
+        </div>
+
 
             <div class="col-span-4 lg:col-span-1  border-1 border-[#DEE2E7] rounded-[6px] p-5  h-fit bg-white">
                 <p class="font-semibold pb-5">You may like</p>
@@ -540,10 +731,11 @@
 
         <!-- Related products Section Starts -->
 
-        <section class="px-[20px] m-auto sm:w-[80%]">
+        <section class="px-[10px] m-auto md:w-[90%] xl:w-[80%]">
             <div class="  border-1 border-[#DEE2E7] rounded-[6px] p-5 my-5 bg-white">
                 <p class=" font-semibold text-[20px] pb-[15px] text-center sm:text-left">Related products</p>
-                <div class="grid gap-5 grid-cols-[repeat(auto-fit,_minmax(150px,_1fr))]">
+                <!-- <div class="grid gap-5 grid-cols-[repeat(auto-fit,_minmax(150px,_1fr))]"> -->
+                <div class="flex gap-5 overflow-x-auto">
 
                     <div class="flex flex-col gap-2 text-center sm:text-left">
                         <img src="/img/product images/Image/cloth/tuxedo.png" alt="" height="200px" width="200px"
@@ -589,7 +781,7 @@
 
         <!-- Discount Section Starts -->
 
-        <section class="px-[20px] m-auto sm:w-[80%] ">
+        <section class="px-[10px] m-auto md:w-[90%] xl:w-[80%]">
             <div class="gradient-bg  flex flex-col  sm:flex-row sm:justify-between p-6 rounded-[6px] mt-5 mb-20">
 
                 <div>
@@ -605,12 +797,10 @@
 
         <!-- Discount Section Ends -->
 
-
-        <!-- Footer Section Starts -->
-
+  <!-- Footer Section Starts -->
 
         <section class="bg-white pt-10 pb-12">
-            <footer class="flex flex-wrap gap-5 px-[20px] m-auto sm:w-[80%] justify-between">
+            <footer class="flex flex-wrap gap-5 px-[10px] m-auto md:w-[90%] xl:w-[80%] justify-between">
                 <div class="w-[100%] lg:w-[20%] flex flex-col gap-y-[15px]">
 
                     <div class="text-[#8CB7F5] text-[32px] font-semibold flex gap-3 items-center">
@@ -697,8 +887,8 @@
                     <li class="text-[#8B96A5] mb-0.5">Settings</li>
                     <li class="text-[#8B96A5] mb-0.5">My Orders</li>
                 </ul>
-                <div class="flex flex-col gap-2.5">
-                    <p class="font-medium ">Get App</p>
+                <div class="md:flex md:flex-col grid grid-cols-2 gap-2.5">
+                    <p class="font-medium  col-span-2">Get App</p>
                     <svg xmlns="http://www.w3.org/2000/svg" width="124" height="42" viewBox="0 0 124 42" fill="none">
                         <rect width="124" height="42" rx="6" fill="#1C1C1C" />
                         <path
@@ -831,8 +1021,8 @@
             </footer>
         </section>
 
-        <section class=" bg-[#EFF2F4]">
-            <div class=" flex py-[23px] px-[20px] m-auto sm:w-[80%]">
+        <section class=" bg-[#EFF2F4] pb-[70px] xl:pb-[0px]">
+            <div class=" flex py-[23px] px-[10px] m-auto md:w-[90%] xl:w-[80%]">
                 <p class="mr-auto text-[#606060]">&copy; 2023 Ecommerce.</p>
                 <img src="/img/flags/america.svg" alt="" class="mr-2">
 
@@ -850,6 +1040,7 @@
 
         </section>
         <!-- Footer Section Ends -->
+         
 
 
 
@@ -861,9 +1052,27 @@
     <script>
         var swiper = new Swiper(".mySwiper", {
             spaceBetween: 10,
-            slidesPerView: 6,
+            slidesPerView: 3,
             freeMode: true,
             watchSlidesProgress: true,
+            breakpoints: {
+                480:{
+                    slidesPerView: 5,
+            spaceBetween: 20,
+                },
+          640: {
+            slidesPerView: 5,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 5,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 6,
+            spaceBetween: 20,
+          },
+        },
         });
         var swiper2 = new Swiper(".mySwiper2", {
             spaceBetween: 10,
@@ -874,6 +1083,7 @@
             thumbs: {
                 swiper: swiper,
             },
+             
         });
     </script>
 

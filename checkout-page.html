@@ -6,17 +6,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout Page</title>
     <link href="./output.css" rel="stylesheet">
+    <style>
+        .show {
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 70%;
+            height: 100vh;
+            background-color: rgb(241, 249, 255);
+            z-index: 1000;
+            box-shadow: 9px 0px 10px -5px rgba(97,97,97,0.75);
+
+        }
+
+        .custom-select {
+        min-width: fit-content;
+        background-color: transparent;
+        z-index: 1;
+    }
+
+    .custom-select select {
+        appearance: none;
+        width: 100%;
+        padding: 0px 20px 0px 0px;
+        background-color: transparent;
+        color: #000;
+        cursor: pointer;
+    }
+    </style>
 </head>
 
 </body>
 <main class="bg-[#f7fafc]">
 
-    <!-- <header class="bg-white ">
-        <div class="mx-56 flex   justify-between  bg-white py-5">
+    
+        <section class="bottom-0 bg-white w-full  fixed xl:hidden shadow-[1px_-5px_5px_-5px_rgba(99,99,99,0.75)] z-50">
+            <div class="flex justify-between py-3 gap-5 px-[10px] m-auto md:w-[90%] xl:w-[80%]">
+                    <span class="text-[#8B96A5] flex flex-col justify-center items-center p-16px">
 
-            <div class="text-[#8CB7F5] text-[32px] font-semibold flex gap-3 items-center">
-                <p
-                    class="bg-[#0D6EFD] w-[43px] h-[43px] shadow-[8px_0px_0px_0px_rgba(13,110,253,0.21)] rounded-[10px] relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M10 10C12.7625 10 15 7.7625 15 5C15 2.2375 12.7625 0 10 0C7.2375 0 5 2.2375 5 5C5 7.7625 7.2375 10 10 10ZM10 11.5C6.6625 11.5 0 13.175 0 16.5V17.75C0 18.4375 0.5625 19 1.25 19H18.75C19.4375 19 20 18.4375 20 17.75V16.5C20 13.175 13.3375 11.5 10 11.5Z"
+                                fill="#8B96A5" />
+                        </svg>
+                        Profile
+                    </span>
+                    <span class="text-[#8B96A5] flex flex-col justify-center items-center p-16px">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M18 0H2C0.9 0 0.01 0.9 0.01 2L0 20L4 16H18C19.1 16 20 15.1 20 14V2C20 0.9 19.1 0 18 0ZM5 7H15C15.55 7 16 7.45 16 8C16 8.55 15.55 9 15 9H5C4.45 9 4 8.55 4 8C4 7.45 4.45 7 5 7ZM11 12H5C4.45 12 4 11.55 4 11C4 10.45 4.45 10 5 10H11C11.55 10 12 10.45 12 11C12 11.55 11.55 12 11 12ZM15 6H5C4.45 6 4 5.55 4 5C4 4.45 4.45 4 5 4H15C15.55 4 16 4.45 16 5C16 5.55 15.55 6 15 6Z"
+                                fill="#8B96A5" />
+                        </svg>Message
+                    </span>
+                    <span class="text-[#8B96A5] flex flex-col justify-center items-center p-16px">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 18" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M11.35 17.1302C10.59 17.8202 9.42003 17.8202 8.66003 17.1202L8.55003 17.0202C3.30003 12.2702 -0.129969 9.16017 3.10168e-05 5.28017C0.060031 3.58017 0.930031 1.95017 2.34003 0.990166C4.98003 -0.809834 8.24003 0.0301659 10 2.09017C11.76 0.0301659 15.02 -0.819834 17.66 0.990166C19.07 1.95017 19.94 3.58017 20 5.28017C20.14 9.16017 16.7 12.2702 11.45 17.0402L11.35 17.1302Z"
+                                fill="#8B96A5" />
+                        </svg>Orders
+                    </span>
+                    <span class="text-[#8B96A5] flex flex-col justify-center items-center p-16px">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="22" viewBox="0 0 21 21" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M6.29989 16.7997C5.14491 16.7997 4.21043 17.7447 4.21043 18.8997C4.21043 20.0546 5.14491 20.9996 6.29989 20.9996C7.45487 20.9996 8.39985 20.0546 8.39985 18.8997C8.39985 17.7447 7.45487 16.7997 6.29989 16.7997ZM0 1.04998C0 1.62747 0.472492 2.09996 1.04998 2.09996H2.09996L5.8799 10.0693L4.46242 12.6313C3.69593 14.0383 4.70392 15.7497 6.29989 15.7497H17.8497C18.4272 15.7497 18.8997 15.2772 18.8997 14.6997C18.8997 14.1223 18.4272 13.6498 17.8497 13.6498H6.29989L7.45487 11.5498H15.2772C16.0647 11.5498 16.7577 11.1193 17.1147 10.4683L20.8736 3.65394C21.2621 2.96095 20.7581 2.09996 19.9601 2.09996H4.42042L3.71693 0.598489C3.54894 0.230996 3.17094 0 2.77195 0H1.04998C0.472492 0 0 0.472492 0 1.04998ZM16.7997 16.7997C15.6447 16.7997 14.7102 17.7447 14.7102 18.8997C14.7102 20.0546 15.6447 20.9996 16.7997 20.9996C17.9547 20.9996 18.8997 20.0546 18.8997 18.8997C18.8997 17.7447 17.9547 16.7997 16.7997 16.7997Z"
+                                fill="#8B96A5" />
+                        </svg>My Cart
+                    </span>
+                </div>
+        </section>
+        <!-- First Header Starts -->
+
+        <header class="bg-white border-b-1 border-[#E0E0E0]">
+            <div class="px-[10px] m-auto md:w-[90%] xl:w-[80%] flex items-center  justify-between  bg-white py-5">
+                <a href="index.html"
+                    class="lg:hidden bg-[#0D6EFD] w-[43px] h-[43px] shadow-[8px_0px_0px_0px_rgba(13,110,253,0.21)] rounded-[10px] relative">
                     <svg class="absolute top-[50%] left-[50%] transform translate-x-[-50%] translate-y-[-50%] "
                         xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22" fill="none">
                         <g opacity="0.7">
@@ -28,47 +92,189 @@
                                 fill="white" />
                         </g>
                     </svg>
-                </p>Brand
-            </div>
+                    <!-- <a href="/checkout-page.html" class="absolute "></a> -->
+                </a>
+                <div class="hidden lg:flex text-[#8CB7F5] text-[32px] font-semibold  gap-3 items-center">
+                    <p
+                        class="bg-[#0D6EFD] w-[43px] h-[43px] shadow-[8px_0px_0px_0px_rgba(13,110,253,0.21)] rounded-[10px] relative">
+                        <svg class="absolute top-[50%] left-[50%] transform translate-x-[-50%] translate-y-[-50%] "
+                            xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22" fill="none">
+                            <g opacity="0.7">
+                                <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M4.29018 7.3562H3.30965C3.25911 7.3562 3.18417 7.4265 3.18127 7.47295L2.45892 19.1476L15.9548 19.1451L15.2253 7.47295C15.2225 7.42828 15.1457 7.3562 15.0969 7.3562H14.1164V9.32145C14.1164 9.86413 13.6765 10.3041 13.1338 10.3041C12.5911 10.3041 12.1512 9.86413 12.1512 9.32145V7.3562L6.25543 7.3562V9.32145C6.25543 9.86413 5.81549 10.3041 5.27281 10.3041C4.73012 10.3041 4.29018 9.86413 4.29018 9.32145V7.3562Z"
+                                    fill="white" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M9.20329 0.478271C11.9153 0.478271 14.1164 2.6796 14.1164 5.38906L15.0969 5.39138C16.1835 5.39138 17.1192 6.27035 17.1867 7.35079L17.9244 19.1539C17.9921 20.2361 17.1698 21.1133 16.0865 21.1133H2.3201C1.23739 21.1133 0.41462 20.2344 0.482148 19.1539L1.21984 7.35079C1.28748 6.26864 2.22128 5.39138 3.30964 5.39138H4.29017C4.29017 2.67813 6.49304 0.478271 9.20329 0.478271ZM12.1511 5.39149C12.1511 3.76503 10.8299 2.44362 9.20328 2.44362C7.57781 2.44362 6.25541 3.76421 6.25541 5.38917L12.1511 5.39149ZM4.29018 7.35657H3.30965C3.2591 7.35657 3.18417 7.42687 3.18126 7.47332L2.45892 19.148L15.9548 19.1455L15.2253 7.47332C15.2225 7.42864 15.1457 7.35657 15.0969 7.35657H14.1164V9.32181C14.1164 9.8645 13.6765 10.3044 13.1338 10.3044C12.5911 10.3044 12.1512 9.8645 12.1512 9.32181V7.35657L6.25542 7.35657L6.25542 9.32181C6.25542 9.8645 5.81549 10.3044 5.2728 10.3044C4.73011 10.3044 4.29018 9.8645 4.29018 9.32181V7.35657Z"
+                                    fill="white" />
+                            </g>
+                        </svg>
+                    </p>Brand
+                </div>
 
+                <div class="border-2 border-[#0D6EFD] rounded-[6px] w-[80%] xl:w-[55%] flex">
+                    <input type="search" id="search-box" name="search" placeholder="Clothes"
+                        class=" px-2.5 py-2 border-r-1 border-r-[#0D6EFD] w-full focus:outline-0">
+<span class="custom-select relative before:absolute before:w-[20px] before:h-[20px] before:top-2 before:right-0 before:content-[url('/img/expand_more.svg')] before:z-[-1] hidden xl:block pl-2.5">
 
-            <div class="flex gap-5">
-                <span class="text-[#8B96A5] flex flex-col justify-center items-center">
+    <select name="categories" id="categories"
+    class="focus:outline-0 px-2.5 py-2 mr-2.5 hidden xl:block h-[100%]">
+    <option value="All Category" class="focus:outline-0">All Category</option>
+    <option value="All Category">All Category</option>
+</select>
+</span>
+                    <button class="hidden md:block btn-gradient text-white px-2.5  sm:px-8 py-2 font-medium">Search
+                    </button>
 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M10 10C12.7625 10 15 7.7625 15 5C15 2.2375 12.7625 0 10 0C7.2375 0 5 2.2375 5 5C5 7.7625 7.2375 10 10 10ZM10 11.5C6.6625 11.5 0 13.175 0 16.5V17.75C0 18.4375 0.5625 19 1.25 19H18.75C19.4375 19 20 18.4375 20 17.75V16.5C20 13.175 13.3375 11.5 10 11.5Z"
-                            fill="#8B96A5" />
+                    <svg class="md:hidden self-center btn-gradient h-[100%] py-3 text-white  font-medium"
+                        xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="25" viewBox="0 0 50 50">
+                        <path
+                            d="M 21 3 C 11.6 3 4 10.6 4 20 C 4 29.4 11.6 37 21 37 C 24.354553 37 27.47104 36.01984 30.103516 34.347656 L 42.378906 46.621094 L 46.621094 42.378906 L 34.523438 30.279297 C 36.695733 27.423994 38 23.870646 38 20 C 38 10.6 30.4 3 21 3 z M 21 7 C 28.2 7 34 12.8 34 20 C 34 27.2 28.2 33 21 33 C 13.8 33 8 27.2 8 20 C 8 12.8 13.8 7 21 7 z"
+                            fill="white"></path>
                     </svg>
-                    Profile
-                </span>
-                <span class="text-[#8B96A5] flex flex-col justify-center items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M18 0H2C0.9 0 0.01 0.9 0.01 2L0 20L4 16H18C19.1 16 20 15.1 20 14V2C20 0.9 19.1 0 18 0ZM5 7H15C15.55 7 16 7.45 16 8C16 8.55 15.55 9 15 9H5C4.45 9 4 8.55 4 8C4 7.45 4.45 7 5 7ZM11 12H5C4.45 12 4 11.55 4 11C4 10.45 4.45 10 5 10H11C11.55 10 12 10.45 12 11C12 11.55 11.55 12 11 12ZM15 6H5C4.45 6 4 5.55 4 5C4 4.45 4.45 4 5 4H15C15.55 4 16 4.45 16 5C16 5.55 15.55 6 15 6Z"
-                            fill="#8B96A5" />
-                    </svg>Message
-                </span>
-                <span class="text-[#8B96A5] flex flex-col justify-center items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 18" fill="none">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M11.35 17.1302C10.59 17.8202 9.42003 17.8202 8.66003 17.1202L8.55003 17.0202C3.30003 12.2702 -0.129969 9.16017 3.10168e-05 5.28017C0.060031 3.58017 0.930031 1.95017 2.34003 0.990166C4.98003 -0.809834 8.24003 0.0301659 10 2.09017C11.76 0.0301659 15.02 -0.819834 17.66 0.990166C19.07 1.95017 19.94 3.58017 20 5.28017C20.14 9.16017 16.7 12.2702 11.45 17.0402L11.35 17.1302Z"
-                            fill="#8B96A5" />
-                    </svg>Orders
-                </span>
-                <span class="text-[#8B96A5] flex flex-col justify-center items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="22" viewBox="0 0 21 21" fill="none">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M6.29989 16.7997C5.14491 16.7997 4.21043 17.7447 4.21043 18.8997C4.21043 20.0546 5.14491 20.9996 6.29989 20.9996C7.45487 20.9996 8.39985 20.0546 8.39985 18.8997C8.39985 17.7447 7.45487 16.7997 6.29989 16.7997ZM0 1.04998C0 1.62747 0.472492 2.09996 1.04998 2.09996H2.09996L5.8799 10.0693L4.46242 12.6313C3.69593 14.0383 4.70392 15.7497 6.29989 15.7497H17.8497C18.4272 15.7497 18.8997 15.2772 18.8997 14.6997C18.8997 14.1223 18.4272 13.6498 17.8497 13.6498H6.29989L7.45487 11.5498H15.2772C16.0647 11.5498 16.7577 11.1193 17.1147 10.4683L20.8736 3.65394C21.2621 2.96095 20.7581 2.09996 19.9601 2.09996H4.42042L3.71693 0.598489C3.54894 0.230996 3.17094 0 2.77195 0H1.04998C0.472492 0 0 0.472492 0 1.04998ZM16.7997 16.7997C15.6447 16.7997 14.7102 17.7447 14.7102 18.8997C14.7102 20.0546 15.6447 20.9996 16.7997 20.9996C17.9547 20.9996 18.8997 20.0546 18.8997 18.8997C18.8997 17.7447 17.9547 16.7997 16.7997 16.7997Z"
-                            fill="#8B96A5" />
-                    </svg>My Cart
-                </span>
-            </div>
-        </div>
-    </header> -->
-    <!-- First Header Ends -->
+                </div>
 
-    <!-- <section class="grid grid-cols-4 gap-x-5 mx-56">
+
+
+                <div class="hidden xl:flex gap-5">
+                    <span class="text-[#8B96A5] flex flex-col justify-center items-center">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M10 10C12.7625 10 15 7.7625 15 5C15 2.2375 12.7625 0 10 0C7.2375 0 5 2.2375 5 5C5 7.7625 7.2375 10 10 10ZM10 11.5C6.6625 11.5 0 13.175 0 16.5V17.75C0 18.4375 0.5625 19 1.25 19H18.75C19.4375 19 20 18.4375 20 17.75V16.5C20 13.175 13.3375 11.5 10 11.5Z"
+                                fill="#8B96A5" />
+                        </svg>
+                        Profile
+                    </span>
+                    <span class="text-[#8B96A5] flex flex-col justify-center items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M18 0H2C0.9 0 0.01 0.9 0.01 2L0 20L4 16H18C19.1 16 20 15.1 20 14V2C20 0.9 19.1 0 18 0ZM5 7H15C15.55 7 16 7.45 16 8C16 8.55 15.55 9 15 9H5C4.45 9 4 8.55 4 8C4 7.45 4.45 7 5 7ZM11 12H5C4.45 12 4 11.55 4 11C4 10.45 4.45 10 5 10H11C11.55 10 12 10.45 12 11C12 11.55 11.55 12 11 12ZM15 6H5C4.45 6 4 5.55 4 5C4 4.45 4.45 4 5 4H15C15.55 4 16 4.45 16 5C16 5.55 15.55 6 15 6Z"
+                                fill="#8B96A5" />
+                        </svg>Message
+                    </span>
+                    <span class="text-[#8B96A5] flex flex-col justify-center items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 18" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M11.35 17.1302C10.59 17.8202 9.42003 17.8202 8.66003 17.1202L8.55003 17.0202C3.30003 12.2702 -0.129969 9.16017 3.10168e-05 5.28017C0.060031 3.58017 0.930031 1.95017 2.34003 0.990166C4.98003 -0.809834 8.24003 0.0301659 10 2.09017C11.76 0.0301659 15.02 -0.819834 17.66 0.990166C19.07 1.95017 19.94 3.58017 20 5.28017C20.14 9.16017 16.7 12.2702 11.45 17.0402L11.35 17.1302Z"
+                                fill="#8B96A5" />
+                        </svg>Orders
+                    </span>
+                    <span class="text-[#8B96A5] flex flex-col justify-center items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="22" viewBox="0 0 21 21" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M6.29989 16.7997C5.14491 16.7997 4.21043 17.7447 4.21043 18.8997C4.21043 20.0546 5.14491 20.9996 6.29989 20.9996C7.45487 20.9996 8.39985 20.0546 8.39985 18.8997C8.39985 17.7447 7.45487 16.7997 6.29989 16.7997ZM0 1.04998C0 1.62747 0.472492 2.09996 1.04998 2.09996H2.09996L5.8799 10.0693L4.46242 12.6313C3.69593 14.0383 4.70392 15.7497 6.29989 15.7497H17.8497C18.4272 15.7497 18.8997 15.2772 18.8997 14.6997C18.8997 14.1223 18.4272 13.6498 17.8497 13.6498H6.29989L7.45487 11.5498H15.2772C16.0647 11.5498 16.7577 11.1193 17.1147 10.4683L20.8736 3.65394C21.2621 2.96095 20.7581 2.09996 19.9601 2.09996H4.42042L3.71693 0.598489C3.54894 0.230996 3.17094 0 2.77195 0H1.04998C0.472492 0 0 0.472492 0 1.04998ZM16.7997 16.7997C15.6447 16.7997 14.7102 17.7447 14.7102 18.8997C14.7102 20.0546 15.6447 20.9996 16.7997 20.9996C17.9547 20.9996 18.8997 20.0546 18.8997 18.8997C18.8997 17.7447 17.9547 16.7997 16.7997 16.7997Z"
+                                fill="#8B96A5" />
+                        </svg>My Cart
+                    </span>
+                </div>
+            </div>
+        </header>
+        <!-- First Header Ends -->
+
+        <!-- Navbar Starts -->
+        <section class="bg-white border-b-1 border-[#E0E0E0]">
+            <div class="px-[10px] m-auto md:w-[90%] xl:w-[80%] flex justify-between gap-20 bg-white py-[17px]">
+                <ul class="flex gap-5 whitespace-nowrap">
+                    <span class="lg:hidden" id="hamburger" onclick="sideNav()">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M3 18H21V16H3V18ZM3 13H21V11H3V13ZM3 6V8H21V6H3Z" fill="#1C1C1C" />
+                        </svg>
+                    </span>
+                    <li class="flex gap-2">All category</li>
+                    <li>Hot Offers</li>
+                    <li class="hidden sm:block">Gift Boes</li>
+                    <li class="hidden md:block">Projects</li>
+                    <li class="hidden sm:block">Menu Items</li>
+                    <li class="flex items-center  custom-select relative before:absolute before:w-[20px] before:h-[20px] before:top-0 before:right-0 before:content-[url('/img/expand_more.svg')] before:z-[-1]">
+                        <select name="help" id="help" class="appearance-none focus:outline-0 ">
+                                    <option value="">Help</option>
+                        </select>
+                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none">
+                            <path
+                                d="M16.59 8.29504L12 12.875L7.41 8.29504L6 9.70504L12 15.705L18 9.70504L16.59 8.29504Z"
+                                fill="#8B96A5" />
+                        </svg> -->
+                    </li>
+
+                </ul>
+
+                <ul class=" items-center gap-12 hidden lg:flex">
+                    <li class="flex gap-2 custom-select relative before:absolute before:w-[20px] before:h-[20px] before:top-0 before:right-0 before:content-[url('/img/expand_more.svg')] before:z-[-1]"><select name="help" id="help" class="appearance-none focus:outline-0">
+                            <option value="">English, USD</option>
+                        </select></li>
+
+                    <li class="flex items-center gap-3 custom-select relative before:absolute before:w-[20px] before:h-[20px] before:top-0 before:right-[32%] before:content-[url('/img/expand_more.svg')] before:z-[-1]">
+                        <select name="help" id="help" class="appearance-none focus:outline-0">
+                            <option value="">Ship To</option>
+                        </select>
+                        <img src="/img/flags/italy.svg" alt="">
+                        
+                    </li>
+                </ul>
+            </div>
+
+            <div class="hidden" id="side-nav">
+
+                <div class="px-[20px] flex flex-col justify-between gap-2 py-[17px] ">
+                    <p onclick="closeNav()" class="absolute top-0 right-0 p-5"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50">
+<path d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z"></path>
+</svg></p>
+                <ul class="flex flex-col gap-8">
+
+                    
+                    <li class="flex gap-2">All category</li>
+                    <li>Hot Offers</li>
+                    <li>Gift Boes</li>
+                    <li>Projects</li>
+                    <li>Menu Items</li>
+                    <li class="flex items-center">
+                        <select name="help" id="help" class="appearance-none focus:outline-0">
+                            <option value="">Help</option>
+                        </select><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none">
+                            <path
+                                d="M16.59 8.29504L12 12.875L7.41 8.29504L6 9.70504L12 15.705L18 9.70504L16.59 8.29504Z"
+                                fill="#8B96A5" />
+                        </svg>
+                    </li>   
+
+                </ul>
+
+                <ul class="flex flex-col items-start gap-12">
+                    <li class="flex gap-2">
+                        <select name="language" id="language" class="appearance-none focus:outline-0 a">
+                            <option value="">English, USD</option>
+                        </select>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none">
+                            <path
+                                d="M16.59 8.29504L12 12.875L7.41 8.29504L6 9.70504L12 15.705L18 9.70504L16.59 8.29504Z"
+                                fill="#8B96A5" />
+                        </svg>
+                    </li>
+
+                    <li class="flex items-center gap-3 ">
+                        <select name="help" id="help" class="appearance-none focus:outline-0">
+                            <option value="">Ship To</option>
+                        </select>
+                        <img src="/img/flags/italy.svg" alt="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M16.59 8.29504L12 12.875L7.41 8.29504L6 9.70504L12 15.705L18 9.70504L16.59 8.29504Z"
+                                fill="#8B96A5" />
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+
+                </div>
+
+
+        </section>
+        <!-- Navbar Ends -->
+    <section class="xl:grid xl:grid-cols-4 gap-x-5 px-[10px] m-auto md:w-[90%] xl:w-[80%] ">
 
 
         <p class="col-span-4 text-[24px] font-semibold py-5">My cart (3)</p>
@@ -80,95 +286,113 @@
             <div class="flex flex-col bg-white p-5 border-1 border-[#DEE2E7] rounded-[6px] gap-y-5">
 
 
-                <div class="grid grid-cols-[auto_1fr_200px] gap-x-2 border-b-1 border-b-[#DEE2E7] pb-5">
-                    <img src="/img/product images/Image/cloth/blue-t-shirt.png" alt="" height="80px" width="80px"
-                        class="self-center border-1 border-[#DEE2E7] rounded-[6px] row-span-3 bg-[#EEEEEE]">
+                <div class="sm:grid sm:grid-cols-[auto_1fr_200px] gap-x-2 border-b-1 border-b-[#DEE2E7] pb-5">
+                    <div>
 
-                    <p class="font-normal">T-shirts with multiple colors, for men and lady</p>
+                        <img src="/img/product images/Image/cloth/blue-t-shirt.png" alt="" height="80px" width="80px"
+                            class="self-center border-1 border-[#DEE2E7] rounded-[6px] row-span-3 bg-[#EEEEEE]">
+                    </div>
+                    <div>
 
-                    <p class="text-[#8B96A5] col-start-2">Size: medium, Color: blue, Material: Plastic
-                        Seller: Artel Market</p>
+                        <p class="font-normal">T-shirts with multiple colors, for men and lady</p>
 
-                    <p class="text-[#8B96A5] col-start-2">Seller: Artel Market</p>
+                        <p class="text-[#8B96A5] col-start-2">Size: medium, Color: blue, Material: Plastic
+                            Seller: Artel Market</p>
 
-                    <p class="font-medium col-start-3 row-start-2  text-end">$78.99</p>
-
-                    <select name="" id=""
-                        class="border-1 border-[#DEE2E7] px-2.5 py-2 w-fit justify-self-end rounded-[6px] col-start-3 row-start-3">
-                        <option value="quantity">Quantity</option>
-                        <option value="quantity">Quantity</option>
-                    </select>
-
-                    <div class="flex gap-2 col-start-2">
-
+                        <p class="text-[#8B96A5] col-start-2">Seller: Artel Market</p>
                         <button
-                            class="border-1 border-[#DEE2E7] rounded-[6px] py-1.5 px-2.5 text-[13px] font-medium text-[#FA3434]">
+                            class="border-1 border-[#DEE2E7] rounded-[6px] py-1.5 px-2.5 mt-[10px] text-[13px] font-medium text-[#FA3434]">
                             Remove</button>
                         <button
                             class="border-1 border-[#DEE2E7] rounded-[6px] py-1.5 px-2.5 text-[13px] font-medium text-[#0D6EFD]">
                             Save for later</button>
                     </div>
+                    <div class="flex flex-col  justify-center  items-end gap-y-[10px]">
+
+                        <p class="font-medium col-start-3 row-start-2  text-end">$78.99</p>
+
+                        <select name="" id="quantity" class="border-1 border-[#DEE2E7] px-2.5 py-2   rounded-[6px] ">
+                            <option value="quantity">Quantity</option>
+                            <option value="quantity">Quantity</option>
+                        </select>
+
+                    </div>
+                    <!-- <div class="flex gap-2 col-start-2">
+
+                    </div> -->
                 </div>
 
 
 
-                <div class="grid grid-cols-[auto_1fr_200px] gap-x-2 border-b-1 border-b-[#DEE2E7] pb-5">
-                    <img src="/img/product images/Image/cloth/blue-t-shirt.png" alt="" height="80px" width="80px"
-                        class="self-center border-1 border-[#DEE2E7] rounded-[6px] row-span-3 bg-[#EEEEEE]">
+                <div class="sm:grid sm:grid-cols-[auto_1fr_200px] gap-x-2 border-b-1 border-b-[#DEE2E7] pb-5">
+                    <div>
 
-                    <p class="font-normal">T-shirts with multiple colors, for men and lady</p>
+                        <img src="/img/product images/Image/cloth/blue-t-shirt.png" alt="" height="80px" width="80px"
+                            class="self-center border-1 border-[#DEE2E7] rounded-[6px] row-span-3 bg-[#EEEEEE]">
+                    </div>
+                    <div>
 
-                    <p class="text-[#8B96A5] col-start-2">Size: medium, Color: blue, Material: Plastic
-                        Seller: Artel Market</p>
+                        <p class="font-normal">T-shirts with multiple colors, for men and lady</p>
 
-                    <p class="text-[#8B96A5] col-start-2">Seller: Artel Market</p>
+                        <p class="text-[#8B96A5] col-start-2">Size: medium, Color: blue, Material: Plastic
+                            Seller: Artel Market</p>
 
-                    <p class="font-medium col-start-3 row-start-2  text-end">$78.99</p>
-
-                    <select name="" id=""
-                        class="border-1 border-[#DEE2E7] px-2.5 py-2 w-fit justify-self-end rounded-[6px] col-start-3 row-start-3">
-                        <option value="quantity">Quantity</option>
-                        <option value="quantity">Quantity</option>
-                    </select>
-
-                    <div class="flex gap-2 col-start-2">
-
+                        <p class="text-[#8B96A5] col-start-2">Seller: Artel Market</p>
                         <button
-                            class="border-1 border-[#DEE2E7] rounded-[6px] py-1.5 px-2.5 text-[13px] font-medium text-[#FA3434]">
+                            class="border-1 border-[#DEE2E7] rounded-[6px] py-1.5 px-2.5 mt-[10px] text-[13px] font-medium text-[#FA3434]">
                             Remove</button>
                         <button
                             class="border-1 border-[#DEE2E7] rounded-[6px] py-1.5 px-2.5 text-[13px] font-medium text-[#0D6EFD]">
                             Save for later</button>
                     </div>
+                    <div class="flex flex-col  justify-center  items-end gap-y-[10px]">
+
+                        <p class="font-medium col-start-3 row-start-2  text-end">$78.99</p>
+
+                        <select name="" id="quantity" class="border-1 border-[#DEE2E7] px-2.5 py-2   rounded-[6px] ">
+                            <option value="quantity">Quantity</option>
+                            <option value="quantity">Quantity</option>
+                        </select>
+
+                    </div>
+                    <!-- <div class="flex gap-2 col-start-2">
+
+                    </div> -->
                 </div>
-                <div class="grid grid-cols-[auto_1fr_200px] gap-x-2 border-b-1 border-b-[#DEE2E7] pb-5">
-                    <img src="/img/product images/Image/cloth/blue-t-shirt.png" alt="" height="80px" width="80px"
-                        class="self-center border-1 border-[#DEE2E7] rounded-[6px] row-span-3 bg-[#EEEEEE]">
+                 <div class="sm:grid sm:grid-cols-[auto_1fr_200px] gap-x-2 border-b-1 border-b-[#DEE2E7] pb-5">
+                    <div>
 
-                    <p class="font-normal">T-shirts with multiple colors, for men and lady</p>
+                        <img src="/img/product images/Image/cloth/blue-t-shirt.png" alt="" height="80px" width="80px"
+                            class="self-center border-1 border-[#DEE2E7] rounded-[6px] row-span-3 bg-[#EEEEEE]">
+                    </div>
+                    <div>
 
-                    <p class="text-[#8B96A5] col-start-2">Size: medium, Color: blue, Material: Plastic
-                        Seller: Artel Market</p>
+                        <p class="font-normal">T-shirts with multiple colors, for men and lady</p>
 
-                    <p class="text-[#8B96A5] col-start-2">Seller: Artel Market</p>
+                        <p class="text-[#8B96A5] col-start-2">Size: medium, Color: blue, Material: Plastic
+                            Seller: Artel Market</p>
 
-                    <p class="font-medium col-start-3 row-start-2  text-end">$78.99</p>
-
-                    <select name="" id=""
-                        class="border-1 border-[#DEE2E7] px-2.5 py-2 w-fit justify-self-end rounded-[6px] col-start-3 row-start-3">
-                        <option value="quantity">Quantity</option>
-                        <option value="quantity">Quantity</option>
-                    </select>
-
-                    <div class="flex gap-2 col-start-2">
-
+                        <p class="text-[#8B96A5] col-start-2">Seller: Artel Market</p>
                         <button
-                            class="border-1 border-[#DEE2E7] rounded-[6px] py-1.5 px-2.5 text-[13px] font-medium text-[#FA3434]">
+                            class="border-1 border-[#DEE2E7] rounded-[6px] py-1.5 px-2.5 mt-[10px] text-[13px] font-medium text-[#FA3434]">
                             Remove</button>
                         <button
                             class="border-1 border-[#DEE2E7] rounded-[6px] py-1.5 px-2.5 text-[13px] font-medium text-[#0D6EFD]">
                             Save for later</button>
                     </div>
+                    <div class="flex flex-col  justify-center  items-end gap-y-[10px]">
+
+                        <p class="font-medium col-start-3 row-start-2  text-end">$78.99</p>
+
+                        <select name="" id="quantity" class="border-1 border-[#DEE2E7] px-2.5 py-2   rounded-[6px] ">
+                            <option value="quantity">Quantity</option>
+                            <option value="quantity">Quantity</option>
+                        </select>
+
+                    </div>
+                    <!-- <div class="flex gap-2 col-start-2">
+
+                    </div> -->
                 </div>
                 <div class="flex justify-between">
                     <button class="btn-gradient font-medium text-white  rounded-[6px] px-2.5 py-1.5  flex gap-2"><img
@@ -181,7 +405,7 @@
                 </div>
 
             </div>
-            <div class="flex gap-20 py-8 bg-[#f7fafc]">
+            <!-- <div class="flex gap-20 py-8 bg-[#f7fafc]">
 
                 <div class="grid grid-cols-[50px_1fr] gap-x-2 items-center">
                     <span class="row-span-2 flex justify-center rounded-full p-2 bg-[#DEE2E7] w-[48px] h-[48px]">
@@ -213,12 +437,12 @@
                     <p class="text-[#8B96A5]">Have you ever finally just</p>
                 </div>
 
-            </div>
+            </div> -->
         </div>
 
-        <div class="col-span-1 flex flex-col gap-2.5 bg-[#f7fafc]">
+        <div class="col-span-1 flex flex-col md:flex-row pt-5 xl:pt-0 xl:flex-col gap-2.5 bg-[#f7fafc]">
 
-            <div class="border-1 p-5 border-[#DEE2E7] rounded-[6px] bg-white">
+            <div class="border-1 p-5 border-[#DEE2E7] rounded-[6px] bg-white md:basis-[40%] xl:basis-auto h-fit">
                 <p class="text-[#505050] pb-2.5">Have a coupon?</p>
                 <div class="flex border-1 border-[#DEE2E7] rounded-[6px]">
                     <input type="text" name="coupon-code" id="coupon-code" placeholder="Add coupon"
@@ -227,10 +451,10 @@
                 </div>
             </div>
 
-            <div class="border-1 p-5 border-[#DEE2E7] rounded-[6px] bg-white shadow-[0px_4px_10px_0px_#3838381A]">
+            <div class="border-1 p-5 border-[#DEE2E7] rounded-[6px] bg-white shadow-[0px_4px_10px_0px_#3838381A] md:basis-[60%] xl:basis-auto mt-2   md:mt-0">
                 <table class=" text-[#505050] w-full">
                     <tr class="">
-                        <th class=" text-[#505050] font-normal text-start px-2 py-1.5">
+                        <th class=" text-[#505050] font-normal text-start px-2 p    y-1.5">
                             Subtotal:</th>
                         <td class=" py-1.5 px-2 text-end text-[#606060]">$1403.97</td>
                     </tr>
@@ -265,176 +489,207 @@
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
 
     <!-- Save for Later Section Starts -->
 
-    <section class="px-[20px] m-auto sm:w-[80%] ">
-        <div class="grid grid-cols-[repeat(auto-fit,_minmax(100px,_1fr))]  sm:grid-cols-[repeat(auto-fit,_minmax(220px,_1fr))]  gap-5  border-1 border-[#DEE2E7] rounded-[6px] p-5 mb-5 bg-white">
+    <section class="px-[10px] m-auto md:w-[90%] xl:w-[80%] pt-5">
+        <p class="col-span-full font-semibold text-[20px]">Saved for later</p>
+        <div
+            class="overflow-x-auto flex lg:grid lg:grid-cols-[repeat(auto-fit,_minmax(220px,_1fr))]  gap-5  border-1 border-[#DEE2E7] rounded-[6px] p-5 mb-5 bg-white">
 
-            <p class="col-span-full font-semibold text-[20px]">Saved for later</p>
-            
-            <div class=" sm:flex-col gap-2">
-            <img src="/img/product images/Image/cloth/tuxedo.png" alt="" height="240px" width="270px"
-            class="border-1 border-[#DEE2E7] rounded-[6px] bg-[#EEEEEE] w-[100px] sm:w-auto">
-            <p class="font-semibold p-18px">$99.50</p>
-            <p class="text-[#8B96A5] p-16px">GoPro HERO6 4K Action<br> Camera - Black</p>
-            <button class="border-1 border-[#DEE2E7] text-[#0D6EFD] w-fit flex gap-2 px-1.5 py-1.5 rounded-[6px]"><img
-                src="/img/Icon/shopping_cart.svg" alt="shopping cart icon" width="20px" height="20px"
-                class="filter-[brightness(0)_saturate(100%)_invert(27%)_sepia(58%)_saturate(3012%)_hue-rotate(207deg)_brightness(106%)_contrast(99%)]">Move
-                to cart</button>
-            </div>
-            
-            <div class=" flex-col gap-2">
-            <img src="/img/product images/Image/cloth/blue-t-shirt.png" alt="" height="240px" width="270px"
-                class=" border-1 border-[#DEE2E7] rounded-[6px] bg-[#EEEEEE] w-[100px] sm:w-auto">
-            <p class="font-semibold p-18px">$99.50</p>
-            <p class="text-[#8B96A5] p-16px">GoPro HERO6 4K Action<br> Camera - Black</p>
-            <button class="border-1 border-[#DEE2E7] text-[#0D6EFD] w-fit flex gap-2 px-1.5 py-1.5 rounded-[6px]"><img
-                    src="/img/Icon/shopping_cart.svg" alt="shopping cart icon" width="20px" height="20px"
-                    class="filter-[brightness(0)_saturate(100%)_invert(27%)_sepia(58%)_saturate(3012%)_hue-rotate(207deg)_brightness(106%)_contrast(99%)]">Move
-                to cart</button>
-        </div>
 
-        <div class=" flex-col gap-2">
-            <img src="/img/product images/Image/cloth/brown-jacket.png" alt="" height="240px" width="270px"
-            class=" border-1 border-[#DEE2E7] rounded-[6px] bg-[#EEEEEE] w-[100px] sm:w-auto">
-            <p class="font-semibold p-18px">$99.50</p>
-            <p class="text-[#8B96A5] p-16px">GoPro HERO6 4K Action<br> Camera - Black</p>
-            <button class="border-1 border-[#DEE2E7] text-[#0D6EFD] w-fit flex gap-2 px-1.5 py-1.5 rounded-[6px]"><img
-                    src="/img/Icon/shopping_cart.svg" alt="shopping cart icon" width="20px" height="20px"
-                    class="filter-[brightness(0)_saturate(100%)_invert(27%)_sepia(58%)_saturate(3012%)_hue-rotate(207deg)_brightness(106%)_contrast(99%)]">Move
-                    to cart</button>
-        </div>
-        
-        <div class=" flex-col gap-2">
-            <img src="/img/product images/Image/cloth/denim-bag.png" alt="" height="240px" width="270px"
-                class=" border-1 border-[#DEE2E7] rounded-[6px] bg-[#EEEEEE] w-[100px] sm:w-auto">
-            <p class="font-semibold p-18px">$99.50</p>
-            <p class="text-[#8B96A5] p-16px">GoPro HERO6 4K Action<br> Camera - Black</p>
-            <button class="border-1 border-[#DEE2E7] text-[#0D6EFD] w-fit flex gap-2 px-1.5 py-1.5 rounded-[6px]"><img
-                    src="/img/Icon/shopping_cart.svg" alt="shopping cart icon" width="20px" height="20px"
-                    class="filter-[brightness(0)_saturate(100%)_invert(27%)_sepia(58%)_saturate(3012%)_hue-rotate(207deg)_brightness(106%)_contrast(99%)]">Move
-                    to cart</button>
-                </div>
-            </div>
-                
-            </section>
-            
-            <!-- Save for Later Section Ends -->
-            
-
-            <!-- Discount Section Starts -->
-            
-        <section class="px-[20px] m-auto sm:w-[80%] ">
-            <div class="gradient-bg  flex flex-col  sm:flex-row sm:justify-between p-6 rounded-[6px] mt-5 mb-20">
-
-                <div>
-
-                    <p class="text-[24px] font-semibold text-white">Super discount on more than 100 USD</p>
-                    <p class="text-white">Have you ever finally just write dummy info</p>
-                </div>
+            <div class=" lg:flex-col gap-2">
+                <img src="/img/product images/Image/cloth/tuxedo.png" alt="" height="240px" width="270px"
+                    class="border-1 border-[#DEE2E7] rounded-[6px] bg-[#EEEEEE] min-w-[100px] sm:w-auto">
+                <p class="font-semibold p-18px">$99.50</p>
+                <p class="text-[#8B96A5] p-16px line-clamp-2    ">GoPro HERO6 4K Action<br> Camera - Black</p>
                 <button
-                    class="bg-[#FF9017] self-start sm:self-center mt-2 sm:mt-0 text-white rounded-[6px] px-[16px] py-2 ">Shop
-                    Now</button>
+                    class="hidden lg:flex border-1 border-[#DEE2E7] text-[#0D6EFD] w-fit  gap-2 px-1.5 py-1.5 rounded-[6px]"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+  <path d="M15.1676 11.9166C15.8551 11.9166 16.4601 11.5408 16.7717 10.9725L20.0534 5.02331C20.3926 4.41831 19.9526 3.66665 19.2559 3.66665H5.68924L4.82758 1.83331H1.83008V3.66665H3.66341L6.96341 10.6241L5.72591 12.8608C5.05674 14.0891 5.93674 15.5833 7.33008 15.5833H18.3301V13.75H7.33008L8.33841 11.9166H15.1676ZM6.56008 5.49998H17.6976L15.1676 10.0833H8.73258L6.56008 5.49998ZM7.33008 16.5C6.32174 16.5 5.50591 17.325 5.50591 18.3333C5.50591 19.3416 6.32174 20.1666 7.33008 20.1666C8.33841 20.1666 9.16341 19.3416 9.16341 18.3333C9.16341 17.325 8.33841 16.5 7.33008 16.5ZM16.4967 16.5C15.4884 16.5 14.6726 17.325 14.6726 18.3333C14.6726 19.3416 15.4884 20.1666 16.4967 20.1666C17.5051 20.1666 18.3301 19.3416 18.3301 18.3333C18.3301 17.325 17.5051 16.5 16.4967 16.5Z" fill="#0D6EFD"/>
+</svg>Move
+                    to cart </button>
+                    <button
+                    class="flex lg:hidden border-1 border-[#DEE2E7] text-[#0D6EFD] w-fit  gap-2 px-1.5 py-1.5 rounded-[6px]"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+  <path d="M15.1676 11.9166C15.8551 11.9166 16.4601 11.5408 16.7717 10.9725L20.0534 5.02331C20.3926 4.41831 19.9526 3.66665 19.2559 3.66665H5.68924L4.82758 1.83331H1.83008V3.66665H3.66341L6.96341 10.6241L5.72591 12.8608C5.05674 14.0891 5.93674 15.5833 7.33008 15.5833H18.3301V13.75H7.33008L8.33841 11.9166H15.1676ZM6.56008 5.49998H17.6976L15.1676 10.0833H8.73258L6.56008 5.49998ZM7.33008 16.5C6.32174 16.5 5.50591 17.325 5.50591 18.3333C5.50591 19.3416 6.32174 20.1666 7.33008 20.1666C8.33841 20.1666 9.16341 19.3416 9.16341 18.3333C9.16341 17.325 8.33841 16.5 7.33008 16.5ZM16.4967 16.5C15.4884 16.5 14.6726 17.325 14.6726 18.3333C14.6726 19.3416 15.4884 20.1666 16.4967 20.1666C17.5051 20.1666 18.3301 19.3416 18.3301 18.3333C18.3301 17.325 17.5051 16.5 16.4967 16.5Z" fill="#0D6EFD"/>
+</svg>Add</button>
             </div>
-        </section>
 
-        <!-- Discount Section Ends -->
+            <div class="lg:flex-col gap-2">
+                <img src="/img/product images/Image/cloth/blue-t-shirt.png" alt="" height="240px" width="270px"
+                    class=" border-1 border-[#DEE2E7] rounded-[6px] bg-[#EEEEEE] min-w-[100px] sm:w-auto">
+                <p class="font-semibold p-18px">$99.50</p>
+                <p class="text-[#8B96A5] p-16px line-clamp-2">GoPro HERO6 4K Action<br> Camera - Black</p>
+                <button
+                    class="hidden lg:flex border-1 border-[#DEE2E7] text-[#0D6EFD] w-fit  gap-2 px-1.5 py-1.5 rounded-[6px]"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+  <path d="M15.1676 11.9166C15.8551 11.9166 16.4601 11.5408 16.7717 10.9725L20.0534 5.02331C20.3926 4.41831 19.9526 3.66665 19.2559 3.66665H5.68924L4.82758 1.83331H1.83008V3.66665H3.66341L6.96341 10.6241L5.72591 12.8608C5.05674 14.0891 5.93674 15.5833 7.33008 15.5833H18.3301V13.75H7.33008L8.33841 11.9166H15.1676ZM6.56008 5.49998H17.6976L15.1676 10.0833H8.73258L6.56008 5.49998ZM7.33008 16.5C6.32174 16.5 5.50591 17.325 5.50591 18.3333C5.50591 19.3416 6.32174 20.1666 7.33008 20.1666C8.33841 20.1666 9.16341 19.3416 9.16341 18.3333C9.16341 17.325 8.33841 16.5 7.33008 16.5ZM16.4967 16.5C15.4884 16.5 14.6726 17.325 14.6726 18.3333C14.6726 19.3416 15.4884 20.1666 16.4967 20.1666C17.5051 20.1666 18.3301 19.3416 18.3301 18.3333C18.3301 17.325 17.5051 16.5 16.4967 16.5Z" fill="#0D6EFD"/>
+</svg>Move
+                    to cart </button>
+                    <button
+                    class="flex lg:hidden border-1 border-[#DEE2E7] text-[#0D6EFD] w-fit  gap-2 px-1.5 py-1.5 rounded-[6px]"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+  <path d="M15.1676 11.9166C15.8551 11.9166 16.4601 11.5408 16.7717 10.9725L20.0534 5.02331C20.3926 4.41831 19.9526 3.66665 19.2559 3.66665H5.68924L4.82758 1.83331H1.83008V3.66665H3.66341L6.96341 10.6241L5.72591 12.8608C5.05674 14.0891 5.93674 15.5833 7.33008 15.5833H18.3301V13.75H7.33008L8.33841 11.9166H15.1676ZM6.56008 5.49998H17.6976L15.1676 10.0833H8.73258L6.56008 5.49998ZM7.33008 16.5C6.32174 16.5 5.50591 17.325 5.50591 18.3333C5.50591 19.3416 6.32174 20.1666 7.33008 20.1666C8.33841 20.1666 9.16341 19.3416 9.16341 18.3333C9.16341 17.325 8.33841 16.5 7.33008 16.5ZM16.4967 16.5C15.4884 16.5 14.6726 17.325 14.6726 18.3333C14.6726 19.3416 15.4884 20.1666 16.4967 20.1666C17.5051 20.1666 18.3301 19.3416 18.3301 18.3333C18.3301 17.325 17.5051 16.5 16.4967 16.5Z" fill="#0D6EFD"/>
+</svg>Add</button>
+            </div>
+
+            <div class="lg:flex-col gap-2">
+                <img src="/img/product images/Image/cloth/brown-jacket.png" alt="" height="240px" width="270px"
+                    class=" border-1 border-[#DEE2E7] rounded-[6px] bg-[#EEEEEE] min-w-[100px] sm:w-auto">
+                <p class="font-semibold p-18px">$99.50</p>
+                <p class="text-[#8B96A5] p-16px line-clamp-2">GoPro HERO6 4K Action<br> Camera - Black</p>
+                <button
+                    class="hidden lg:flex border-1 border-[#DEE2E7] text-[#0D6EFD] w-fit  gap-2 px-1.5 py-1.5 rounded-[6px]"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+  <path d="M15.1676 11.9166C15.8551 11.9166 16.4601 11.5408 16.7717 10.9725L20.0534 5.02331C20.3926 4.41831 19.9526 3.66665 19.2559 3.66665H5.68924L4.82758 1.83331H1.83008V3.66665H3.66341L6.96341 10.6241L5.72591 12.8608C5.05674 14.0891 5.93674 15.5833 7.33008 15.5833H18.3301V13.75H7.33008L8.33841 11.9166H15.1676ZM6.56008 5.49998H17.6976L15.1676 10.0833H8.73258L6.56008 5.49998ZM7.33008 16.5C6.32174 16.5 5.50591 17.325 5.50591 18.3333C5.50591 19.3416 6.32174 20.1666 7.33008 20.1666C8.33841 20.1666 9.16341 19.3416 9.16341 18.3333C9.16341 17.325 8.33841 16.5 7.33008 16.5ZM16.4967 16.5C15.4884 16.5 14.6726 17.325 14.6726 18.3333C14.6726 19.3416 15.4884 20.1666 16.4967 20.1666C17.5051 20.1666 18.3301 19.3416 18.3301 18.3333C18.3301 17.325 17.5051 16.5 16.4967 16.5Z" fill="#0D6EFD"/>
+</svg>Move
+                    to cart </button>
+                    <button
+                    class="flex lg:hidden border-1 border-[#DEE2E7] text-[#0D6EFD] w-fit  gap-2 px-1.5 py-1.5 rounded-[6px]"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+  <path d="M15.1676 11.9166C15.8551 11.9166 16.4601 11.5408 16.7717 10.9725L20.0534 5.02331C20.3926 4.41831 19.9526 3.66665 19.2559 3.66665H5.68924L4.82758 1.83331H1.83008V3.66665H3.66341L6.96341 10.6241L5.72591 12.8608C5.05674 14.0891 5.93674 15.5833 7.33008 15.5833H18.3301V13.75H7.33008L8.33841 11.9166H15.1676ZM6.56008 5.49998H17.6976L15.1676 10.0833H8.73258L6.56008 5.49998ZM7.33008 16.5C6.32174 16.5 5.50591 17.325 5.50591 18.3333C5.50591 19.3416 6.32174 20.1666 7.33008 20.1666C8.33841 20.1666 9.16341 19.3416 9.16341 18.3333C9.16341 17.325 8.33841 16.5 7.33008 16.5ZM16.4967 16.5C15.4884 16.5 14.6726 17.325 14.6726 18.3333C14.6726 19.3416 15.4884 20.1666 16.4967 20.1666C17.5051 20.1666 18.3301 19.3416 18.3301 18.3333C18.3301 17.325 17.5051 16.5 16.4967 16.5Z" fill="#0D6EFD"/>
+</svg>Add</button>
+            </div>
+
+            <div class="lg:flex-col gap-2   ">
+                <img src="/img/product images/Image/cloth/denim-bag.png" alt="" height="240px" width="270px"
+                    class=" border-1 border-[#DEE2E7] rounded-[6px] bg-[#EEEEEE] min-w-[100px] sm:w-auto">
+                <p class="font-semibold p-18px">$99.50</p>
+                <p class="text-[#8B96A5] p-16px line-clamp-2">GoPro HERO6 4K Action<br> Camera - Black</p>
+                <button
+                    class="hidden lg:flex border-1 border-[#DEE2E7] text-[#0D6EFD] w-fit  gap-2 px-1.5 py-1.5 rounded-[6px]"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+  <path d="M15.1676 11.9166C15.8551 11.9166 16.4601 11.5408 16.7717 10.9725L20.0534 5.02331C20.3926 4.41831 19.9526 3.66665 19.2559 3.66665H5.68924L4.82758 1.83331H1.83008V3.66665H3.66341L6.96341 10.6241L5.72591 12.8608C5.05674 14.0891 5.93674 15.5833 7.33008 15.5833H18.3301V13.75H7.33008L8.33841 11.9166H15.1676ZM6.56008 5.49998H17.6976L15.1676 10.0833H8.73258L6.56008 5.49998ZM7.33008 16.5C6.32174 16.5 5.50591 17.325 5.50591 18.3333C5.50591 19.3416 6.32174 20.1666 7.33008 20.1666C8.33841 20.1666 9.16341 19.3416 9.16341 18.3333C9.16341 17.325 8.33841 16.5 7.33008 16.5ZM16.4967 16.5C15.4884 16.5 14.6726 17.325 14.6726 18.3333C14.6726 19.3416 15.4884 20.1666 16.4967 20.1666C17.5051 20.1666 18.3301 19.3416 18.3301 18.3333C18.3301 17.325 17.5051 16.5 16.4967 16.5Z" fill="#0D6EFD"/>
+</svg>Move
+                    to cart </button>
+                    <button
+                    class="flex lg:hidden border-1 border-[#DEE2E7] text-[#0D6EFD] w-fit  gap-2 px-1.5 py-1.5 rounded-[6px]"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+  <path d="M15.1676 11.9166C15.8551 11.9166 16.4601 11.5408 16.7717 10.9725L20.0534 5.02331C20.3926 4.41831 19.9526 3.66665 19.2559 3.66665H5.68924L4.82758 1.83331H1.83008V3.66665H3.66341L6.96341 10.6241L5.72591 12.8608C5.05674 14.0891 5.93674 15.5833 7.33008 15.5833H18.3301V13.75H7.33008L8.33841 11.9166H15.1676ZM6.56008 5.49998H17.6976L15.1676 10.0833H8.73258L6.56008 5.49998ZM7.33008 16.5C6.32174 16.5 5.50591 17.325 5.50591 18.3333C5.50591 19.3416 6.32174 20.1666 7.33008 20.1666C8.33841 20.1666 9.16341 19.3416 9.16341 18.3333C9.16341 17.325 8.33841 16.5 7.33008 16.5ZM16.4967 16.5C15.4884 16.5 14.6726 17.325 14.6726 18.3333C14.6726 19.3416 15.4884 20.1666 16.4967 20.1666C17.5051 20.1666 18.3301 19.3416 18.3301 18.3333C18.3301 17.325 17.5051 16.5 16.4967 16.5Z" fill="#0D6EFD"/>
+</svg>Add</button>
+            </div>
+
+             <div class="lg:flex-col gap-2   ">
+                <img src="/img/product images/Image/cloth/denim-bag.png" alt="" height="240px" width="270px"
+                    class=" border-1 border-[#DEE2E7] rounded-[6px] bg-[#EEEEEE] min-w-[100px] sm:w-auto">
+                <p class="font-semibold p-18px">$99.50</p>
+                <p class="text-[#8B96A5] p-16px line-clamp-2 ">GoPro HERO6 4K Action<br> Camera - Black</p>
+                <button
+                    class="hidden lg:flex border-1 border-[#DEE2E7] text-[#0D6EFD] w-fit  gap-2 px-1.5 py-1.5 rounded-[6px]"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+  <path d="M15.1676 11.9166C15.8551 11.9166 16.4601 11.5408 16.7717 10.9725L20.0534 5.02331C20.3926 4.41831 19.9526 3.66665 19.2559 3.66665H5.68924L4.82758 1.83331H1.83008V3.66665H3.66341L6.96341 10.6241L5.72591 12.8608C5.05674 14.0891 5.93674 15.5833 7.33008 15.5833H18.3301V13.75H7.33008L8.33841 11.9166H15.1676ZM6.56008 5.49998H17.6976L15.1676 10.0833H8.73258L6.56008 5.49998ZM7.33008 16.5C6.32174 16.5 5.50591 17.325 5.50591 18.3333C5.50591 19.3416 6.32174 20.1666 7.33008 20.1666C8.33841 20.1666 9.16341 19.3416 9.16341 18.3333C9.16341 17.325 8.33841 16.5 7.33008 16.5ZM16.4967 16.5C15.4884 16.5 14.6726 17.325 14.6726 18.3333C14.6726 19.3416 15.4884 20.1666 16.4967 20.1666C17.5051 20.1666 18.3301 19.3416 18.3301 18.3333C18.3301 17.325 17.5051 16.5 16.4967 16.5Z" fill="#0D6EFD"/>
+</svg>Move
+                    to cart </button>
+                    <button
+                    class="flex lg:hidden border-1 border-[#DEE2E7] text-[#0D6EFD] w-fit  gap-2 px-1.5 py-1.5 rounded-[6px]"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+  <path d="M15.1676 11.9166C15.8551 11.9166 16.4601 11.5408 16.7717 10.9725L20.0534 5.02331C20.3926 4.41831 19.9526 3.66665 19.2559 3.66665H5.68924L4.82758 1.83331H1.83008V3.66665H3.66341L6.96341 10.6241L5.72591 12.8608C5.05674 14.0891 5.93674 15.5833 7.33008 15.5833H18.3301V13.75H7.33008L8.33841 11.9166H15.1676ZM6.56008 5.49998H17.6976L15.1676 10.0833H8.73258L6.56008 5.49998ZM7.33008 16.5C6.32174 16.5 5.50591 17.325 5.50591 18.3333C5.50591 19.3416 6.32174 20.1666 7.33008 20.1666C8.33841 20.1666 9.16341 19.3416 9.16341 18.3333C9.16341 17.325 8.33841 16.5 7.33008 16.5ZM16.4967 16.5C15.4884 16.5 14.6726 17.325 14.6726 18.3333C14.6726 19.3416 15.4884 20.1666 16.4967 20.1666C17.5051 20.1666 18.3301 19.3416 18.3301 18.3333C18.3301 17.325 17.5051 16.5 16.4967 16.5Z" fill="#0D6EFD"/>
+</svg>  Add</button>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Save for Later Section Ends -->
+
+
+    <!-- Discount Section Starts -->
+
+    <section class="px-[10px] m-auto md:w-[90%] xl:w-[80%]">
+        <div class="gradient-bg  flex flex-col  sm:flex-row sm:justify-between p-6 rounded-[6px] my-5">
+
+            <div>
+
+                <p class="text-[24px] font-semibold text-white">Super discount on more than 100 USD</p>
+                <p class="text-white">Have you ever finally just write dummy info</p>
+            </div>
+            <button
+                class="bg-[#FF9017] self-start sm:self-center mt-2 sm:mt-0 text-white rounded-[6px] px-[16px] py-2 ">Shop
+                Now</button>
+        </div>
+    </section>
+
+    <!-- Discount Section Ends -->
 
     <!-- Footer Section Starts -->
 
 
-        <section class="bg-white pt-10 pb-12">
-            <footer class="flex flex-wrap gap-5 px-[20px] m-auto sm:w-[80%] justify-between">
-                <div class="w-[100%] lg:w-[20%] flex flex-col gap-y-[15px]">
+    <section class="bg-white pt-10 pb-12">
+        <footer class="flex flex-wrap gap-5 px-[10px] m-auto md:w-[90%] xl:w-[80%] justify-between">
+            <div class="w-[100%] lg:w-[20%] flex flex-col gap-y-[15px]">
 
-                    <div class="text-[#8CB7F5] text-[32px] font-semibold flex gap-3 items-center">
-                        <p
-                            class="bg-[#0D6EFD] min-w-[43px] min-h-[43px] shadow-[8px_0px_0px_0px_rgba(13,110,253,0.21)] rounded-[10px] relative">
-                            <svg class="absolute top-[50%] left-[50%] transform translate-x-[-50%] translate-y-[-50%] "
-                                xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22"
-                                fill="none">
-                                <g opacity="0.7">
-                                    <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M4.29018 7.3562H3.30965C3.25911 7.3562 3.18417 7.4265 3.18127 7.47295L2.45892 19.1476L15.9548 19.1451L15.2253 7.47295C15.2225 7.42828 15.1457 7.3562 15.0969 7.3562H14.1164V9.32145C14.1164 9.86413 13.6765 10.3041 13.1338 10.3041C12.5911 10.3041 12.1512 9.86413 12.1512 9.32145V7.3562L6.25543 7.3562V9.32145C6.25543 9.86413 5.81549 10.3041 5.27281 10.3041C4.73012 10.3041 4.29018 9.86413 4.29018 9.32145V7.3562Z"
-                                        fill="white" />
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M9.20329 0.478271C11.9153 0.478271 14.1164 2.6796 14.1164 5.38906L15.0969 5.39138C16.1835 5.39138 17.1192 6.27035 17.1867 7.35079L17.9244 19.1539C17.9921 20.2361 17.1698 21.1133 16.0865 21.1133H2.3201C1.23739 21.1133 0.41462 20.2344 0.482148 19.1539L1.21984 7.35079C1.28748 6.26864 2.22128 5.39138 3.30964 5.39138H4.29017C4.29017 2.67813 6.49304 0.478271 9.20329 0.478271ZM12.1511 5.39149C12.1511 3.76503 10.8299 2.44362 9.20328 2.44362C7.57781 2.44362 6.25541 3.76421 6.25541 5.38917L12.1511 5.39149ZM4.29018 7.35657H3.30965C3.2591 7.35657 3.18417 7.42687 3.18126 7.47332L2.45892 19.148L15.9548 19.1455L15.2253 7.47332C15.2225 7.42864 15.1457 7.35657 15.0969 7.35657H14.1164V9.32181C14.1164 9.8645 13.6765 10.3044 13.1338 10.3044C12.5911 10.3044 12.1512 9.8645 12.1512 9.32181V7.35657L6.25542 7.35657L6.25542 9.32181C6.25542 9.8645 5.81549 10.3044 5.2728 10.3044C4.73011 10.3044 4.29018 9.8645 4.29018 9.32181V7.35657Z"
-                                        fill="white" />
-                                </g>
-                            </svg>
-                        </p>Brand
-                    </div>
-                    <p class="text-[#505050]">Best information about the company gies here but now lorem ipsum is</p>
-                    <ul class="flex gap-2">
-                        <li><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
-                                fill="none">
+                <div class="text-[#8CB7F5] text-[32px] font-semibold flex gap-3 items-center">
+                    <p
+                        class="bg-[#0D6EFD] min-w-[43px] min-h-[43px] shadow-[8px_0px_0px_0px_rgba(13,110,253,0.21)] rounded-[10px] relative">
+                        <svg class="absolute top-[50%] left-[50%] transform translate-x-[-50%] translate-y-[-50%] "
+                            xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22" fill="none">
+                            <g opacity="0.7">
+                                <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M4.29018 7.3562H3.30965C3.25911 7.3562 3.18417 7.4265 3.18127 7.47295L2.45892 19.1476L15.9548 19.1451L15.2253 7.47295C15.2225 7.42828 15.1457 7.3562 15.0969 7.3562H14.1164V9.32145C14.1164 9.86413 13.6765 10.3041 13.1338 10.3041C12.5911 10.3041 12.1512 9.86413 12.1512 9.32145V7.3562L6.25543 7.3562V9.32145C6.25543 9.86413 5.81549 10.3041 5.27281 10.3041C4.73012 10.3041 4.29018 9.86413 4.29018 9.32145V7.3562Z"
+                                    fill="white" />
                                 <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M19.8953 10.99L18.4834 10.9909C17.3762 10.9909 17.1616 11.5169 17.1616 12.2884V13.9909H19.8025L19.4584 16.6581H17.1616V23.5H14.4081V16.6581H12.1056V13.9909H14.4081V12.025C14.4081 9.74219 15.8022 8.5 17.8375 8.5C18.8125 8.5 19.6506 8.57219 19.8953 8.605V10.99ZM16 1C7.71625 1 1 7.71531 1 16C1 24.2837 7.71625 31 16 31C24.2847 31 31 24.2837 31 16C31 7.71531 24.2847 1 16 1Z"
-                                    fill="#BDC4CD" />
-                            </svg></li>
-                        <li><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
-                                fill="none">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M21.9644 12.9409C21.97 13.0731 21.9738 13.2053 21.9738 13.3394C21.9738 17.4053 18.8781 22.0947 13.2175 22.0947C11.4794 22.0947 9.86219 21.5856 8.5 20.7128C8.74094 20.7409 8.98562 20.755 9.23406 20.755C10.6759 20.755 12.0025 20.2638 13.0562 19.4378C11.7091 19.4134 10.5728 18.5238 10.1809 17.3013C10.3694 17.3369 10.5616 17.3556 10.7603 17.3556C11.0406 17.3556 11.3125 17.3181 11.5712 17.2478C10.1631 16.9656 9.10281 15.7216 9.10281 14.2309C9.10281 14.2178 9.10281 14.2047 9.10281 14.1916C9.51719 14.4222 9.9925 14.5609 10.4969 14.5769C9.67094 14.0247 9.12719 13.0825 9.12719 12.0156C9.12719 11.4513 9.27906 10.9225 9.54437 10.4678C11.0622 12.3297 13.33 13.555 15.8875 13.6834C15.835 13.4584 15.8078 13.2231 15.8078 12.9822C15.8078 11.2825 17.1859 9.90438 18.8847 9.90438C19.7706 9.90438 20.5703 10.2784 21.1309 10.8766C21.8322 10.7388 22.4912 10.4828 23.0856 10.1303C22.8559 10.8484 22.3675 11.4513 21.7328 11.8328C22.3553 11.7578 22.9478 11.5928 23.5 11.3481C23.0875 11.965 22.5653 12.5069 21.9644 12.9409ZM16 1C7.71531 1 1 7.71531 1 16C1 24.2837 7.71531 31 16 31C24.2847 31 31 24.2837 31 16C31 7.71531 24.2847 1 16 1Z"
-                                    fill="#BDC4CD" />
-                            </svg></li>
-                        <li><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
-                                fill="none">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M23.5 23.4859H20.3922V18.6222C20.3922 17.4625 20.3716 15.9709 18.7769 15.9709C17.1597 15.9709 16.9131 17.2347 16.9131 18.5397V23.4859H13.8081V13.4847H16.7875V14.8525H16.8306C17.245 14.0659 18.2594 13.2362 19.7716 13.2362C22.9187 13.2362 23.5 15.3072 23.5 18.0006V23.4859ZM10.3038 12.1187C9.30531 12.1187 8.5 11.3106 8.5 10.3159C8.5 9.32125 9.30531 8.51312 10.3038 8.51312C11.2975 8.51312 12.1047 9.32125 12.1047 10.3159C12.1047 11.3106 11.2975 12.1187 10.3038 12.1187ZM11.8581 23.4859H8.74656V13.4847H11.8581V23.4859ZM16 1C7.71531 1 1 7.71531 1 16C1 24.2837 7.71531 31 16 31C24.2847 31 31 24.2837 31 16C31 7.71531 24.2847 1 16 1Z"
-                                    fill="#BDC4CD" />
-                            </svg></li>
-                        <li><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
-                                fill="none">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M16.0175 18.8948C17.6103 18.8948 18.9022 17.6067 18.9022 16.0167C18.9022 14.4276 17.6103 13.1395 16.0175 13.1395C14.4247 13.1395 13.1328 14.4276 13.1328 16.0167C13.1328 17.6067 14.4247 18.8948 16.0175 18.8948ZM19.3392 13.0694H21.367C21.5986 13.0694 21.787 12.8819 21.787 12.6512V10.6272C21.787 10.3966 21.5986 10.2091 21.367 10.2091H19.3392C19.1076 10.2091 18.9192 10.3966 18.9192 10.6272V12.6512C18.9192 12.8819 19.1076 13.0694 19.3392 13.0694ZM23.5 21.7206C23.5 22.7031 22.7022 23.5 21.7169 23.5H10.2831C9.29875 23.5 8.5 22.7031 8.5 21.7206V10.2784C8.5 9.29594 9.29875 8.5 10.2831 8.5H21.7169C22.7022 8.5 23.5 9.29594 23.5 10.2784V21.7206ZM16 1C7.71531 1 1 7.71531 1 16C1 24.2837 7.71531 31 16 31C24.2847 31 31 24.2837 31 16C31 7.71531 24.2847 1 16 1ZM20.5804 16.0171C20.5804 18.5268 18.5339 20.5696 16.0176 20.5696C13.5014 20.5696 11.4548 18.5268 11.4548 16.0171C11.4548 15.6008 11.5111 15.1967 11.617 14.8133H10.2136V21.3364C10.2136 21.568 10.4011 21.7555 10.6326 21.7555H21.4017C21.6342 21.7555 21.8217 21.568 21.8217 21.3364V14.8133H20.4183C20.5242 15.1967 20.5804 15.6008 20.5804 16.0171Z"
-                                    fill="#BDC4CD" />
-                            </svg></li>
-                        <li><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
-                                fill="none">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M23.5 16.5662C23.5 17.7803 23.35 18.9944 23.35 18.9944C23.35 18.9944 23.2038 20.0275 22.7537 20.4831C22.1838 21.0803 21.5444 21.0831 21.2509 21.1178C19.1519 21.2697 16 21.2744 16 21.2744C16 21.2744 12.1 21.2388 10.9 21.1244C10.5662 21.0616 9.81625 21.0803 9.24625 20.4831C8.79625 20.0275 8.65 18.9944 8.65 18.9944C8.65 18.9944 8.5 17.7803 8.5 16.5662V15.4281C8.5 14.2141 8.65 13.0009 8.65 13.0009C8.65 13.0009 8.79625 11.9669 9.24625 11.5113C9.81625 10.9141 10.4556 10.9113 10.7491 10.8766C12.8481 10.7247 15.9972 10.7247 15.9972 10.7247H16.0028C16.0028 10.7247 19.1519 10.7247 21.2509 10.8766C21.5444 10.9113 22.1838 10.9141 22.7537 11.5113C23.2038 11.9669 23.35 13.0009 23.35 13.0009C23.35 13.0009 23.5 14.2141 23.5 15.4281V16.5662ZM16 1C7.71531 1 1 7.71531 1 16C1 24.2837 7.71531 31 16 31C24.2847 31 31 24.2837 31 16C31 7.71531 24.2847 1 16 1ZM14.4514 17.9453L18.5042 15.8453L14.4505 13.7303L14.4514 17.9453Z"
-                                    fill="#BDC4CD" />
-                            </svg></li>
-                    </ul>
+                                    d="M9.20329 0.478271C11.9153 0.478271 14.1164 2.6796 14.1164 5.38906L15.0969 5.39138C16.1835 5.39138 17.1192 6.27035 17.1867 7.35079L17.9244 19.1539C17.9921 20.2361 17.1698 21.1133 16.0865 21.1133H2.3201C1.23739 21.1133 0.41462 20.2344 0.482148 19.1539L1.21984 7.35079C1.28748 6.26864 2.22128 5.39138 3.30964 5.39138H4.29017C4.29017 2.67813 6.49304 0.478271 9.20329 0.478271ZM12.1511 5.39149C12.1511 3.76503 10.8299 2.44362 9.20328 2.44362C7.57781 2.44362 6.25541 3.76421 6.25541 5.38917L12.1511 5.39149ZM4.29018 7.35657H3.30965C3.2591 7.35657 3.18417 7.42687 3.18126 7.47332L2.45892 19.148L15.9548 19.1455L15.2253 7.47332C15.2225 7.42864 15.1457 7.35657 15.0969 7.35657H14.1164V9.32181C14.1164 9.8645 13.6765 10.3044 13.1338 10.3044C12.5911 10.3044 12.1512 9.8645 12.1512 9.32181V7.35657L6.25542 7.35657L6.25542 9.32181C6.25542 9.8645 5.81549 10.3044 5.2728 10.3044C4.73011 10.3044 4.29018 9.8645 4.29018 9.32181V7.35657Z"
+                                    fill="white" />
+                            </g>
+                        </svg>
+                    </p>Brand
                 </div>
-
-
-                <ul>
-                    <li class="text-[#1C1C1C] font-medium mb-2.5">About</li>
-                    <li class="text-[#8B96A5] mb-0.5">About Us</li>
-                    <li class="text-[#8B96A5] mb-0.5">Find store</li>
-                    <li class="text-[#8B96A5] mb-0.5">Categories</li>
-                    <li class="text-[#8B96A5] mb-0.5">Blogs</li>
+                <p class="text-[#505050]">Best information about the company gies here but now lorem ipsum is</p>
+                <ul class="flex gap-2">
+                    <li><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M19.8953 10.99L18.4834 10.9909C17.3762 10.9909 17.1616 11.5169 17.1616 12.2884V13.9909H19.8025L19.4584 16.6581H17.1616V23.5H14.4081V16.6581H12.1056V13.9909H14.4081V12.025C14.4081 9.74219 15.8022 8.5 17.8375 8.5C18.8125 8.5 19.6506 8.57219 19.8953 8.605V10.99ZM16 1C7.71625 1 1 7.71531 1 16C1 24.2837 7.71625 31 16 31C24.2847 31 31 24.2837 31 16C31 7.71531 24.2847 1 16 1Z"
+                                fill="#BDC4CD" />
+                        </svg></li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M21.9644 12.9409C21.97 13.0731 21.9738 13.2053 21.9738 13.3394C21.9738 17.4053 18.8781 22.0947 13.2175 22.0947C11.4794 22.0947 9.86219 21.5856 8.5 20.7128C8.74094 20.7409 8.98562 20.755 9.23406 20.755C10.6759 20.755 12.0025 20.2638 13.0562 19.4378C11.7091 19.4134 10.5728 18.5238 10.1809 17.3013C10.3694 17.3369 10.5616 17.3556 10.7603 17.3556C11.0406 17.3556 11.3125 17.3181 11.5712 17.2478C10.1631 16.9656 9.10281 15.7216 9.10281 14.2309C9.10281 14.2178 9.10281 14.2047 9.10281 14.1916C9.51719 14.4222 9.9925 14.5609 10.4969 14.5769C9.67094 14.0247 9.12719 13.0825 9.12719 12.0156C9.12719 11.4513 9.27906 10.9225 9.54437 10.4678C11.0622 12.3297 13.33 13.555 15.8875 13.6834C15.835 13.4584 15.8078 13.2231 15.8078 12.9822C15.8078 11.2825 17.1859 9.90438 18.8847 9.90438C19.7706 9.90438 20.5703 10.2784 21.1309 10.8766C21.8322 10.7388 22.4912 10.4828 23.0856 10.1303C22.8559 10.8484 22.3675 11.4513 21.7328 11.8328C22.3553 11.7578 22.9478 11.5928 23.5 11.3481C23.0875 11.965 22.5653 12.5069 21.9644 12.9409ZM16 1C7.71531 1 1 7.71531 1 16C1 24.2837 7.71531 31 16 31C24.2847 31 31 24.2837 31 16C31 7.71531 24.2847 1 16 1Z"
+                                fill="#BDC4CD" />
+                        </svg></li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M23.5 23.4859H20.3922V18.6222C20.3922 17.4625 20.3716 15.9709 18.7769 15.9709C17.1597 15.9709 16.9131 17.2347 16.9131 18.5397V23.4859H13.8081V13.4847H16.7875V14.8525H16.8306C17.245 14.0659 18.2594 13.2362 19.7716 13.2362C22.9187 13.2362 23.5 15.3072 23.5 18.0006V23.4859ZM10.3038 12.1187C9.30531 12.1187 8.5 11.3106 8.5 10.3159C8.5 9.32125 9.30531 8.51312 10.3038 8.51312C11.2975 8.51312 12.1047 9.32125 12.1047 10.3159C12.1047 11.3106 11.2975 12.1187 10.3038 12.1187ZM11.8581 23.4859H8.74656V13.4847H11.8581V23.4859ZM16 1C7.71531 1 1 7.71531 1 16C1 24.2837 7.71531 31 16 31C24.2847 31 31 24.2837 31 16C31 7.71531 24.2847 1 16 1Z"
+                                fill="#BDC4CD" />
+                        </svg></li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M16.0175 18.8948C17.6103 18.8948 18.9022 17.6067 18.9022 16.0167C18.9022 14.4276 17.6103 13.1395 16.0175 13.1395C14.4247 13.1395 13.1328 14.4276 13.1328 16.0167C13.1328 17.6067 14.4247 18.8948 16.0175 18.8948ZM19.3392 13.0694H21.367C21.5986 13.0694 21.787 12.8819 21.787 12.6512V10.6272C21.787 10.3966 21.5986 10.2091 21.367 10.2091H19.3392C19.1076 10.2091 18.9192 10.3966 18.9192 10.6272V12.6512C18.9192 12.8819 19.1076 13.0694 19.3392 13.0694ZM23.5 21.7206C23.5 22.7031 22.7022 23.5 21.7169 23.5H10.2831C9.29875 23.5 8.5 22.7031 8.5 21.7206V10.2784C8.5 9.29594 9.29875 8.5 10.2831 8.5H21.7169C22.7022 8.5 23.5 9.29594 23.5 10.2784V21.7206ZM16 1C7.71531 1 1 7.71531 1 16C1 24.2837 7.71531 31 16 31C24.2847 31 31 24.2837 31 16C31 7.71531 24.2847 1 16 1ZM20.5804 16.0171C20.5804 18.5268 18.5339 20.5696 16.0176 20.5696C13.5014 20.5696 11.4548 18.5268 11.4548 16.0171C11.4548 15.6008 11.5111 15.1967 11.617 14.8133H10.2136V21.3364C10.2136 21.568 10.4011 21.7555 10.6326 21.7555H21.4017C21.6342 21.7555 21.8217 21.568 21.8217 21.3364V14.8133H20.4183C20.5242 15.1967 20.5804 15.6008 20.5804 16.0171Z"
+                                fill="#BDC4CD" />
+                        </svg></li>
+                    <li><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M23.5 16.5662C23.5 17.7803 23.35 18.9944 23.35 18.9944C23.35 18.9944 23.2038 20.0275 22.7537 20.4831C22.1838 21.0803 21.5444 21.0831 21.2509 21.1178C19.1519 21.2697 16 21.2744 16 21.2744C16 21.2744 12.1 21.2388 10.9 21.1244C10.5662 21.0616 9.81625 21.0803 9.24625 20.4831C8.79625 20.0275 8.65 18.9944 8.65 18.9944C8.65 18.9944 8.5 17.7803 8.5 16.5662V15.4281C8.5 14.2141 8.65 13.0009 8.65 13.0009C8.65 13.0009 8.79625 11.9669 9.24625 11.5113C9.81625 10.9141 10.4556 10.9113 10.7491 10.8766C12.8481 10.7247 15.9972 10.7247 15.9972 10.7247H16.0028C16.0028 10.7247 19.1519 10.7247 21.2509 10.8766C21.5444 10.9113 22.1838 10.9141 22.7537 11.5113C23.2038 11.9669 23.35 13.0009 23.35 13.0009C23.35 13.0009 23.5 14.2141 23.5 15.4281V16.5662ZM16 1C7.71531 1 1 7.71531 1 16C1 24.2837 7.71531 31 16 31C24.2847 31 31 24.2837 31 16C31 7.71531 24.2847 1 16 1ZM14.4514 17.9453L18.5042 15.8453L14.4505 13.7303L14.4514 17.9453Z"
+                                fill="#BDC4CD" />
+                        </svg></li>
                 </ul>
-                <ul>
-                    <li class="text-[#1C1C1C] font-medium mb-2.5">Partnership</li>
-                    <li class="text-[#8B96A5] mb-0.5">About Us</li>
+            </div>
 
-                    <li class="text-[#8B96A5] mb-0.5">Find store</li>
-                    <li class="text-[#8B96A5] mb-0.5">Categories</li>
-                    <li class="text-[#8B96A5]  mb-0.5">Blogs</li>
-                </ul>
-                <ul>
-                    <li class="text-[#1C1C1C] font-medium mb-2.5">Information</li>
-                    <li class="text-[#8B96A5]  mb-0.5">Help Center</li>
 
-                    <li class="text-[#8B96A5] mb-0.5">Money Refund</li>
-                    <li class="text-[#8B96A5] mb-0.5">Shipping</li>
-                    <li class="text-[#8B96A5] mb-0.5">Contact us</li>
-                </ul>
-                <ul>
-                    <li class="text-[#1C1C1C] font-medium mb-2.5">For users</li>
-                    <li class="text-[#8B96A5] mb-0.5">Login</li>
+            <ul>
+                <li class="text-[#1C1C1C] font-medium mb-2.5">About</li>
+                <li class="text-[#8B96A5] mb-0.5">About Us</li>
+                <li class="text-[#8B96A5] mb-0.5">Find store</li>
+                <li class="text-[#8B96A5] mb-0.5">Categories</li>
+                <li class="text-[#8B96A5] mb-0.5">Blogs</li>
+            </ul>
+            <ul>
+                <li class="text-[#1C1C1C] font-medium mb-2.5">Partnership</li>
+                <li class="text-[#8B96A5] mb-0.5">About Us</li>
 
-                    <li class="text-[#8B96A5] mb-0.5">Register</li>
-                    <li class="text-[#8B96A5] mb-0.5">Settings</li>
-                    <li class="text-[#8B96A5] mb-0.5">My Orders</li>
-                </ul>
-                <div class="flex flex-col gap-2.5">
-                    <p class="font-medium ">Get App</p>
+                <li class="text-[#8B96A5] mb-0.5">Find store</li>
+                <li class="text-[#8B96A5] mb-0.5">Categories</li>
+                <li class="text-[#8B96A5]  mb-0.5">Blogs</li>
+            </ul>
+            <ul>
+                <li class="text-[#1C1C1C] font-medium mb-2.5">Information</li>
+                <li class="text-[#8B96A5]  mb-0.5">Help Center</li>
+
+                <li class="text-[#8B96A5] mb-0.5">Money Refund</li>
+                <li class="text-[#8B96A5] mb-0.5">Shipping</li>
+                <li class="text-[#8B96A5] mb-0.5">Contact us</li>
+            </ul>
+            <ul>
+                <li class="text-[#1C1C1C] font-medium mb-2.5">For users</li>
+                <li class="text-[#8B96A5] mb-0.5">Login</li>
+
+                <li class="text-[#8B96A5] mb-0.5">Register</li>
+                <li class="text-[#8B96A5] mb-0.5">Settings</li>
+                <li class="text-[#8B96A5] mb-0.5">My Orders</li>
+            </ul>
+            <div class="md:flex md:flex-col grid grid-cols-2 gap-2.5">
+                    <p class="font-medium  col-span-2">Get App</p>
                     <svg xmlns="http://www.w3.org/2000/svg" width="124" height="42" viewBox="0 0 124 42" fill="none">
                         <rect width="124" height="42" rx="6" fill="#1C1C1C" />
                         <path
@@ -564,11 +819,11 @@
                             fill="white" />
                     </svg>
                 </div>
-            </footer>
-        </section>
+        </footer>
+    </section>
 
-        <section class=" bg-[#EFF2F4]">
-            <div class=" flex py-[23px] px-[20px] m-auto sm:w-[80%]">
+   <section class=" bg-[#EFF2F4] pb-[70px] xl:pb-[0px]">
+            <div class=" flex py-[23px] px-[10px] m-auto md:w-[90%] xl:w-[80%]">
                 <p class="mr-auto text-[#606060]">&copy; 2023 Ecommerce.</p>
                 <img src="/img/flags/america.svg" alt="" class="mr-2">
 
@@ -585,11 +840,12 @@
             </div>
 
         </section>
-        <!-- Footer Section Ends -->
+    <!-- Footer Section Ends -->
 
 </main>
 
 <script src="script.js"></script>
+
 </body>
 
 </html>

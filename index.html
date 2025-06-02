@@ -6,17 +6,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <link href="./output.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="input.css"> -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
+    <style>
+       .show {
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 70%;
+            height: 100vh;
+            background-color: rgb(241, 249, 255);
+            z-index: 1000;
+            box-shadow: 9px 0px 10px -5px rgba(97,97,97,0.75);
+        }
+
+        .custom-select {
+        min-width: fit-content;
+        background-color: transparent;
+        z-index: 1;
+    }
+
+    .custom-select select {
+        appearance: none;
+        width: 100%;
+        padding: 0px 20px 0px 0px;
+        background-color: transparent;
+        color: #000;
+        cursor: pointer;
+    }
+
+ .swiper {
+      width: 100%;
+      height: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      /* background: #333; */
+      height: calc((100% - 30px) / 2) !important;
+margin-top: 0px !important;
+      /* Center slide text vertically */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .swiper-grid-column>.swiper-wrapper{
+        flex-direction: row;
+    }
+
+    .swiper-slide img{
+        max-width: 100%;
+    }
+
+
+    </style>
 </head>
 
 <body>
     <main class=" bg-[#F7FAFC]">
-        <!-- First Header Starts -->
-        <!-- 
-        <header class="bg-white border-b-1 border-[#E0E0E0]">
-            <div class="mx-56 flex   justify-between  bg-white py-5">
 
-                <div class="text-[#8CB7F5] text-[32px] font-semibold flex gap-3 items-center">
+        <section class="bottom-0 bg-white w-full  fixed xl:hidden shadow-[1px_-5px_5px_-5px_rgba(99,99,99,0.75)] z-50">
+            <div class="flex justify-between py-3 gap-5 px-[10px] m-auto md:w-[90%] xl:w-[80%]">
+                    <span class="text-[#8B96A5] flex flex-col justify-center items-center p-16px">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M10 10C12.7625 10 15 7.7625 15 5C15 2.2375 12.7625 0 10 0C7.2375 0 5 2.2375 5 5C5 7.7625 7.2375 10 10 10ZM10 11.5C6.6625 11.5 0 13.175 0 16.5V17.75C0 18.4375 0.5625 19 1.25 19H18.75C19.4375 19 20 18.4375 20 17.75V16.5C20 13.175 13.3375 11.5 10 11.5Z"
+                                fill="#8B96A5" />
+                        </svg>
+                        Profile
+                    </span>
+                    <span class="text-[#8B96A5] flex flex-col justify-center items-center p-16px">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M18 0H2C0.9 0 0.01 0.9 0.01 2L0 20L4 16H18C19.1 16 20 15.1 20 14V2C20 0.9 19.1 0 18 0ZM5 7H15C15.55 7 16 7.45 16 8C16 8.55 15.55 9 15 9H5C4.45 9 4 8.55 4 8C4 7.45 4.45 7 5 7ZM11 12H5C4.45 12 4 11.55 4 11C4 10.45 4.45 10 5 10H11C11.55 10 12 10.45 12 11C12 11.55 11.55 12 11 12ZM15 6H5C4.45 6 4 5.55 4 5C4 4.45 4.45 4 5 4H15C15.55 4 16 4.45 16 5C16 5.55 15.55 6 15 6Z"
+                                fill="#8B96A5" />
+                        </svg>Message
+                    </span>
+                    <span class="text-[#8B96A5] flex flex-col justify-center items-center p-16px">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 18" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M11.35 17.1302C10.59 17.8202 9.42003 17.8202 8.66003 17.1202L8.55003 17.0202C3.30003 12.2702 -0.129969 9.16017 3.10168e-05 5.28017C0.060031 3.58017 0.930031 1.95017 2.34003 0.990166C4.98003 -0.809834 8.24003 0.0301659 10 2.09017C11.76 0.0301659 15.02 -0.819834 17.66 0.990166C19.07 1.95017 19.94 3.58017 20 5.28017C20.14 9.16017 16.7 12.2702 11.45 17.0402L11.35 17.1302Z"
+                                fill="#8B96A5" />
+                        </svg>Orders
+                    </span>
+                    <span class="text-[#8B96A5] flex flex-col justify-center items-center p-16px">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="22" viewBox="0 0 21 21" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M6.29989 16.7997C5.14491 16.7997 4.21043 17.7447 4.21043 18.8997C4.21043 20.0546 5.14491 20.9996 6.29989 20.9996C7.45487 20.9996 8.39985 20.0546 8.39985 18.8997C8.39985 17.7447 7.45487 16.7997 6.29989 16.7997ZM0 1.04998C0 1.62747 0.472492 2.09996 1.04998 2.09996H2.09996L5.8799 10.0693L4.46242 12.6313C3.69593 14.0383 4.70392 15.7497 6.29989 15.7497H17.8497C18.4272 15.7497 18.8997 15.2772 18.8997 14.6997C18.8997 14.1223 18.4272 13.6498 17.8497 13.6498H6.29989L7.45487 11.5498H15.2772C16.0647 11.5498 16.7577 11.1193 17.1147 10.4683L20.8736 3.65394C21.2621 2.96095 20.7581 2.09996 19.9601 2.09996H4.42042L3.71693 0.598489C3.54894 0.230996 3.17094 0 2.77195 0H1.04998C0.472492 0 0 0.472492 0 1.04998ZM16.7997 16.7997C15.6447 16.7997 14.7102 17.7447 14.7102 18.8997C14.7102 20.0546 15.6447 20.9996 16.7997 20.9996C17.9547 20.9996 18.8997 20.0546 18.8997 18.8997C18.8997 17.7447 17.9547 16.7997 16.7997 16.7997Z"
+                                fill="#8B96A5" />
+                        </svg>My Cart
+                    </span>
+                </div>
+        </section>
+        <!-- First Header Starts -->
+
+        <header class="bg-white border-b-1 border-[#E0E0E0]">
+            <div class="px-[10px] m-auto md:w-[90%] xl:w-[80%] flex items-center  justify-between  bg-white py-5">
+                <a href="index.html"
+                    class="lg:hidden bg-[#0D6EFD] w-[43px] h-[43px] shadow-[8px_0px_0px_0px_rgba(13,110,253,0.21)] rounded-[10px] relative">
+                    <svg class="absolute top-[50%] left-[50%] transform translate-x-[-50%] translate-y-[-50%] "
+                        xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22" fill="none">
+                        <g opacity="0.7">
+                            <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd"
+                                d="M4.29018 7.3562H3.30965C3.25911 7.3562 3.18417 7.4265 3.18127 7.47295L2.45892 19.1476L15.9548 19.1451L15.2253 7.47295C15.2225 7.42828 15.1457 7.3562 15.0969 7.3562H14.1164V9.32145C14.1164 9.86413 13.6765 10.3041 13.1338 10.3041C12.5911 10.3041 12.1512 9.86413 12.1512 9.32145V7.3562L6.25543 7.3562V9.32145C6.25543 9.86413 5.81549 10.3041 5.27281 10.3041C4.73012 10.3041 4.29018 9.86413 4.29018 9.32145V7.3562Z"
+                                fill="white" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M9.20329 0.478271C11.9153 0.478271 14.1164 2.6796 14.1164 5.38906L15.0969 5.39138C16.1835 5.39138 17.1192 6.27035 17.1867 7.35079L17.9244 19.1539C17.9921 20.2361 17.1698 21.1133 16.0865 21.1133H2.3201C1.23739 21.1133 0.41462 20.2344 0.482148 19.1539L1.21984 7.35079C1.28748 6.26864 2.22128 5.39138 3.30964 5.39138H4.29017C4.29017 2.67813 6.49304 0.478271 9.20329 0.478271ZM12.1511 5.39149C12.1511 3.76503 10.8299 2.44362 9.20328 2.44362C7.57781 2.44362 6.25541 3.76421 6.25541 5.38917L12.1511 5.39149ZM4.29018 7.35657H3.30965C3.2591 7.35657 3.18417 7.42687 3.18126 7.47332L2.45892 19.148L15.9548 19.1455L15.2253 7.47332C15.2225 7.42864 15.1457 7.35657 15.0969 7.35657H14.1164V9.32181C14.1164 9.8645 13.6765 10.3044 13.1338 10.3044C12.5911 10.3044 12.1512 9.8645 12.1512 9.32181V7.35657L6.25542 7.35657L6.25542 9.32181C6.25542 9.8645 5.81549 10.3044 5.2728 10.3044C4.73011 10.3044 4.29018 9.8645 4.29018 9.32181V7.35657Z"
+                                fill="white" />
+                        </g>
+                    </svg>
+                    <!-- <a href="/checkout-page.html" class="absolute "></a> -->
+                </a>
+                <div class="hidden lg:flex text-[#8CB7F5] text-[32px] font-semibold  gap-3 items-center">
                     <p
                         class="bg-[#0D6EFD] w-[43px] h-[43px] shadow-[8px_0px_0px_0px_rgba(13,110,253,0.21)] rounded-[10px] relative">
                         <svg class="absolute top-[50%] left-[50%] transform translate-x-[-50%] translate-y-[-50%] "
@@ -33,18 +140,31 @@
                     </p>Brand
                 </div>
 
-                <div class="border-2 border-[#0D6EFD] rounded-[6px] w-[55%] flex">
-                    <input type="search" placeholder="Search"
+                <div class="border-2 border-[#0D6EFD] rounded-[6px] w-[80%] xl:w-[55%] flex">
+                    <input type="search" id="search-box" name="search" placeholder="Clothes"
                         class=" px-2.5 py-2 border-r-1 border-r-[#0D6EFD] w-full focus:outline-0">
+<span class="custom-select relative before:absolute before:w-[20px] before:h-[20px] before:top-2 before:right-0 before:content-[url('/img/expand_more.svg')] before:z-[-1] hidden xl:block pl-2.5">
 
-                    <select name="" id="" class="focus:outline-0 px-2.5 py-2 mr-2.5">
-                        <option value="All Category" class="focus:outline-0">All Category</option>
-                        <option value="All Category">All Category</option>
-                    </select>
-                    <button class="btn-gradient text-white px-8 py-2 font-medium">Search</button>
+    <select name="categories" id="categories"
+    class="focus:outline-0 px-2.5 py-2 mr-2.5 hidden xl:block h-[100%]">
+    <option value="All Category" class="focus:outline-0">All Category</option>
+    <option value="All Category">All Category</option>
+</select>
+</span>
+                    <button class="hidden md:block btn-gradient text-white px-2.5  sm:px-8 py-2 font-medium">Search
+                    </button>
+
+                    <svg class="md:hidden self-center btn-gradient h-[100%] py-3 text-white  font-medium"
+                        xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="25" viewBox="0 0 50 50">
+                        <path
+                            d="M 21 3 C 11.6 3 4 10.6 4 20 C 4 29.4 11.6 37 21 37 C 24.354553 37 27.47104 36.01984 30.103516 34.347656 L 42.378906 46.621094 L 46.621094 42.378906 L 34.523438 30.279297 C 36.695733 27.423994 38 23.870646 38 20 C 38 10.6 30.4 3 21 3 z M 21 7 C 28.2 7 34 12.8 34 20 C 34 27.2 28.2 33 21 33 C 13.8 33 8 27.2 8 20 C 8 12.8 13.8 7 21 7 z"
+                            fill="white"></path>
+                    </svg>
                 </div>
 
-                <div class="flex gap-5">
+
+
+                <div class="hidden xl:flex gap-5">
                     <span class="text-[#8B96A5] flex flex-col justify-center items-center">
 
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
@@ -77,41 +197,92 @@
                     </span>
                 </div>
             </div>
-        </header> -->
+        </header>
         <!-- First Header Ends -->
 
         <!-- Navbar Starts -->
-        <!-- <section class="bg-white border-b-1 border-[#E0E0E0]">
-            <div class="flex justify-between bg-white mx-56 py-[17px]">
-                <ul class="flex gap-8">
-                    <li class="flex gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none">
+        <section class="bg-white border-b-1 border-[#E0E0E0]">
+            <div class="px-[10px] m-auto md:w-[90%] xl:w-[80%] flex justify-between gap-20 bg-white py-[17px]">
+                <ul class="flex gap-5 whitespace-nowrap">
+                    <span class="lg:hidden" id="hamburger" onclick="sideNav()">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M3 18H21V16H3V18ZM3 13H21V11H3V13ZM3 6V8H21V6H3Z" fill="#1C1C1C" />
-                        </svg>All category</li>
+                        </svg>
+                    </span>
+                    <li class="flex gap-2">All category</li>
+                    <li>Hot Offers</li>
+                    <li class="hidden sm:block">Gift Boes</li>
+                    <li class="hidden md:block">Projects</li>
+                    <li class="hidden sm:block">Menu Items</li>
+                    <li class="flex items-center  custom-select relative before:absolute before:w-[20px] before:h-[20px] before:top-0 before:right-0 before:content-[url('/img/expand_more.svg')] before:z-[-1]">
+                        <select name="help" id="help" class="appearance-none focus:outline-0 ">
+                                    <option value="">Help</option>
+                        </select>
+                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none">
+                            <path
+                                d="M16.59 8.29504L12 12.875L7.41 8.29504L6 9.70504L12 15.705L18 9.70504L16.59 8.29504Z"
+                                fill="#8B96A5" />
+                        </svg> -->
+                    </li>
+
+                </ul>
+
+                <ul class=" items-center gap-12 hidden lg:flex">
+                    <li class="flex gap-2 custom-select relative before:absolute before:w-[20px] before:h-[20px] before:top-0 before:right-0 before:content-[url('/img/expand_more.svg')] before:z-[-1]"><select name="help" id="help" class="appearance-none focus:outline-0">
+                            <option value="">English, USD</option>
+                        </select></li>
+
+                    <li class="flex items-center gap-3 custom-select relative before:absolute before:w-[20px] before:h-[20px] before:top-0 before:right-[32%] before:content-[url('/img/expand_more.svg')] before:z-[-1]">
+                        <select name="help" id="help" class="appearance-none focus:outline-0">
+                            <option value="">Ship To</option>
+                        </select>
+                        <img src="/img/flags/italy.svg" alt="">
+                        
+                    </li>
+                </ul>
+            </div>
+
+            <div class="hidden " id="side-nav">
+
+                <div class="px-[20px] flex flex-col justify-between gap-2 py-[17px] ">
+                    <p onclick="closeNav()" class="absolute top-0 right-0 p-5"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50">
+<path d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z"></path>
+</svg></p>
+                <ul class="flex flex-col gap-8">
+
+                    
+                    <li class="flex gap-2">All category</li>
                     <li>Hot Offers</li>
                     <li>Gift Boes</li>
                     <li>Projects</li>
                     <li>Menu Items</li>
-                    <li class="flex items-center"><select name="help" id="help" class="appearance-none focus:outline-0">
+                    <li class="flex items-center">
+                        <select name="help" id="help" class="appearance-none focus:outline-0">
                             <option value="">Help</option>
                         </select><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                             fill="none">
                             <path
                                 d="M16.59 8.29504L12 12.875L7.41 8.29504L6 9.70504L12 15.705L18 9.70504L16.59 8.29504Z"
                                 fill="#8B96A5" />
-                        </svg></li>
+                        </svg>
+                    </li>   
 
                 </ul>
 
-                <ul class="flex items-center gap-12">
-                    <li class="flex gap-2"><select name="help" id="help" class="appearance-none focus:outline-0">
+                <ul class="flex flex-col items-start gap-12">
+                    <li class="flex gap-2">
+                        <select name="language" id="language" class="appearance-none focus:outline-0 a">
                             <option value="">English, USD</option>
-                        </select><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        </select>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                             fill="none">
                             <path
                                 d="M16.59 8.29504L12 12.875L7.41 8.29504L6 9.70504L12 15.705L18 9.70504L16.59 8.29504Z"
                                 fill="#8B96A5" />
-                        </svg></li>
+                        </svg>
+                    </li>
 
                     <li class="flex items-center gap-3 ">
                         <select name="help" id="help" class="appearance-none focus:outline-0">
@@ -126,34 +297,44 @@
                     </li>
                 </ul>
             </div>
-        </section> -->
+
+                </div>
+
+
+        </section>
         <!-- Navbar Ends -->
 
 
-
-
-
-
-        <section class=" px-[20px] m-auto sm:w-[80%]">
+        <section class="px-[10px] m-auto md:w-[90%] xl:w-[80%]">
             <div
-                class="grid lg:grid-cols-[minmax(250px,_320px)_auto_minmax(200px,_250px)] border-1 light-gray-border rounded-[6px] p-5 gap-5 bg-white mt-5 mb-10">
+                class="grid lg:grid-cols-[minmax(50px,_200px)_auto_minmax(200px,_250px)] border-1 light-gray-border rounded-[6px] p-5 gap-5 bg-white mt-5 mb-7">
 
                 <div class="hidden lg:block">
-                    <ul class="flex flex-col ">
-                        <li class="bg-[#E5F1FF] rounded-[6px] text-[#1C1C1C] font-medium p-2.5">Automobiles</li>
-                        <li class=" text-[#505050] p-2.5">Clothes and wear</li>
-                        <li class=" text-[#505050] p-2.5">Home interiors</li>
-                        <li class=" text-[#505050] p-2.5">Computer and tech</li>
-                        <li class=" text-[#505050] p-2.5">Tools, equipments</li>
-                        <li class=" text-[#505050] p-2.5">Sports and outdoor</li>
-                        <li class=" text-[#505050] p-2.5">Animal and pets</li>
-                        <li class=" text-[#505050] p-2.5">Machinery tools</li>
-                        <li class=" text-[#505050] p-2.5">More category</li>
+                    <ul class="flex flex-col cursor-pointer ">
+                        <li class="hover:bg-[#E5F1FF] rounded-[6px] hover:text-[#1C1C1C] text-[#505050]  p-2.5">
+                            Automobiles</li>
+                        <li class="hover:bg-[#E5F1FF] rounded-[6px] hover:text-[#1C1C1C] text-[#505050] p-2.5">Clothes
+                            and wear</li>
+                        <li class="hover:bg-[#E5F1FF] rounded-[6px] hover:text-[#1C1C1C] text-[#505050] p-2.5">Home
+                            interiors</li>
+                        <li class="hover:bg-[#E5F1FF] rounded-[6px] hover:text-[#1C1C1C] text-[#505050] p-2.5">Computer
+                            and tech</li>
+                        <li class="hover:bg-[#E5F1FF] rounded-[6px] hover:text-[#1C1C1C] text-[#505050] p-2.5">Tools,
+                            equipments</li>
+                        <li class="hover:bg-[#E5F1FF] rounded-[6px] hover:text-[#1C1C1C] text-[#505050] p-2.5">Sports
+                            and outdoor</li>
+                        <li class="hover:bg-[#E5F1FF] rounded-[6px] hover:text-[#1C1C1C] text-[#505050] p-2.5">Animal
+                            and pets</li>
+                        <li class="hover:bg-[#E5F1FF] rounded-[6px] hover:text-[#1C1C1C] text-[#505050] p-2.5">Machinery
+                            tools</li>
+                        <li class="hover:bg-[#E5F1FF] rounded-[6px] hover:text-[#1C1C1C] text-[#505050] p-2.5">More
+                            category</li>
                     </ul>
                 </div>
 
                 <div class=" relative">
-                    <img src="/img/banner-img.png" alt="" class="object-cover w-full">
+                    <img src="/img/banner-img.png" alt="" class="object-cover w-full h-[100%] max-h-[400px]" width="100px"
+                        height="100px">
                     <div class="absolute top-0 left-0 p-[5%]  ">
 
                         <p class="heading-1 font-normal">Latest Trending</p>
@@ -164,10 +345,10 @@
 
                 <div class="grid grid-cols-2 lg:flex lg:flex-col gap-2.5">
 
-                    <div class="bg-[#E3F0FF] rounded-[6px] grid col-span-2 lg:col-auto p-5 gap-2.5">
+                    <div class="bg-[#E3F0FF] rounded-[6px] grid col-span-2 lg:col-auto p-[5%] gap-2.5">
                         <div class="flex gap-2 items-center">
 
-                            <img src="/img/user-icon.svg" alt="user-icon" width="50px" height="50px">
+                            <img src="/img/Avatar.svg" alt="user-icon" width="50px" height="50px">
                             <p class="text-[#1C1C1C]">Hi, User let's get started</p>
                         </div>
                         <button class="btn-gradient text-white  font-medium col-span-2 rounded-[6px] px-2.5 py-1.5">Join
@@ -177,9 +358,13 @@
                             In</button>
                     </div>
 
-                    <p class="bg-[#F38332] rounded-[6px] p-[10%] text-white">Get US $10 off <br>with a new <br>supplier</p>
+                    <p class="bg-[#F38332] rounded-[6px] px-[10%] py-[5%] text-white">Get US $10 off <br>with a new
+                        <br>supplier
+                    </p>
 
-                    <p class="bg-[#55BDC3] rounded-[6px] p-[10%] text-white">Send quotes with <br> supplier <br> preferences
+                    <p class="bg-[#55BDC3] rounded-[6px] px-[10%] py-[5%] text-white">Send quotes with <br> supplier
+                        <br>
+                        preferences
                     </p>
                 </div>
 
@@ -189,11 +374,12 @@
         <!-- Banner Section Ends  -->
 
         <!-- Deals & Offers Section Starts -->
-        <section class=" px-[20px] m-auto sm:w-[80%]">
+        <section class="px-[10px] m-auto md:w-[90%] xl:w-[80%]">
             <div
-                class=" grid  grid-cols-2  sm:grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))]  border-1 light-gray-border rounded-[6px]  mt-5 bg-white my-10">
+                class=" grid  grid-cols-2  sm:grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))]  border-1 light-gray-border rounded-[6px]  bg-white my-5">
 
-                <div class="border-r-gray-300 border-r-1 border-b-1 border-b-gray-300 xl:border-b-0  p-5 row-start-1 row-end-2 col-span-2 ">
+                <div
+                    class="border-r-gray-300 border-r-1 border-b-1 border-b-gray-300 xl:border-b-0  p-5 row-start-1 row-end-2 col-span-2 ">
                     <p class="primary-black font-semibold text-[20px]">Deals and offers</p>
                     <p class="text-[#8B96A5]">Hygiene equipments</p>
                     <div class="flex gap-1.5 mt-[20px]">
@@ -208,39 +394,48 @@
                     </div>
                 </div>
 
-                <div class="border-r-gray-300 border-r-1 border-b-1 xl:border-b-0 border-b-gray-300 p-5 text-center flex flex-col gap-2 items-center">
-                    <img src="/img/product images/Image/tech/digital-watch.svg" alt="" height="200px" width="200px">
+                <div
+                    class="border-r-gray-300 border-r-1 border-b-1 2xl:border-b-0 border-b-gray-300 p-5 text-center flex flex-col gap-2 items-center">
+                    <img src="/img/digital-watch.png" alt="" height="150px" width="150px"
+                        class="w-[150px] h-[100%] object-contain ">
                     <p>Smart watches</p>
                     <p class="text-[#EB001B] bg-[#FFE3E3] px-[13px] py-[4px] w-fit m-auto rounded-[29px]">-25%</p>
 
                 </div>
 
-                <div class="border-r-gray-300 border-r-1 border-b-1 xl:border-b-0 border-b-gray-300 p-5 text-center flex flex-col gap-2 items-center">
-                    <img src="/img/product images/Image/tech/laptop.svg" alt="" height="200px" width="200px">
+                <div
+                    class="border-r-gray-300 border-r-1 border-b-1 2xl:border-b-0 border-b-gray-300 p-5 text-center flex flex-col gap-2 items-center">
+                    <img src="/img/laptop.png" alt="" height="200px" width="200px"
+                        class="w-[200px] h-[100%] object-contain">
                     <p>Smart watches</p>
                     <p class="text-[#EB001B] bg-[#FFE3E3] px-[13px] py-[4px] w-fit m-auto rounded-[29px]">-25%</p>
 
                 </div>
 
-                <div class="border-r-gray-300 border-r-1 border-b-1 xl:border-b-0 border-b-gray-300 p-5 text-center flex flex-col gap-2 items-center">
-                    <img src="/img/product images/Image/tech/camera.svg" alt="" height="200px" width="200px">
+                <div
+                    class="border-r-gray-300 border-r-1 border-b-1 2xl:border-b-0 border-b-gray-300 p-5 text-center flex flex-col gap-2 items-center">
+                    <img src="/img/camera.png" alt="" height="200px" width="200px"
+                        class="w-[200px] h-[100%] object-contain">
                     <p>Smart watches</p>
                     <p class="text-[#EB001B] bg-[#FFE3E3] px-[13px] py-[4px] w-fit m-auto rounded-[29px]">-25%</p>
 
                 </div>
 
-                <div class="border-r-gray-300 border-r-1 border-b-1 xl:border-b-0 border-b-gray-300 p-5 text-center flex flex-col gap-2 items-center">
-                    <img src="/img/product images/Image/tech/black-headphone.svg" alt="" height="200px" width="200px">
+                <div
+                    class="border-r-gray-300 border-r-1 border-b-1 border-t-0 lg:border-t-1 lg:border-t-gray-300 2xl:border-b-0 border-b-gray-300 p-5 text-center flex flex-col gap-2 items-center">
+                    <img src="/img/blue-headphone.png" alt="" height="200px" width="200px"
+                        class="w-[200px] h-[100%] object-contain">
                     <p>Smart watches</p>
                     <p class="text-[#EB001B] bg-[#FFE3E3] px-[13px] py-[4px] w-fit m-auto rounded-[29px]">-25%</p>
 
                 </div>
 
-                <div class=" border-r-gray-300 border-r-1 xl:border-r-0 p-5 text-center flex flex-col gap-2 items-center">
-                    <img src="/img/product images/Image/tech/two-coloured-mobile.svg" alt="" height="200px"
-                        width="200px">
+                <div
+                    class=" border-r-gray-300 border-r-1 2xl:border-r-0 border-t-0 md:border-t-1 md:border-t-gray-300 2xl:border-t-0 p-5 text-center flex flex-col gap-2 items-center">
+                    <img src="/img/two-coloured-mobile.png" alt="" height="200px" width="200px"
+                        class=" w-[200px] h-[100%] object-contain">
                     <p>Smart watches</p>
-                    <p class="text-[#EB001B] bg-[#FFE3E3] px-[13px] py-[4px] w-fit m-auto rounded-[29px]">-25%</p>
+                    <p class="text-[orange] bg-[#FFE3E3] px-[13px] py-[4px] w-fit m-auto rounded-[29px]">-25%</p>
                 </div>
             </div>
 
@@ -250,168 +445,174 @@
 
         <!-- Home & Outdoor Section Starts -->
 
-        <section class="px-[20px] m-auto sm:w-[80%] ">
+        <section class="px-[10px] m-auto md:w-[90%] xl:w-[80%]">
+            <!-- <img src="/img/gadget-banner.png" alt=""> -->
 
             <div
-                class="grid  grid-cols-2  sm:grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] border-1 light-gray-border rounded-[6px] my-10 bg-white">
+                class="grid  grid-cols-2  sm:grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] border-1 light-gray-border rounded-[6px] my-5 bg-white">
 
 
                 <div
-                    class="border-r-gray-300 border-r-1 p-5 bg-[url(/img/home-outdoor-bg.svg)] bg-cover row-start-1 row-end-3 col-span-2">
-                    <p class="primary-black font-semibold text-[20px]">Home and <br> Outdoor</p>
+                    class="border-r-gray-300 border-r-1 p-5 bg-[url(/img/home-banner.jpg)] bg-cover row-start-1 row-end-3 col-span-2">
+                    <p class="primary-black font-semibold form-text">Home and <br> Outdoor</p>
                     <button class="bg-[#FFFFFF] px-5 py-2 rounded-[6px] text-[#1C1C1C] mt-2.5">Source Now</button>
                 </div>
 
                 <div class="border-r-gray-300 border-r-1 border-b-1 border-b-gray-300 grid grid-cols-2 p-5">
-                    <p class="col-span-2 primary-black">Soft Chairs</p>
+                    <p class="col-span-2 primary-black line-clamp-1">Soft Chairs</p>
                     <p class="text-[#8B96A5] text-[13px]">From <br> USD 19</p>
-                    <img src="/img/product images/Image/interior/cream-chair.svg" alt="" height="100px" width="100px"
-                        class="justify-self-end">
+                    <img src="/img/cream-chair.png" alt="" height="100px" width="100px" class="justify-self-end">
+                </div>
+
+
+                <div class="2xl:border-r-gray-300 2xl:border-r-1 border-b-1 border-b-gray-300 grid grid-cols-2 p-5">
+
+                    <p class="col-span-2 primary-black line-clamp-1">Lamps</p>
+                    <p class="text-[#8B96A5] text-[13px]">From <br> USD 19</p>
+                    <img src="/img/lamp.png" alt="" height="100px" width="100px">
                 </div>
 
 
                 <div class="border-r-gray-300 border-r-1 border-b-1 border-b-gray-300 grid grid-cols-2 p-5">
 
-                    <p class="col-span-2 primary-black">Lamps</p>
+                    <p class="col-span-2 primary-black line-clamp-1">Mattresses</p>
                     <p class="text-[#8B96A5] text-[13px]">From <br> USD 19</p>
-                    <img src="/img/product images/Image/interior/lamp.svg" alt="" height="100px" width="100px">
+                    <img src="/img/mattress.png" alt="" height="100px" width="100px">
                 </div>
 
 
-                <div class="border-r-gray-300 border-r-1 border-b-1 border-b-gray-300 grid grid-cols-2 p-5">
+                <div class="lg:border-r-gray-300 lg:border-r-1 border-b-1 border-b-gray-300 grid grid-cols-2 p-5">
 
-                    <p class="col-span-2 primary-black">Mattresses</p>
+                    <p class="col-span-2 primary-black line-clamp-1">Pots</p>
                     <p class="text-[#8B96A5] text-[13px]">From <br> USD 19</p>
-                    <img src="/img/product images/Image/interior/mattress.svg" alt="" height="100px" width="100px">
+                    <img src="/img/pot.png" alt="" height="100px" width="100px">
                 </div>
 
 
-                <div class=" border-b-1 border-b-gray-300 grid grid-cols-2 p-5">
+                <div
+                    class="border-r-gray-300 border-r-1 border-b-1 border-b-gray-300 xl:border-b-0 grid grid-cols-2 p-5">
 
-                    <p class="col-span-2 primary-black">Pots</p>
+                    <p class="col-span-2 primary-black line-clamp-1">Kitchen Appliances</p>
                     <p class="text-[#8B96A5] text-[13px]">From <br> USD 19</p>
-                    <img src="/img/product images/Image/interior/brown-pot.svg" alt="" height="100px" width="100px">
+                    <img src="/img/juicer.png" alt="" height="100px" width="100px">
                 </div>
 
 
-                <div class="border-r-gray-300 border-r-1  grid grid-cols-2 p-5">
+                <div
+                    class="lg:border-r-gray-300 lg:border-r-1 border-b-1 border-b-gray-300 lg:border-b-0 grid grid-cols-2 p-5">
 
-                    <p class="col-span-2 primary-black">Kitchen Appliances</p>
+                    <p class="col-span-2 primary-black line-clamp-1">Blenders</p>
                     <p class="text-[#8B96A5] text-[13px]">From <br> USD 19</p>
-                    <img src="/img/product images/Image/interior/juicer.svg" alt="" height="100px" width="100px">
-                </div>
-
-
-                <div class="border-r-gray-300 border-r-1  grid grid-cols-2 p-5">
-
-                    <p class="col-span-2 primary-black">Blenders</p>
-                    <p class="text-[#8B96A5] text-[13px]">From <br> USD 19</p>
-                    <img src="/img/product images/Image/interior/coffee-make.svg" alt="" height="100px" width="100px">
+                    <img src="/img/coffee-maker.png" alt="" height="100px" width="100px">
                 </div>
 
 
                 <div class="border-r-gray-300 border-r-1  grid grid-cols-2 p-5">
 
-                    <p class="col-span-2 primary-black">Home Appliances</p>
+                    <p class="col-span-2 primary-black line-clamp-1">Home Appliances </p>
                     <p class="text-[#8B96A5] text-[13px]">From <br> USD 19</p>
-                    <img src="/img/product images/Image/interior/home-appliance.svg" alt="" height="100px"
-                        width="100px">
+                    <img src="/img/yellow-chair.png" alt="" height="100px" width="100px">
                 </div>
 
 
                 <div class=" grid grid-cols-2 p-5">
 
-                    <p class="col-span-2 primary-black">Plants</p>
+                    <p class="col-span-2 primary-black line-clamp-1">Plants</p>
                     <p class="text-[#8B96A5] text-[13px]">From <br> USD 19</p>
-                    <img src="/img/product images/Image/interior/small-plant-pot.svg" alt="" height="100px"
-                        width="100px">
+                    <img src="/img/small-plant.png" alt="" height="100px" width="100px">
                 </div>
             </div>
         </section>
         <!-- Home & Outdoor Section Ends -->
 
         <!-- Consumer Electronics Section Starts -->
-
-        <section class="px-[20px] m-auto sm:w-[80%] ">
+        <section class="px-[10px] m-auto md:w-[90%] xl:w-[80%]">
             <div
-                class="grid  sm:grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))] grid-cols-2  border-1 light-gray-border rounded-[6px] my-10 bg-white">
+                class="grid  sm:grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))] grid-cols-2  border-1 light-gray-border rounded-[6px] my-5 bg-white">
 
                 <div
-                    class="border-r-gray-300 border-r-1 p-5 bg-[url(/img/electronic-bg.svg)] bg-cover row-start-1 row-end-3 col-span-2">
-                    <p class="primary-black font-semibold text-[20px]">Consumer <br>electronics and <br>gadgets</p>
+                    class="border-r-gray-300 border-r-1 p-5 bg-[url(/img/gadget-banner.png)] bg-cover bg-center row-start-1 row-end-3 col-span-2">
+                    <p class="primary-black font-semibold form-text">Consumer <br>electronics and <br>gadgets</p>
                     <button class="bg-[#FFFFFF] px-5 py-2 rounded-[6px] text-[#1C1C1C] mt-2.5">Source Now</button>
                 </div>
 
                 <div class="border-r-gray-300 border-r-1 border-b-1 border-b-gray-300 grid grid-cols-2 p-5">
-                    <p class="col-span-2 primary-black">Soft Chairs</p>
+                    <p class="col-span-2 primary-black line-clamp-1">Soft Chairs</p>
                     <p class="text-[#8B96A5] text-[13px]">From <br> USD 19</p>
-                    <img src="/img/product images/Image/interior/cream-chair.svg" alt="" height="100px" width="100px"
-                        class="justify-self-end">
+                    <img src="/img/digital-watch.png" alt="" height="100px" width="100px"
+                        class="justify-self-end w-[100px] h-[100%] object-contain">
                 </div>
 
 
                 <div class="border-r-gray-300 border-r-1 border-b-1 border-b-gray-300 grid grid-cols-2 p-5">
 
-                    <p class="col-span-2 primary-black">Lamps</p>
+                    <p class="col-span-2 primary-black line-clamp-1">Lamps</p>
                     <p class="text-[#8B96A5] text-[13px]">From <br> USD 19</p>
-                    <img src="/img/product images/Image/interior/lamp.svg" alt="" height="100px" width="100px">
+                    <img src="/img/camera.png" alt="" height="100px" width="100px"
+                        class="justify-self-end w-[100px] h-[100%] object-contain">
                 </div>
 
 
                 <div class="border-r-gray-300 border-r-1 border-b-1 border-b-gray-300 grid grid-cols-2 p-5">
 
-                    <p class="col-span-2 primary-black">Mattresses</p>
+                    <p class="col-span-2 primary-black line-clamp-1">Mattresses</p>
                     <p class="text-[#8B96A5] text-[13px]">From <br> USD 19</p>
-                    <img src="/img/product images/Image/interior/mattress.svg" alt="" height="100px" width="100px">
+                    <img src="/img/white-headphone.png" alt="" height="100px" width="100px"
+                        class="justify-self-end w-[100px] h-[100%] object-contain">
                 </div>
 
 
-                <div class=" border-b-1 border-b-gray-300 grid grid-cols-2 p-5">
+                <div class="lg:border-r-gray-300 lg:border-r-1 border-b-1 border-b-gray-300 grid grid-cols-2 p-5">
 
-                    <p class="col-span-2 primary-black">Pots</p>
+                    <p class="col-span-2 primary-black line-clamp-1">Pots</p>
                     <p class="text-[#8B96A5] text-[13px]">From <br> USD 19</p>
-                    <img src="/img/product images/Image/interior/brown-pot.svg" alt="" height="100px" width="100px">
+                    <img src="/img/kettle.png" alt="" height="100px" width="100px"
+                        class="justify-self-end w-[100px] h-[100%] object-contain">
+                </div>
+
+
+                <div
+                    class="border-r-gray-300 border-r-1 border-b-1 border-b-gray-300 xl:border-b-0  grid grid-cols-2 p-5">
+
+                    <p class="col-span-2 primary-black line-clamp-1">Kitchen Appliances</p>
+                    <p class="text-[#8B96A5] text-[13px]">From <br> USD 19</p>
+                    <img src="/img/blue-headphone.png" alt="" height="100px" width="100px"
+                        class="justify-self-end w-[100px] h-[100%] object-contain">
+                </div>
+
+
+                <div
+                    class="lg:border-r-gray-300 lg:border-r-1 border-b-1 border-b-gray-300 lg:border-b-0  grid grid-cols-2 p-5">
+
+                    <p class="col-span-2 primary-black line-clamp-1">Blenders</p>
+                    <p class="text-[#8B96A5] text-[13px]">From <br> USD 19</p>
+                    <img src="/img/laptop.png" alt="" height="100px" width="100px"
+                        class="justify-self-end w-[100px] h-[100%] object-contain">
                 </div>
 
 
                 <div class="border-r-gray-300 border-r-1  grid grid-cols-2 p-5">
 
-                    <p class="col-span-2 primary-black">Kitchen Appliances</p>
+                    <p class="col-span-2 primary-black line-clamp-1">Home Appliances</p>
                     <p class="text-[#8B96A5] text-[13px]">From <br> USD 19</p>
-                    <img src="/img/product images/Image/interior/juicer.svg" alt="" height="100px" width="100px">
-                </div>
-
-
-                <div class="border-r-gray-300 border-r-1  grid grid-cols-2 p-5">
-
-                    <p class="col-span-2 primary-black">Blenders</p>
-                    <p class="text-[#8B96A5] text-[13px]">From <br> USD 19</p>
-                    <img src="/img/product images/Image/interior/coffee-make.svg" alt="" height="100px" width="100px">
-                </div>
-
-
-                <div class="border-r-gray-300 border-r-1  grid grid-cols-2 p-5">
-
-                    <p class="col-span-2 primary-black">Home Appliances</p>
-                    <p class="text-[#8B96A5] text-[13px]">From <br> USD 19</p>
-                    <img src="/img/product images/Image/interior/home-appliance.svg" alt="" height="100px"
-                        width="100px">
+                    <img src="/img/tablet.png" alt="" height="100px" width="100px"
+                        class="justify-self-end w-[100px] h-[100%] object-contain">
                 </div>
 
 
                 <div class=" grid grid-cols-2 p-5">
 
-                    <p class="col-span-2 primary-black">Plants</p>
+                    <p class="col-span-2 primary-black line-clamp-1">Plants</p>
                     <p class="text-[#8B96A5] text-[13px]">From <br> USD 19</p>
-                    <img src="/img/product images/Image/interior/small-plant-pot.svg" alt="" height="100px"
-                        width="100px">
+                    <img src="/img/red-phone.png" alt="" height="100px" width="100px"
+                        class="justify-self-end w-[100px] h-[100%] object-contain">
                 </div>
             </div>
         </section>
         <!-- Consumer Electronics Section Ends -->
 
         <!-- Blue Form Section Starts -->
-        <section class=" px-[20px] m-auto sm:w-[80%]">
+        <section class="px-[10px] m-auto md:w-[90%] xl:w-[80%]">
             <div class="rounded-[6px]  bg-img-overlay p-5 flex flex-col lg:flex-row justify-between relative ">
 
                 <div class="overlay"></div>
@@ -446,7 +647,7 @@
                         placeholder="Quantity">
 
                     <div
-                        class="border-1 light-gray-border rounded-[6px] py-2.5 pl-2.5 pr-2 w-fit flex items-center gap-7">
+                        class="border-1 light-gray-border rounded-[6px] py-2.5 pl-2.5 pr-2 w-full flex items-center gap-7 custom-select relative before:absolute before:w-[20px] before:h-[20px] before:top-[20%] before:right-[5%] before:content-[url('/img/expand_more.svg')] before:z-[-1]">
 
                         <select name="pieces" id="pieces" class="appearance-none focus:outline-0 ">
                             <option value="1">Pcs</option>
@@ -454,11 +655,7 @@
                             <option value="3">3</option>
                             <option value="4">4</option>
                         </select>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path
-                                d="M16.59 8.29501L12 12.875L7.41 8.29501L6 9.70501L12 15.705L18 9.70501L16.59 8.29501Z"
-                                fill="#8B96A5" />
-                        </svg>
+                        
                     </div>
 
                     <button class="btn-gradient text-white col-span-2 sm:col-auto w-fit rounded-[6px] px-4 py-2">Send
@@ -473,147 +670,193 @@
 
         <!-- Recommended Items Section Starts -->
 
-        <section class="px-[20px] m-auto sm:w-[80%]">
-            <p class="text-[24px] font-semibold mt-5 mb-5">Recommended Items</p>
-            <div class="grid  grid-cols-[repeat(auto-fill,_minmax(200px,_1fr))]  gap-5 bg-[#F7FAFC] ">
+    <section class="px-[10px] m-auto md:w-[90%] xl:w-[80%]">
 
-                <div class="border-gray-300 border-1 p-5 flex flex-col gap-2 rounded-[6px] bg-white">
-                    <img src="/img/product images/Image/cloth/blue-t-shirt.svg" alt="" height="200px" width="200px"
-                        class="self-center">
+             <p class="text-[24px] font-semibold mt-5 mb-5">Recommended Items</p>
+             <div class="">
+                 
+                 <div class="swiper mySwiper grid  grid-cols-[repeat(auto-fill,_minmax(200px,_1fr))]">
+                     <div class="swiper-wrapper">
+                         <div class="swiper-slide"> 
+                        <div class="border-gray-300 border-1 p-[2%] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white">
+                            <img src="/img/grey-t-shirt.png" alt="" height="200px" width="200px"
+                            class="self-center min-w-[100px] h-[auto] object-contain">
                     <p class="font-medium">$10.30</p>
-                    <p class="text-light-gray">T-shirts with multiple colors, for men</p>
-                </div>
-
-
-                <div class="border-gray-300 border-1 p-5 flex flex-col gap-2 rounded-[6px] bg-white">
-
-                    <img src="/img/product images/Image/cloth/brown-jacket.svg" alt="" height="200px" width="200px"
-                        class="self-center">
-                    <p class="font-medium">$10.30</p>
-                    <p class="text-light-gray">T-shirts with multiple colors, for men</p>
-
-                </div>
-
-
-                <div class="border-gray-300 border-1 p-5 flex flex-col gap-2 rounded-[6px] bg-white">
-
-                    <img src="/img/product images/Image/cloth/navy-blue-blazer.svg" alt="" height="200px" width="200px"
-                        class="self-center">
-                    <p class="font-medium">$10.30</p>
-                    <p class="text-light-gray">T-shirts with multiple colors, for men</p>
-
-                </div>
-
-
-                <div class="border-gray-300 border-1 p-5 flex flex-col gap-2 rounded-[6px] bg-white">
-
-                    <img src="/img/product images/Image/cloth/blue-wallet.svg" alt="" height="200px" width="200px"
-                        class="self-center">
-                    <p class="font-medium">$10.30</p>
-                    <p class="text-light-gray">T-shirts with multiple colors, for men</p>
-
-                </div>
-
-
-                <div class="border-gray-300 border-1 p-5 flex flex-col gap-2 rounded-[6px] bg-white">
-
-                    <img src="/img/product images/Image/cloth/denim-bag.svg" alt="" height="200px" width="200px"
-                        class="self-center">
-                    <p class="font-medium">$10.30</p>
-                    <p class="text-light-gray">T-shirts with multiple colors, for men</p>
-
-                </div>
-
-
-                <div class="border-gray-300 border-1 p-5 flex flex-col gap-2 rounded-[6px] bg-white">
-
-                    <img src="/img/product images/Image/cloth/denim-shorts.svg" alt="" height="200px" width="200px"
-                        class="self-center">
-                    <p class="font-medium">$10.30</p>
-                    <p class="text-light-gray">T-shirts with multiple colors, for men</p>
-
-                </div>
-
-
-                <div class="border-gray-300 border-1 p-5 flex flex-col gap-2 rounded-[6px] bg-white">
-
-                    <img src="/img/product images/Image/tech/white-headphone.svg" alt="" height="200px" width="200px"
-                        class="self-center">
-                    <p class="font-medium">$10.30</p>
-                    <p class="text-light-gray">T-shirts with multiple colors, for men</p>
-
-                </div>
-
-                <div class="border-gray-300 border-1 p-5 flex flex-col gap-2 rounded-[6px] bg-white">
-
-                    <img src="/img/product images/Image/cloth/denim-bag.svg" alt="" height="200px" width="200px"
-                        class="self-center">
-                    <p class="font-medium">$10.30</p>
-                    <p class="text-light-gray">T-shirts with multiple colors, for men</p>
-
-                </div>
-
-
-                <div class="border-gray-300 border-1 p-5 flex flex-col gap-2 rounded-[6px] bg-white">
-
-                    <img src="/img/product images/Image/interior/brown-pot.svg" alt="" height="200px" width="200px"
-                        class="self-center">
-                    <p class="font-medium">$10.30</p>
-                    <p class="text-light-gray">T-shirts with multiple colors, for men</p>
-
-                </div>
-
-
-                <div class="border-gray-300 border-1 p-5 flex flex-col gap-2 rounded-[6px] bg-white">
-                    <img src="/img/product images/Image/tech/kettle.svg" alt="" height="200px" width="200px"
-                        class="self-center">
-                    <p class="font-medium">$10.30</p>
-                    <p class="text-light-gray">T-shirts with multiple colors, for men</p>
+                    <p class="text-light-gray p-16px line-clamp-2">T-shirts with multiple colors, for men</p>
                 </div>
             </div>
-        </section>
+            <div class="swiper-slide"> <div class="border-gray-300 border-1 p-[2%] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white">
+
+                <img src="/img/brown-jacket.png" alt="brown jacket" height="200px" width="200px"
+                class="self-center min-w-[100px] h-[auto] object-contain">
+                    <p class="font-medium">$10.30</p>
+                    <p class="text-light-gray p-16px line-clamp-2">T-shirts with multiple colors, for men</p>
+
+                </div></div>
+                <div class="swiper-slide"> <div class="border-gray-300 border-1 p-[2%] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white">
+                    
+                    <img src="/img/tuxedo.png" alt="" height="200px" width="200px"
+                    class="self-center min-w-[100px] h-[auto] object-contain">
+                    <p class="font-medium">$10.30</p>
+                    <p class="text-light-gray p-16px line-clamp-2">T-shirts with multiple colors, for men</p>
+
+                </div></div>
+                <div class="swiper-slide"> <div class="border-gray-300 border-1 p-[2%] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white">
+
+                    <img src="/img/wallet.png" alt="" height="200px" width="200px"
+                        class="self-center min-w-[100px] h-[auto] object-contain">
+                    <p class="font-medium">$10.30</p>
+                    <p class="text-light-gray p-16px line-clamp-2">T-shirts with multiple colors, for men</p>
+
+                </div></div>
+                     <div class="swiper-slide"> <div class="border-gray-300 border-1 p-[2%] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white">
+
+                    <img src="/img/denim-bag.png" alt="" height="200px" width="200px"
+                        class="self-center min-w-[100px] h-[auto] object-contain">
+                    <p class="font-medium">$10.30</p>
+                    <p class="text-light-gray p-16px line-clamp-2">T-shirts with multiple colors, for men</p>
+
+                </div></div>
+                     <div class="swiper-slide"><div class="border-gray-300 border-1 p-[2%] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white">
+
+                    <img src="/img/shorts.png" alt="" height="200px" width="200px"
+                        class="self-center min-w-[100px] h-[auto] object-contain">
+                    <p class="font-medium">$10.30</p>
+                    <p class="text-light-gray p-16px line-clamp-2">T-shirts with multiple colors, for men</p>
+
+                </div></div>
+                     <div class="swiper-slide"> <div class="border-gray-300 border-1 p-[2%] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white">
+
+                    <img src="/img/denim-bag.png" alt="" height="200px" width="200px"
+                        class="self-center min-w-[100px] h-[auto] object-contain">
+                    <p class="font-medium">$10.30</p>
+                    <p class="text-light-gray p-16px line-clamp-2">T-shirts with multiple colors, for men</p>
+
+                </div></div>
+                     <div class="swiper-slide"><div class="border-gray-300 border-1 p-[2%] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white">
+
+                    <img src="/img/pot.png" alt="" height="200px" width="200px"
+                        class="self-center min-w-[100px] h-[auto] object-contain">
+                    <p class="font-medium">$10.30</p>
+                    <p class="text-light-gray p-16px line-clamp-2">T-shirts with multiple colors, for men</p>
+
+                </div></div>
+                     <div class="swiper-slide"><div class="border-gray-300 border-1 p-[2%] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white">
+                    <img src="/img/kettle.png" alt="" height="200px" width="200px"
+                        class="self-center min-w-[100px] h-[auto] object-contain">
+                    <p class="font-medium">$10.30</p>
+                    <p class="text-light-gray p-16px line-clamp-2">T-shirts with multiple colors, for men</p>
+                </div>
+</div>
+
+<div class="swiper-slide"><div class="border-gray-300 border-1 p-[2%] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white">
+                    <img src="/img/kettle.png" alt="" height="200px" width="200px"
+                        class="self-center min-w-[100px] h-[auto] object-contain">
+                    <p class="font-medium">$10.30</p>
+                    <p class="text-light-gray p-16px line-clamp-2">T-shirts with multiple colors, for men</p>
+                </div>
+</div>
+
+<div class="swiper-slide"><div class="border-gray-300 border-1 p-[2%] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white">
+                    <img src="/img/kettle.png" alt="" height="200px" width="200px"
+                    class="self-center min-w-[100px] h-[auto] object-contain">
+                    <p class="font-medium">$10.30</p>
+                    <p class="text-light-gray p-16px line-clamp-2">T-shirts with multiple colors, for men</p>
+                </div>
+            </div>
+            
+            <div class="swiper-slide"><div class="border-gray-300 border-1 p-[2%] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white">
+                <img src="/img/kettle.png" alt="" height="200px" width="200px"
+                class="self-center min-w-[100px] h-[auto] object-contain">
+                <p class="font-medium">$10.30</p>
+                <p class="text-light-gray p-16px line-clamp-2">T-shirts with multiple colors, for men</p>
+            </div>
+        </div>
+        
+        <div class="swiper-slide"><div class="border-gray-300 border-1 p-[2%] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white">
+            <img src="/img/kettle.png" alt="" height="200px" width="200px"
+            class="self-center min-w-[100px] h-[auto] object-contain">
+            <p class="font-medium">$10.30</p>
+            <p class="text-light-gray p-16px line-clamp-2">T-shirts with multiple colors, for men</p>
+        </div>
+    </div>
+    
+    <div class="swiper-slide"><div class="border-gray-300 border-1 p-[2%] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white">
+        <img src="/img/kettle.png" alt="" height="200px" width="200px"
+        class="self-center min-w-[100px] h-[auto] object-contain">
+        <p class="font-medium">$10.30</p>
+        <p class="text-light-gray p-16px line-clamp-2">T-shirts with multiple colors, for men</p>
+    </div>
+</div>
+
+</div>
+<div class="swiper-pagination"></div>
+</div>
+</div>
+</section>
         <!-- Recommended Items Section Ends -->
 
 
         <!-- Our extra Services Section Starts -->
 
-        <section class="px-[20px] m-auto sm:w-[80%]">
+        <section class="px-[10px] m-auto md:w-[90%] xl:w-[80%]">
             <p class="text-[24px] font-semibold mt-5 mb-5">Our extra services</p>
             <div class="grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] gap-5">
 
                 <div class="grow border-1 light-gray-border rounded-[6px] relative bg-white">
-                    <img src="/img/container.svg" alt="" width="100%" class="rounded-tr-[6px] rounded-tl-[6px]">
+                    <img src="/img/containers.png" alt="" width="200px" height="100px"
+                        class="rounded-tr-[6px] rounded-tl-[6px] w-[100%] h-[150px] object-cover">
                     <p class="p-5">Source from<br>Industry Hubs</p>
                     <button
                         class="bg-[#D1E7FF] rounded-full border-2 border-white w-[60px] h-[60px] flex items-center justify-center absolute top-[125px] right-[20px]">
-                        <img src="/img/Icon/control/search.svg" alt="" width="30px" height="30px">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M15.755 14.255H14.965L14.685 13.985C15.665 12.845 16.255 11.365 16.255 9.755C16.255 6.165 13.345 3.255 9.755 3.255C6.165 3.255 3.255 6.165 3.255 9.755C3.255 13.345 6.165 16.255 9.755 16.255C11.365 16.255 12.845 15.665 13.985 14.685L14.255 14.965V15.755L19.255 20.745L20.745 19.255L15.755 14.255ZM9.755 14.255C7.26501 14.255 5.255 12.245 5.255 9.755C5.255 7.26501 7.26501 5.255 9.755 5.255C12.245 5.255 14.255 7.26501 14.255 9.755C14.255 12.245 12.245 14.255 9.755 14.255Z"
+                                fill="#1C1C1C" />
+                        </svg>
                     </button>
                 </div>
 
                 <div class="grow border-1 light-gray-border rounded-[6px] relative bg-white">
-                    <img src="/img/colour-palette.svg" alt="" width="100%" class="rounded-tr-[6px] rounded-tl-[6px]">
+                    <img src="/img/colour-chart.png" alt="" width="200px" height="100px"
+                        class="rounded-tr-[6px] rounded-tl-[6px] w-[100%] h-[150px] object-cover">
                     <p class="p-5">Customize Your <br>Products</p>
                     <button
                         class="bg-[#D1E7FF] rounded-full border-2 border-white w-[60px] h-[60px] flex items-center justify-center absolute top-[125px] right-[20px]">
-                        <img src="/img/Icon/inventory_2.svg" alt="" width="30px" height="30px">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M20 2H4C3 2 2 2.9 2 4V7.01C2 7.73 2.43 8.35 3 8.7V20C3 21.1 4.1 22 5 22H19C19.9 22 21 21.1 21 20V8.7C21.57 8.35 22 7.73 22 7.01V4C22 2.9 21 2 20 2ZM19 20H5V9H19V20ZM20 7H4V4H20V7Z"
+                                fill="#1C1C1C" />
+                            <path d="M15 12H9V14H15V12Z" fill="#1C1C1C" />
+                        </svg>
                     </button>
                 </div>
 
                 <div class="grow border-1 light-gray-border rounded-[6px] relative bg-white">
-                    <img src="/img/aeroplane.svg" alt="" width="100%" class="rounded-tr-[6px] rounded-tl-[6px]">
+                    <img src="/img/aeroplane.png" alt="" width="200px" height="100px"
+                        class="rounded-tr-[6px] rounded-tl-[6px] w-[100%] h-[150px] object-cover">
                     <p class="p-5">Fast, reliable shipping <br>by ocean or air</p>
                     <button
                         class="bg-[#D1E7FF] rounded-full border-2 border-white w-[60px] h-[60px] flex items-center justify-center absolute top-[125px] right-[20px]">
-                        <img src="/img/Icon/control/send.svg" alt="" width="30px" height="30px">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M3.51 6.03L11.02 9.25L3.5 8.25L3.51 6.03ZM11.01 14.75L3.5 17.97V15.75L11.01 14.75ZM1.51 3L1.5 10L16.5 12L1.5 14L1.51 21L22.5 12L1.51 3Z"
+                                fill="#1C1C1C" />
+                        </svg>
                     </button>
                 </div>
 
                 <div class="grow border-1 light-gray-border rounded-[6px] relative bg-white">
-                    <img src="/img/person-working.svg" alt="" width="100%" class="rounded-tr-[6px] rounded-tl-[6px]">
+                    <img src="/img/person-working.png" alt="" width="200px" height="100px"
+                        class="rounded-tr-[6px] rounded-tl-[6px] w-[100%] h-[150px] object-cover">
                     <p class="p-5">Product monitoring <br>and inspection</p>
                     <button
                         class="bg-[#D1E7FF] rounded-full border-2 border-white w-[60px] h-[60px] flex items-center justify-center absolute top-[125px] right-[20px]">
-                        <img src="/img/Icon/security.svg" alt="" width="30px" height="30px">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1ZM12 11.99H19C18.47 16.11 15.72 19.78 12 20.93V12H5V6.3L12 3.19V11.99Z"
+                                fill="#1C1C1C" />
+                        </svg>
                     </button>
                 </div>
             </div>
@@ -623,56 +866,66 @@
 
 
         <!-- Supplier Region Section Starts -->
-        <section class="px-[20px] m-auto sm:w-[80%]">
+        <section class="px-[10px] m-auto md:w-[90%] xl:w-[80%]">
             <p class="text-[24px] font-semibold mt-5 mb-5">Suppliers By Region</p>
             <div class="grid grid-cols-[repeat(auto-fit,_minmax(150px,_1fr))] gap-5">
                 <div class="grid grid-cols-[50px_1fr]">
-                    <img src="/img/flags/arab-emirates.svg" alt="" height="40px" width="40px" class="self-center">
+                    <img src="/img/arab.png" alt="" height="40px" width="40px"
+                        class="self-center w-[40px] h-[40px] object-contain">
                     <p>Arab Emirates <span class="mt-[-2px] block text-light-gray text-[13px]">shopname.ae</span></p>
                 </div>
 
                 <div class=" grid grid-cols-[50px_1fr]">
-                    <img src="/img/flags/australia.svg" alt="" height="40px" width="40px" class="self-center">
+                    <img src="/img/australia.png" alt="" height="40px" width="40px"
+                        class="self-center w-[40px] h-[40px] object-contain">
                     <p>Australia <span class="mt-[-2px] block text-light-gray text-[13px]">shopname.ae</span></p>
                 </div>
 
                 <div class=" grid grid-cols-[50px_1fr]">
-                    <img src="/img/flags/america.svg" alt="" height="40px" width="40px" class="self-center">
+                    <img src="/img/america.png" alt="" height="40px" width="40px"
+                        class="self-center w-[40px] h-[40px] object-contain">
                     <p>United States <span class="mt-[-2px] block text-light-gray text-[13px]">shopname.ae</span></p>
                 </div>
 
                 <div class=" grid grid-cols-[50px_1fr]">
-                    <img src="/img/flags/russia.svg" alt="" height="40px" width="40px" class="self-center">
+                    <img src="/img/russia.png" alt="" height="40px" width="40px"
+                        class="self-center w-[40px] h-[40px] object-contain">
                     <p>Russia<span class="mt-[-2px] block text-light-gray text-[13px]">shopname.ae</span></p>
                 </div>
 
                 <div class=" grid grid-cols-[50px_1fr]">
-                    <img src="/img/flags/italy.svg" alt="" height="40px" width="40px" class="self-center">
+                    <img src="/img/italy.png" alt="" height="40px" width="40px"
+                        class="self-center w-[40px] h-[40px] object-contain">
                     <p>Italy<span class="mt-[-2px] block text-light-gray text-[13px]">shopname.ae</span></p>
                 </div>
 
                 <div class="grid grid-cols-[50px_1fr]">
-                    <img src="/img/flags/denmark.svg" alt="" height="40px" width="40px" class="self-center">
+                    <img src="/img/denmark.png" alt="" height="40px" width="40px"
+                        class="self-center w-[40px] h-[40px] object-contain">
                     <p>Denmark<span class="mt-[-2px] block text-light-gray text-[13px]">shopname.ae</span></p>
                 </div>
 
                 <div class=" grid grid-cols-[50px_1fr]">
-                    <img src="/img/flags/france.svg" alt="" height="40px" width="40px" class="self-center">
+                    <img src="/img/france.png" alt="" height="40px" width="40px"
+                        class="self-center w-[40px] h-[40px] object-contain">
                     <p>France<span class="mt-[-2px] block text-light-gray text-[13px]">shopname.ae</span></p>
                 </div>
 
                 <div class=" grid grid-cols-[50px_1fr]">
-                    <img src="/img/flags/arab-emirates.svg" alt="" height="40px" width="40px" class="self-center">
+                    <img src="/img/arab.png" alt="" height="40px" width="40px"
+                        class="self-center w-[40px] h-[40px] object-contain">
                     <p>Arab Emirates<span class="mt-[-2px] block text-light-gray text-[13px]">shopname.ae</span></p>
                 </div>
 
                 <div class="grid grid-cols-[50px_1fr]">
-                    <img src="/img/flags/china.svg" alt="" height="40px" width="40px" class="self-center">
+                    <img src="/img/china.png" alt="" height="40px" width="40px"
+                        class="self-center w-[40px] h-[40px] object-contain">
                     <p>China<span class="mt-[-2px] block text-light-gray text-[13px]">shopname.ae</span></p>
                 </div>
 
                 <div class=" grid grid-cols-[50px_1fr]">
-                    <img src="/img/flags/great-britain.svg" alt="" height="40px" width="40px" class="self-center">
+                    <img src="/img/britain.png" alt="" height="40px" width="40px"
+                        class="self-center w-[40px] h-[40px] object-contain">
                     <p>Great Britain<span class="mt-[-2px] block text-light-gray text-[13px]">shopname.ae</span></p>
                 </div>
             </div>
@@ -683,14 +936,16 @@
         <!-- Newsletter Section Starts -->
         <section class="bg-[#EFF2F4] ">
 
-            <div class="text-center py-10 mt-10 px-[20px] m-auto sm:w-[80%] flex flex-col sm:block">
+            <div class="text-center py-10 mt-10 px-[10px] m-auto md:w-[90%] xl:w-[80%] flex flex-col sm:block">
                 <p class="font-semibold text-[20px]">Subscribe to our newsletter</p>
                 <p class="text-[#606060] mb-5">Get daily news on upcoming offers from many suppliers all over the world
                 </p>
-                <input type="email" name="email" id="email" placeholder="Email"
-                    class="bg-white mb-2 sm:mb-0 px-10 py-1 bg-[url(/img/Icon/email.svg)] bg-no-repeat bg-position-[10px] mr-[10px] rounded-[6px]">
-                <button
-                    class="bg-[#0067FF] items-center  text-white sm:col-span-2 rounded-[6px] px-2.5 py-1">Subscribe</button>
+                <span>
+
+                    <input type="email" name="email" id="email" placeholder="Email"
+                        class="bg-white mb-2 w-[60%] sm:mb-0 pl-10 sm:px-10 py-1 bg-[url(/img/Icon/email.svg)] bg-no-repeat bg-position-[10px] mr-[10px] rounded-[6px]">
+                    <button class="bg-[#0067FF] items-center  text-white  rounded-[6px] px-2.5 py-1">Subscribe</button>
+                </span>
 
             </div>
         </section>
@@ -700,7 +955,7 @@
         <!-- Footer Section Starts -->
 
         <section class="bg-white pt-10 pb-12">
-            <footer class="flex flex-wrap gap-5 px-[20px] m-auto sm:w-[80%] justify-between">
+            <footer class="flex flex-wrap gap-5 px-[10px] m-auto md:w-[90%] xl:w-[80%] justify-between">
                 <div class="w-[100%] lg:w-[20%] flex flex-col gap-y-[15px]">
 
                     <div class="text-[#8CB7F5] text-[32px] font-semibold flex gap-3 items-center">
@@ -787,8 +1042,8 @@
                     <li class="text-[#8B96A5] mb-0.5">Settings</li>
                     <li class="text-[#8B96A5] mb-0.5">My Orders</li>
                 </ul>
-                <div class="flex flex-col gap-2.5">
-                    <p class="font-medium ">Get App</p>
+                <div class="md:flex md:flex-col grid grid-cols-2 gap-2.5">
+                    <p class="font-medium  col-span-2">Get App</p>
                     <svg xmlns="http://www.w3.org/2000/svg" width="124" height="42" viewBox="0 0 124 42" fill="none">
                         <rect width="124" height="42" rx="6" fill="#1C1C1C" />
                         <path
@@ -921,8 +1176,8 @@
             </footer>
         </section>
 
-        <section class=" bg-[#EFF2F4]">
-            <div class=" flex py-[23px] px-[20px] m-auto sm:w-[80%]">
+        <section class=" bg-[#EFF2F4] pb-[70px] xl:pb-[0px]">
+            <div class=" flex py-[23px] px-[10px] m-auto md:w-[90%] xl:w-[80%]">
                 <p class="mr-auto text-[#606060]">&copy; 2023 Ecommerce.</p>
                 <img src="/img/flags/america.svg" alt="" class="mr-2">
 
@@ -940,10 +1195,49 @@
 
         </section>
         <!-- Footer Section Ends -->
+         
+
+           
 
 
+                
+
+
+                
     </main>
     <script src="script.js"></script>
+   
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      grid: {
+        rows: 1,
+      },
+      spaceBetween: 10,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+          640: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 5,
+            spaceBetween: 20,
+          },
+        },
+    });
+  </script>
 </body>
 
 </html>

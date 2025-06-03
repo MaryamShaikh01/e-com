@@ -7,102 +7,104 @@
     <title>Home Page</title>
     <link href="./output.css" rel="stylesheet">
     <!-- <link rel="stylesheet" href="input.css"> -->
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <style>
-       .show {
+        .show {
             display: block;
             position: absolute;
             top: 0px;
             left: 0px;
             width: 70%;
             height: 100vh;
-            background-color: rgb(241, 249, 255);
+            background-color: rgb(255 255 255);
             z-index: 1000;
-            box-shadow: 9px 0px 10px -5px rgba(97,97,97,0.75);
+            box-shadow: 9px 0px 10px -5px rgba(97, 97, 97, 0.75);
         }
 
         .custom-select {
-        min-width: fit-content;
-        background-color: transparent;
-        z-index: 1;
-    }
+            min-width: fit-content;
+            background-color: transparent;
+            z-index: 1;
+        }
 
-    .custom-select select {
-        appearance: none;
-        width: 100%;
-        padding: 0px 20px 0px 0px;
-        background-color: transparent;
-        color: #000;
-        cursor: pointer;
-    }
+        .custom-select select {
+            appearance: none;
+            width: 100%;
+            padding: 0px 20px 0px 0px;
+            background-color: transparent;
+            color: #000;
+            cursor: pointer;
+        }
 
- .swiper {
-      width: 100%;
-      height: 100%;
-      margin-left: auto;
-      margin-right: auto;
-    }
+        .swiper {
+            width: 100%;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      /* background: #333; */
-      height: calc((100% - 30px) / 2) !important;
-margin-top: 0px !important;
-      /* Center slide text vertically */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .swiper-grid-column>.swiper-wrapper{
-        flex-direction: row;
-    }
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            /* background: #333; */
+            height: calc((100% - 30px) / 2) !important;
+            margin-top: 0px !important;
+            /* Center slide text vertically */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    .swiper-slide img{
-        max-width: 100%;
-    }
+        .swiper-grid-column>.swiper-wrapper {
+            flex-direction: row;
+        }
 
-
+        .swiper-slide img {
+            max-width: 100%;
+        }
     </style>
 </head>
 
 <body>
     <main class=" bg-[#F7FAFC]">
 
-        <section class="bottom-0 bg-white w-full  fixed xl:hidden shadow-[1px_-5px_5px_-5px_rgba(99,99,99,0.75)] z-50">
-            <div class="flex justify-between py-3 gap-5 px-[10px] m-auto md:w-[90%] xl:w-[80%]">
-                    <span class="text-[#8B96A5] flex flex-col justify-center items-center p-16px">
+        <div id="backdrop" class="hidden fixed top-0 left-0 w-full h-full bg-black opacity-50 z-5"></div>
 
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M10 10C12.7625 10 15 7.7625 15 5C15 2.2375 12.7625 0 10 0C7.2375 0 5 2.2375 5 5C5 7.7625 7.2375 10 10 10ZM10 11.5C6.6625 11.5 0 13.175 0 16.5V17.75C0 18.4375 0.5625 19 1.25 19H18.75C19.4375 19 20 18.4375 20 17.75V16.5C20 13.175 13.3375 11.5 10 11.5Z"
-                                fill="#8B96A5" />
-                        </svg>
-                        Profile
-                    </span>
-                    <span class="text-[#8B96A5] flex flex-col justify-center items-center p-16px">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M18 0H2C0.9 0 0.01 0.9 0.01 2L0 20L4 16H18C19.1 16 20 15.1 20 14V2C20 0.9 19.1 0 18 0ZM5 7H15C15.55 7 16 7.45 16 8C16 8.55 15.55 9 15 9H5C4.45 9 4 8.55 4 8C4 7.45 4.45 7 5 7ZM11 12H5C4.45 12 4 11.55 4 11C4 10.45 4.45 10 5 10H11C11.55 10 12 10.45 12 11C12 11.55 11.55 12 11 12ZM15 6H5C4.45 6 4 5.55 4 5C4 4.45 4.45 4 5 4H15C15.55 4 16 4.45 16 5C16 5.55 15.55 6 15 6Z"
-                                fill="#8B96A5" />
-                        </svg>Message
-                    </span>
-                    <span class="text-[#8B96A5] flex flex-col justify-center items-center p-16px">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 18" fill="none">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M11.35 17.1302C10.59 17.8202 9.42003 17.8202 8.66003 17.1202L8.55003 17.0202C3.30003 12.2702 -0.129969 9.16017 3.10168e-05 5.28017C0.060031 3.58017 0.930031 1.95017 2.34003 0.990166C4.98003 -0.809834 8.24003 0.0301659 10 2.09017C11.76 0.0301659 15.02 -0.819834 17.66 0.990166C19.07 1.95017 19.94 3.58017 20 5.28017C20.14 9.16017 16.7 12.2702 11.45 17.0402L11.35 17.1302Z"
-                                fill="#8B96A5" />
-                        </svg>Orders
-                    </span>
-                    <span class="text-[#8B96A5] flex flex-col justify-center items-center p-16px">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="22" viewBox="0 0 21 21" fill="none">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M6.29989 16.7997C5.14491 16.7997 4.21043 17.7447 4.21043 18.8997C4.21043 20.0546 5.14491 20.9996 6.29989 20.9996C7.45487 20.9996 8.39985 20.0546 8.39985 18.8997C8.39985 17.7447 7.45487 16.7997 6.29989 16.7997ZM0 1.04998C0 1.62747 0.472492 2.09996 1.04998 2.09996H2.09996L5.8799 10.0693L4.46242 12.6313C3.69593 14.0383 4.70392 15.7497 6.29989 15.7497H17.8497C18.4272 15.7497 18.8997 15.2772 18.8997 14.6997C18.8997 14.1223 18.4272 13.6498 17.8497 13.6498H6.29989L7.45487 11.5498H15.2772C16.0647 11.5498 16.7577 11.1193 17.1147 10.4683L20.8736 3.65394C21.2621 2.96095 20.7581 2.09996 19.9601 2.09996H4.42042L3.71693 0.598489C3.54894 0.230996 3.17094 0 2.77195 0H1.04998C0.472492 0 0 0.472492 0 1.04998ZM16.7997 16.7997C15.6447 16.7997 14.7102 17.7447 14.7102 18.8997C14.7102 20.0546 15.6447 20.9996 16.7997 20.9996C17.9547 20.9996 18.8997 20.0546 18.8997 18.8997C18.8997 17.7447 17.9547 16.7997 16.7997 16.7997Z"
-                                fill="#8B96A5" />
-                        </svg>My Cart
-                    </span>
-                </div>
+
+        <section class="bottom-0 bg-white w-full  fixed lg:hidden shadow-[1px_-5px_5px_-5px_rgba(99,99,99,0.75)] z-50">
+            <div class="flex justify-between py-3 gap-5 px-[10px] m-auto md:w-[90%] xl:w-[80%]">
+                <span class="text-[#8B96A5] flex flex-col justify-center items-center p-16px">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M10 10C12.7625 10 15 7.7625 15 5C15 2.2375 12.7625 0 10 0C7.2375 0 5 2.2375 5 5C5 7.7625 7.2375 10 10 10ZM10 11.5C6.6625 11.5 0 13.175 0 16.5V17.75C0 18.4375 0.5625 19 1.25 19H18.75C19.4375 19 20 18.4375 20 17.75V16.5C20 13.175 13.3375 11.5 10 11.5Z"
+                            fill="#8B96A5" />
+                    </svg>
+                    Profile
+                </span>
+                <span class="text-[#8B96A5] flex flex-col justify-center items-center p-16px">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M18 0H2C0.9 0 0.01 0.9 0.01 2L0 20L4 16H18C19.1 16 20 15.1 20 14V2C20 0.9 19.1 0 18 0ZM5 7H15C15.55 7 16 7.45 16 8C16 8.55 15.55 9 15 9H5C4.45 9 4 8.55 4 8C4 7.45 4.45 7 5 7ZM11 12H5C4.45 12 4 11.55 4 11C4 10.45 4.45 10 5 10H11C11.55 10 12 10.45 12 11C12 11.55 11.55 12 11 12ZM15 6H5C4.45 6 4 5.55 4 5C4 4.45 4.45 4 5 4H15C15.55 4 16 4.45 16 5C16 5.55 15.55 6 15 6Z"
+                            fill="#8B96A5" />
+                    </svg>Message
+                </span>
+                <span class="text-[#8B96A5] flex flex-col justify-center items-center p-16px">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 18" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M11.35 17.1302C10.59 17.8202 9.42003 17.8202 8.66003 17.1202L8.55003 17.0202C3.30003 12.2702 -0.129969 9.16017 3.10168e-05 5.28017C0.060031 3.58017 0.930031 1.95017 2.34003 0.990166C4.98003 -0.809834 8.24003 0.0301659 10 2.09017C11.76 0.0301659 15.02 -0.819834 17.66 0.990166C19.07 1.95017 19.94 3.58017 20 5.28017C20.14 9.16017 16.7 12.2702 11.45 17.0402L11.35 17.1302Z"
+                            fill="#8B96A5" />
+                    </svg>Orders
+                </span>
+                <span class="text-[#8B96A5] flex flex-col justify-center items-center p-16px">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="22" viewBox="0 0 21 21" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M6.29989 16.7997C5.14491 16.7997 4.21043 17.7447 4.21043 18.8997C4.21043 20.0546 5.14491 20.9996 6.29989 20.9996C7.45487 20.9996 8.39985 20.0546 8.39985 18.8997C8.39985 17.7447 7.45487 16.7997 6.29989 16.7997ZM0 1.04998C0 1.62747 0.472492 2.09996 1.04998 2.09996H2.09996L5.8799 10.0693L4.46242 12.6313C3.69593 14.0383 4.70392 15.7497 6.29989 15.7497H17.8497C18.4272 15.7497 18.8997 15.2772 18.8997 14.6997C18.8997 14.1223 18.4272 13.6498 17.8497 13.6498H6.29989L7.45487 11.5498H15.2772C16.0647 11.5498 16.7577 11.1193 17.1147 10.4683L20.8736 3.65394C21.2621 2.96095 20.7581 2.09996 19.9601 2.09996H4.42042L3.71693 0.598489C3.54894 0.230996 3.17094 0 2.77195 0H1.04998C0.472492 0 0 0.472492 0 1.04998ZM16.7997 16.7997C15.6447 16.7997 14.7102 17.7447 14.7102 18.8997C14.7102 20.0546 15.6447 20.9996 16.7997 20.9996C17.9547 20.9996 18.8997 20.0546 18.8997 18.8997C18.8997 17.7447 17.9547 16.7997 16.7997 16.7997Z"
+                            fill="#8B96A5" />
+                    </svg>My Cart
+                </span>
+            </div>
         </section>
         <!-- First Header Starts -->
 
@@ -124,7 +126,7 @@ margin-top: 0px !important;
                     <!-- <a href="/checkout-page.html" class="absolute "></a> -->
                 </a>
                 <div class="hidden lg:flex text-[#8CB7F5] text-[32px] font-semibold  gap-3 items-center">
-                    <p
+                    <a href="index.html"
                         class="bg-[#0D6EFD] w-[43px] h-[43px] shadow-[8px_0px_0px_0px_rgba(13,110,253,0.21)] rounded-[10px] relative">
                         <svg class="absolute top-[50%] left-[50%] transform translate-x-[-50%] translate-y-[-50%] "
                             xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22" fill="none">
@@ -137,20 +139,21 @@ margin-top: 0px !important;
                                     fill="white" />
                             </g>
                         </svg>
-                    </p>Brand
+                    </a>Brand
                 </div>
 
-                <div class="border-2 border-[#0D6EFD] rounded-[6px] w-[80%] xl:w-[55%] flex">
+                <div class="border-2 border-[#0D6EFD] rounded-[6px] w-[80%] min-[1000px]:w-[50%] xl:w-[55%] flex">
                     <input type="search" id="search-box" name="search" placeholder="Clothes"
                         class=" px-2.5 py-2 border-r-1 border-r-[#0D6EFD] w-full focus:outline-0">
-<span class="custom-select relative before:absolute before:w-[20px] before:h-[20px] before:top-2 before:right-0 before:content-[url('/img/expand_more.svg')] before:z-[-1] hidden xl:block pl-2.5">
+                    <span
+                        class="custom-select relative before:absolute before:w-[20px] before:h-[20px] before:top-2 before:right-0 before:content-[url('/img/expand_more.svg')] before:z-[-1] hidden xl:block pl-2.5">
 
-    <select name="categories" id="categories"
-    class="focus:outline-0 px-2.5 py-2 mr-2.5 hidden xl:block h-[100%]">
-    <option value="All Category" class="focus:outline-0">All Category</option>
-    <option value="All Category">All Category</option>
-</select>
-</span>
+                        <select name="categories" id="categories"
+                            class="focus:outline-0 px-2.5 py-2 mr-2.5 hidden xl:block h-[100%]">
+                            <option value="All Category" class="focus:outline-0">All Category</option>
+                            <option value="All Category">All Category</option>
+                        </select>
+                    </span>
                     <button class="hidden md:block btn-gradient text-white px-2.5  sm:px-8 py-2 font-medium">Search
                     </button>
 
@@ -164,7 +167,7 @@ margin-top: 0px !important;
 
 
 
-                <div class="hidden xl:flex gap-5">
+                <div class="hidden lg:flex gap-5">
                     <span class="text-[#8B96A5] flex flex-col justify-center items-center">
 
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
@@ -212,12 +215,13 @@ margin-top: 0px !important;
                     </span>
                     <li class="flex gap-2">All category</li>
                     <li>Hot Offers</li>
-                    <li class="hidden sm:block">Gift Boes</li>
+                    <li class="hidden sm:block">Gift Boxes</li>
                     <li class="hidden md:block">Projects</li>
                     <li class="hidden sm:block">Menu Items</li>
-                    <li class="flex items-center  custom-select relative before:absolute before:w-[20px] before:h-[20px] before:top-0 before:right-0 before:content-[url('/img/expand_more.svg')] before:z-[-1]">
+                    <li
+                        class="flex items-center  custom-select relative before:absolute before:w-[20px] before:h-[20px] before:top-0 before:right-0 before:content-[url('/img/expand_more.svg')] before:z-[-1]">
                         <select name="help" id="help" class="appearance-none focus:outline-0 ">
-                                    <option value="">Help</option>
+                            <option value="">Help</option>
                         </select>
                         <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                             fill="none">
@@ -230,75 +234,77 @@ margin-top: 0px !important;
                 </ul>
 
                 <ul class=" items-center gap-12 hidden lg:flex">
-                    <li class="flex gap-2 custom-select relative before:absolute before:w-[20px] before:h-[20px] before:top-0 before:right-0 before:content-[url('/img/expand_more.svg')] before:z-[-1]"><select name="help" id="help" class="appearance-none focus:outline-0">
+                    <li
+                        class="flex gap-2 custom-select relative before:absolute before:w-[20px] before:h-[20px] before:top-0 before:right-0 before:content-[url('/img/expand_more.svg')] before:z-[-1]">
+                        <select name="help" id="help" class="appearance-none focus:outline-0">
                             <option value="">English, USD</option>
-                        </select></li>
+                        </select>
+                    </li>
 
-                    <li class="flex items-center gap-3 custom-select relative before:absolute before:w-[20px] before:h-[20px] before:top-0 before:right-[32%] before:content-[url('/img/expand_more.svg')] before:z-[-1]">
+                    <li
+                        class="flex items-center gap-3 custom-select relative before:absolute before:w-[20px] before:h-[20px] before:top-0 before:right-[32%] before:content-[url('/img/expand_more.svg')] before:z-[-1]">
                         <select name="help" id="help" class="appearance-none focus:outline-0">
                             <option value="">Ship To</option>
                         </select>
                         <img src="/img/flags/italy.svg" alt="">
-                        
+
                     </li>
                 </ul>
             </div>
 
             <div class="hidden " id="side-nav">
 
-                <div class="px-[20px] flex flex-col justify-between gap-2 py-[17px] ">
-                    <p onclick="closeNav()" class="absolute top-0 right-0 p-5"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50">
-<path d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z"></path>
-</svg></p>
-                <ul class="flex flex-col gap-8">
+                <div class="px-[20px] sm:px-[30px] flex flex-col justify-between gap-8 py-[20px] sm:py-[30px] ">
+                    <p id="close-nav" class="absolute top-[20px] sm:top-[30px] right-[20px] sm:right-[30px] "><svg
+                            xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30"
+                            viewBox="0 0 50 50">
+                            <path
+                                d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z">
+                            </path>
+                        </svg></p>
+                    <ul class="flex flex-col gap-8 w-fit font-medium">
 
-                    
-                    <li class="flex gap-2">All category</li>
-                    <li>Hot Offers</li>
-                    <li>Gift Boes</li>
-                    <li>Projects</li>
-                    <li>Menu Items</li>
-                    <li class="flex items-center">
-                        <select name="help" id="help" class="appearance-none focus:outline-0">
-                            <option value="">Help</option>
-                        </select><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+
+                        <li class="flex gap-2">All Category</li>
+                        <li class="">Hot Offers</li>
+                        <li>Gift Boxes</li>
+                        <li>Projects</li>
+                        <li>Menu Items</li>
+                        <li
+                            class="flex items-center  custom-select relative before:absolute before:w-[20px] before:h-[20px] before:top-0 before:right-0 before:content-[url('/img/expand_more.svg')] before:z-[-1]">
+                            <select name="help" id="help" class="appearance-none focus:outline-0 ">
+                                <option value="">Help</option>
+                            </select>
+                            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                             fill="none">
                             <path
                                 d="M16.59 8.29504L12 12.875L7.41 8.29504L6 9.70504L12 15.705L18 9.70504L16.59 8.29504Z"
                                 fill="#8B96A5" />
-                        </svg>
-                    </li>   
+                        </svg> -->
+                        </li>
 
-                </ul>
+                    </ul>
 
-                <ul class="flex flex-col items-start gap-12">
-                    <li class="flex gap-2">
-                        <select name="language" id="language" class="appearance-none focus:outline-0 a">
-                            <option value="">English, USD</option>
-                        </select>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                            fill="none">
-                            <path
-                                d="M16.59 8.29504L12 12.875L7.41 8.29504L6 9.70504L12 15.705L18 9.70504L16.59 8.29504Z"
-                                fill="#8B96A5" />
-                        </svg>
-                    </li>
+                    <ul class=" flex flex-col items-start gap-y-8 font-medium">
+                        <li
+                            class="flex gap-2 custom-select relative before:absolute before:w-[20px] before:h-[20px] before:top-0 before:right-0 before:content-[url('/img/expand_more.svg')] before:z-[-1]">
+                            <select name="help" id="help" class="appearance-none focus:outline-0">
+                                <option value="">English, USD</option>
+                            </select>
+                        </li>
 
-                    <li class="flex items-center gap-3 ">
-                        <select name="help" id="help" class="appearance-none focus:outline-0">
-                            <option value="">Ship To</option>
-                        </select>
-                        <img src="/img/flags/italy.svg" alt="">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path
-                                d="M16.59 8.29504L12 12.875L7.41 8.29504L6 9.70504L12 15.705L18 9.70504L16.59 8.29504Z"
-                                fill="#8B96A5" />
-                        </svg>
-                    </li>
-                </ul>
-            </div>
+                        <li
+                            class="flex items-center gap-3 custom-select relative before:absolute before:w-[20px] before:h-[20px] before:top-0 before:right-[32%] before:content-[url('/img/expand_more.svg')] before:z-[-1]">
+                            <select name="help" id="help" class="appearance-none focus:outline-0">
+                                <option value="">Ship To</option>
+                            </select>
+                            <img src="/img/flags/italy.svg" alt="">
 
+                        </li>
+                    </ul>
                 </div>
+
+            </div>
 
 
         </section>
@@ -333,8 +339,8 @@ margin-top: 0px !important;
                 </div>
 
                 <div class=" relative">
-                    <img src="/img/banner-img.png" alt="" class="object-cover w-full h-[100%] max-h-[400px]" width="100px"
-                        height="100px">
+                    <img src="/img/banner-img.png" alt="" class="object-cover w-full h-[100%] max-h-[400px]"
+                        width="100px" height="100px">
                     <div class="absolute top-0 left-0 p-[5%]  ">
 
                         <p class="heading-1 font-normal">Latest Trending</p>
@@ -481,7 +487,7 @@ margin-top: 0px !important;
                 </div>
 
 
-                <div class="lg:border-r-gray-300 lg:border-r-1 border-b-1 border-b-gray-300 grid grid-cols-2 p-5">
+                <div class="md:border-r-gray-300 md:border-r-1 border-b-1 border-b-gray-300 grid grid-cols-2 p-5">
 
                     <p class="col-span-2 primary-black line-clamp-1">Pots</p>
                     <p class="text-[#8B96A5] text-[13px]">From <br> USD 19</p>
@@ -562,7 +568,7 @@ margin-top: 0px !important;
                 </div>
 
 
-                <div class="lg:border-r-gray-300 lg:border-r-1 border-b-1 border-b-gray-300 grid grid-cols-2 p-5">
+                <div class="md:border-r-gray-300 md:border-r-1 border-b-1 border-b-gray-300 grid grid-cols-2 p-5">
 
                     <p class="col-span-2 primary-black line-clamp-1">Pots</p>
                     <p class="text-[#8B96A5] text-[13px]">From <br> USD 19</p>
@@ -655,7 +661,7 @@ margin-top: 0px !important;
                             <option value="3">3</option>
                             <option value="4">4</option>
                         </select>
-                        
+
                     </div>
 
                     <button class="btn-gradient text-white col-span-2 sm:col-auto w-fit rounded-[6px] px-4 py-2">Send
@@ -670,130 +676,195 @@ margin-top: 0px !important;
 
         <!-- Recommended Items Section Starts -->
 
-    <section class="px-[10px] m-auto md:w-[90%] xl:w-[80%]">
+        <section class="px-[10px] m-auto md:w-[90%] xl:w-[80%]">
 
-             <p class="text-[24px] font-semibold mt-5 mb-5">Recommended Items</p>
-             <div class="">
-                 
-                 <div class="swiper mySwiper grid  grid-cols-[repeat(auto-fill,_minmax(200px,_1fr))]">
-                     <div class="swiper-wrapper">
-                         <div class="swiper-slide"> 
-                        <div class="border-gray-300 border-1 p-[2%] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white">
-                            <img src="/img/grey-t-shirt.png" alt="" height="200px" width="200px"
-                            class="self-center min-w-[100px] h-[auto] object-contain">
-                    <p class="font-medium">$10.30</p>
-                    <p class="text-light-gray p-16px line-clamp-2">T-shirts with multiple colors, for men</p>
+            <p class="text-[24px] font-semibold mt-5 mb-5">Recommended Items</p>
+            <div class="">
+
+                <div class="swiper mySwiper grid  grid-cols-[repeat(auto-fill,_minmax(200px,_1fr))]"
+                    style="--swiper-navigation-color: black; --swiper-pagination-color: black; --swiper-navigation-size: 30px; font-weight: 700;">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div
+                                class="border-gray-300 border-1 p-[15px] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white text-left">
+                                <img src="/img/grey-t-shirt.png" alt="" height="200px" width="200px"
+                                    class="self-center min-w-[100px] h-[auto] object-contain">
+                                <p class="font-medium">$10.30</p>
+                                <p class="text-light-gray p-16px font-normal line-clamp-2">T-shirts with multiple
+                                    colors, for men
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div
+                                class="border-gray-300 border-1 p-[15px] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white text-left">
+
+                                <img src="/img/brown-jacket.png" alt="brown jacket" height="200px" width="200px"
+                                    class="self-center min-w-[100px] h-[auto] object-contain">
+                                <p class="font-medium">$10.30</p>
+                                <p class="text-light-gray p-16px font-normal line-clamp-2">T-shirts with multiple
+                                    colors, for men
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div
+                                class="border-gray-300 border-1 p-[15px] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white text-left">
+
+                                <img src="/img/tuxedo.png" alt="" height="200px" width="200px"
+                                    class="self-center min-w-[100px] h-[auto] object-contain">
+                                <p class="font-medium">$10.30</p>
+                                <p class="text-light-gray p-16px font-normal line-clamp-2">T-shirts with multiple
+                                    colors, for men
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div
+                                class="border-gray-300 border-1 p-[15px] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white text-left">
+
+                                <img src="/img/wallet.png" alt="" height="200px" width="200px"
+                                    class="self-center min-w-[100px] h-[auto] object-contain">
+                                <p class="font-medium">$10.30</p>
+                                <p class="text-light-gray p-16px font-normal line-clamp-2">T-shirts with multiple
+                                    colors, for men
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div
+                                class="border-gray-300 border-1 p-[15px] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white text-left">
+
+                                <img src="/img/denim-bag.png" alt="" height="200px" width="200px"
+                                    class="self-center min-w-[100px] h-[auto] object-contain">
+                                <p class="font-medium">$10.30</p>
+                                <p class="text-light-gray p-16px font-normal line-clamp-2">T-shirts with multiple
+                                    colors, for men
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div
+                                class="border-gray-300 border-1 p-[15px] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white text-left">
+
+                                <img src="/img/shorts.png" alt="" height="200px" width="200px"
+                                    class="self-center min-w-[100px] h-[auto] object-contain">
+                                <p class="font-medium">$10.30</p>
+                                <p class="text-light-gray p-16px font-normal line-clamp-2">T-shirts with multiple
+                                    colors, for men
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div
+                                class="border-gray-300 border-1 p-[15px] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white text-left">
+
+                                <img src="/img/denim-bag.png" alt="" height="200px" width="200px"
+                                    class="self-center min-w-[100px] h-[auto] object-contain">
+                                <p class="font-medium">$10.30</p>
+                                <p class="text-light-gray p-16px font-normal line-clamp-2">T-shirts with multiple
+                                    colors, for men
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div
+                                class="border-gray-300 border-1 p-[15px] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white text-left">
+
+                                <img src="/img/pot.png" alt="" height="200px" width="200px"
+                                    class="self-center min-w-[100px] h-[auto] object-contain">
+                                <p class="font-medium">$10.30</p>
+                                <p class="text-light-gray p-16px font-normal line-clamp-2">T-shirts with multiple
+                                    colors, for men
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div
+                                class="border-gray-300 border-1 p-[15px] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white text-left">
+                                <img src="/img/kettle.png" alt="" height="200px" width="200px"
+                                    class="self-center min-w-[100px] h-[auto] object-contain">
+                                <p class="font-medium">$10.30</p>
+                                <p class="text-light-gray p-16px font-normal line-clamp-2">T-shirts with multiple
+                                    colors, for men
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div
+                                class="border-gray-300 border-1 p-[15px] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white text-left">
+                                <img src="/img/kettle.png" alt="" height="200px" width="200px"
+                                    class="self-center min-w-[100px] h-[auto] object-contain">
+                                <p class="font-medium">$10.30</p>
+                                <p class="text-light-gray p-16px font-normal line-clamp-2">T-shirts with multiple
+                                    colors, for men
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div
+                                class="border-gray-300 border-1 p-[15px] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white text-left">
+                                <img src="/img/kettle.png" alt="" height="200px" width="200px"
+                                    class="self-center min-w-[100px] h-[auto] object-contain">
+                                <p class="font-medium">$10.30</p>
+                                <p class="text-light-gray p-16px font-normal line-clamp-2">T-shirts with multiple
+                                    colors, for men
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div
+                                class="border-gray-300 border-1 p-[15px] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white text-left">
+                                <img src="/img/kettle.png" alt="" height="200px" width="200px"
+                                    class="self-center min-w-[100px] h-[auto] object-contain">
+                                <p class="font-medium">$10.30</p>
+                                <p class="text-light-gray p-16px font-normal line-clamp-2">T-shirts with multiple
+                                    colors, for men
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div
+                                class="border-gray-300 border-1 p-[15px] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white text-left">
+                                <img src="/img/kettle.png" alt="" height="200px" width="200px"
+                                    class="self-center min-w-[100px] h-[auto] object-contain">
+                                <p class="font-medium">$10.30</p>
+                                <p class="text-light-gray p-16px font-normal line-clamp-2">T-shirts with multiple
+                                    colors, for men
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div
+                                class="border-gray-300 border-1 p-[15px] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white text-left">
+                                <img src="/img/kettle.png" alt="" height="200px" width="200px"
+                                    class="self-center min-w-[100px] h-[auto] object-contain">
+                                <p class="font-medium">$10.30</p>
+                                <p class="text-light-gray p-16px font-normal line-clamp-2">T-shirts with multiple
+                                    colors, for men
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- <div class="swiper-pagination"></div> -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
-            <div class="swiper-slide"> <div class="border-gray-300 border-1 p-[2%] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white">
-
-                <img src="/img/brown-jacket.png" alt="brown jacket" height="200px" width="200px"
-                class="self-center min-w-[100px] h-[auto] object-contain">
-                    <p class="font-medium">$10.30</p>
-                    <p class="text-light-gray p-16px line-clamp-2">T-shirts with multiple colors, for men</p>
-
-                </div></div>
-                <div class="swiper-slide"> <div class="border-gray-300 border-1 p-[2%] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white">
-                    
-                    <img src="/img/tuxedo.png" alt="" height="200px" width="200px"
-                    class="self-center min-w-[100px] h-[auto] object-contain">
-                    <p class="font-medium">$10.30</p>
-                    <p class="text-light-gray p-16px line-clamp-2">T-shirts with multiple colors, for men</p>
-
-                </div></div>
-                <div class="swiper-slide"> <div class="border-gray-300 border-1 p-[2%] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white">
-
-                    <img src="/img/wallet.png" alt="" height="200px" width="200px"
-                        class="self-center min-w-[100px] h-[auto] object-contain">
-                    <p class="font-medium">$10.30</p>
-                    <p class="text-light-gray p-16px line-clamp-2">T-shirts with multiple colors, for men</p>
-
-                </div></div>
-                     <div class="swiper-slide"> <div class="border-gray-300 border-1 p-[2%] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white">
-
-                    <img src="/img/denim-bag.png" alt="" height="200px" width="200px"
-                        class="self-center min-w-[100px] h-[auto] object-contain">
-                    <p class="font-medium">$10.30</p>
-                    <p class="text-light-gray p-16px line-clamp-2">T-shirts with multiple colors, for men</p>
-
-                </div></div>
-                     <div class="swiper-slide"><div class="border-gray-300 border-1 p-[2%] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white">
-
-                    <img src="/img/shorts.png" alt="" height="200px" width="200px"
-                        class="self-center min-w-[100px] h-[auto] object-contain">
-                    <p class="font-medium">$10.30</p>
-                    <p class="text-light-gray p-16px line-clamp-2">T-shirts with multiple colors, for men</p>
-
-                </div></div>
-                     <div class="swiper-slide"> <div class="border-gray-300 border-1 p-[2%] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white">
-
-                    <img src="/img/denim-bag.png" alt="" height="200px" width="200px"
-                        class="self-center min-w-[100px] h-[auto] object-contain">
-                    <p class="font-medium">$10.30</p>
-                    <p class="text-light-gray p-16px line-clamp-2">T-shirts with multiple colors, for men</p>
-
-                </div></div>
-                     <div class="swiper-slide"><div class="border-gray-300 border-1 p-[2%] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white">
-
-                    <img src="/img/pot.png" alt="" height="200px" width="200px"
-                        class="self-center min-w-[100px] h-[auto] object-contain">
-                    <p class="font-medium">$10.30</p>
-                    <p class="text-light-gray p-16px line-clamp-2">T-shirts with multiple colors, for men</p>
-
-                </div></div>
-                     <div class="swiper-slide"><div class="border-gray-300 border-1 p-[2%] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white">
-                    <img src="/img/kettle.png" alt="" height="200px" width="200px"
-                        class="self-center min-w-[100px] h-[auto] object-contain">
-                    <p class="font-medium">$10.30</p>
-                    <p class="text-light-gray p-16px line-clamp-2">T-shirts with multiple colors, for men</p>
-                </div>
-</div>
-
-<div class="swiper-slide"><div class="border-gray-300 border-1 p-[2%] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white">
-                    <img src="/img/kettle.png" alt="" height="200px" width="200px"
-                        class="self-center min-w-[100px] h-[auto] object-contain">
-                    <p class="font-medium">$10.30</p>
-                    <p class="text-light-gray p-16px line-clamp-2">T-shirts with multiple colors, for men</p>
-                </div>
-</div>
-
-<div class="swiper-slide"><div class="border-gray-300 border-1 p-[2%] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white">
-                    <img src="/img/kettle.png" alt="" height="200px" width="200px"
-                    class="self-center min-w-[100px] h-[auto] object-contain">
-                    <p class="font-medium">$10.30</p>
-                    <p class="text-light-gray p-16px line-clamp-2">T-shirts with multiple colors, for men</p>
-                </div>
-            </div>
-            
-            <div class="swiper-slide"><div class="border-gray-300 border-1 p-[2%] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white">
-                <img src="/img/kettle.png" alt="" height="200px" width="200px"
-                class="self-center min-w-[100px] h-[auto] object-contain">
-                <p class="font-medium">$10.30</p>
-                <p class="text-light-gray p-16px line-clamp-2">T-shirts with multiple colors, for men</p>
-            </div>
-        </div>
-        
-        <div class="swiper-slide"><div class="border-gray-300 border-1 p-[2%] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white">
-            <img src="/img/kettle.png" alt="" height="200px" width="200px"
-            class="self-center min-w-[100px] h-[auto] object-contain">
-            <p class="font-medium">$10.30</p>
-            <p class="text-light-gray p-16px line-clamp-2">T-shirts with multiple colors, for men</p>
-        </div>
-    </div>
-    
-    <div class="swiper-slide"><div class="border-gray-300 border-1 p-[2%] md:p-5 flex flex-col gap-2 rounded-[6px] bg-white">
-        <img src="/img/kettle.png" alt="" height="200px" width="200px"
-        class="self-center min-w-[100px] h-[auto] object-contain">
-        <p class="font-medium">$10.30</p>
-        <p class="text-light-gray p-16px line-clamp-2">T-shirts with multiple colors, for men</p>
-    </div>
-</div>
-
-</div>
-<div class="swiper-pagination"></div>
-</div>
-</div>
-</section>
+        </section>
         <!-- Recommended Items Section Ends -->
 
 
@@ -868,7 +939,7 @@ margin-top: 0px !important;
         <!-- Supplier Region Section Starts -->
         <section class="px-[10px] m-auto md:w-[90%] xl:w-[80%]">
             <p class="text-[24px] font-semibold mt-5 mb-5">Suppliers By Region</p>
-            <div class="grid grid-cols-[repeat(auto-fit,_minmax(150px,_1fr))] gap-5">
+            <div class="grid grid-cols-[repeat(auto-fit,_minmax(150px,_1fr))] gap-5 whitespace-nowrap">
                 <div class="grid grid-cols-[50px_1fr]">
                     <img src="/img/arab.png" alt="" height="40px" width="40px"
                         class="self-center w-[40px] h-[40px] object-contain">
@@ -943,7 +1014,7 @@ margin-top: 0px !important;
                 <span>
 
                     <input type="email" name="email" id="email" placeholder="Email"
-                        class="bg-white mb-2 w-[60%] sm:mb-0 pl-10 sm:px-10 py-1 bg-[url(/img/Icon/email.svg)] bg-no-repeat bg-position-[10px] mr-[10px] rounded-[6px]">
+                        class="bg-white mb-2 w-[60%] sm:w-auto sm:mb-0 pl-10 sm:px-10 py-1 bg-[url(/img/Icon/email.svg)] bg-no-repeat bg-position-[10px] mr-[10px] rounded-[6px]">
                     <button class="bg-[#0067FF] items-center  text-white  rounded-[6px] px-2.5 py-1">Subscribe</button>
                 </span>
 
@@ -1180,64 +1251,65 @@ margin-top: 0px !important;
             <div class=" flex py-[23px] px-[10px] m-auto md:w-[90%] xl:w-[80%]">
                 <p class="mr-auto text-[#606060]">&copy; 2023 Ecommerce.</p>
                 <img src="/img/flags/america.svg" alt="" class="mr-2">
+<span class="custom-select relative before:absolute before:w-[20px] before:h-[20px] before:top-0 before:right-0 before:content-[url('/img/expand_more.svg')] before:z-[-1]">
 
-                <select name="help" id="help" class="appearance-none focus:outline-0">
-                    <option value="">English</option>
-                    <option value="">English</option>
-                    <option value="">English</option>
-                    <option value="">English</option>
-                </select>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 8.29492L6 14.2949L7.41 15.7049L12 11.1249L16.59 15.7049L18 14.2949L12 8.29492Z"
-                        fill="#1C1C1C" />
-                </svg>
+    <select name="help" id="help" class="appearance-none focus:outline-0">
+        <option value="">English</option>
+        <option value="">English</option>
+        <option value="">English</option>
+        <option value="">English</option>
+    </select>
+</span>
+                
+
             </div>
 
         </section>
         <!-- Footer Section Ends -->
-         
-
-           
 
 
-                
-
-
-                
     </main>
     <script src="script.js"></script>
-   
+
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-  <!-- Initialize Swiper -->
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 3,
-      grid: {
-        rows: 1,
-      },
-      spaceBetween: 10,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      breakpoints: {
-          640: {
-            slidesPerView: 3,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 4,
-            spaceBetween: 20,
-          },
-          1024: {
-            slidesPerView: 5,
-            spaceBetween: 20,
-          },
-        },
-    });
-  </script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 2,
+            grid: {
+                rows: 1,
+            },
+            spaceBetween: 10,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            thumbs: {
+                swiper: swiper,
+            },
+            breakpoints: {
+
+                400: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 5,
+                    spaceBetween: 20,
+                },
+            },
+        });
+    </script>
 </body>
 
 </html>

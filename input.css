@@ -10,6 +10,7 @@
     --text-light-gray: #8B96A5;
 }
 
+
 @layer components {
 
     body {
@@ -147,6 +148,12 @@
         font-size: clamp(0.75rem, 0.6121rem + 0.6897vw, 1rem);
     }
 
+    .p-16-13px{
+        font-size: clamp(0.875rem, 0.8125rem + 0.3333vw, 1rem);
+    }
+.p-20-16px{
+    font-size: clamp(1rem, 0.875rem + 0.6667vw, 1.25rem);
+}
     .content {
         display: none;
     }
@@ -216,5 +223,8 @@
         background-color: transparent;
         color: #000;
         cursor: pointer;
+    }
+    .cart-heading{
+        font-size: clamp(1rem, 0.75rem + 1.3333vw, 1.5rem);
     }
 }

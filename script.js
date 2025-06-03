@@ -70,19 +70,29 @@ buttons.forEach(btn => {
 })
 
 
-        function sideNav() {
+function sideNav() {
             const hamburger = document.getElementById('hamburger')
             const sideNav = document.getElementById('side-nav')
             console.log(hamburger, 'gfsdg  ')
             console.log(sideNav, 'sideNav  ')
-            sideNav.classList.toggle('show')
+            sideNav.classList.add('show')
+            backdropNav.classList.remove('hidden');
+
         }
+const closeBtn = document.getElementById('close-nav')
+ const backdropNav = document.getElementById('backdrop');
+
 
         function closeNav(){
-            
+          
             const sideNav = document.getElementById('side-nav')
             sideNav.classList.remove('show')
+            backdropNav.classList.add('hidden');
+
         }
+closeBtn.addEventListener('click', closeNav);
+backdropNav.addEventListener('click', closeNav);
+        
 //   const hamburger = document.getElementById('hamburger')
           
         // document.onclick = function(e){
